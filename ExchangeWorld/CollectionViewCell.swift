@@ -12,4 +12,7 @@ class CollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var posterNameLabel: UILabel!
+    @IBOutlet var objectIcon: UIImageView!
+    @IBOutlet var userIcon: UIImageView!
 }
