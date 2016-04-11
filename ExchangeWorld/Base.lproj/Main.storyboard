@@ -79,6 +79,7 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <color key="backgroundColor" red="0.92570371716567157" green="0.92570371716567157" blue="0.92570371716567157" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="VT3-NT-BSr" firstAttribute="centerY" secondItem="7hb-G2-Ne2" secondAttribute="centerY" id="32O-rN-vi2"/>
                                             <constraint firstItem="VT3-NT-BSr" firstAttribute="top" secondItem="dPZ-J3-yUy" secondAttribute="bottom" constant="1" id="7zY-t1-Yv7"/>
