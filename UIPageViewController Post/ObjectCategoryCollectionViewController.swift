@@ -12,9 +12,19 @@ private let reuseIdentifier = "Cell"
 
 class ObjectCategoryCollectionViewController: UICollectionViewController {
 
+    @IBOutlet var ObjectCategoryCollectionView: UICollectionView!
+    
+    
     let objectcategories = ObjectCategories()
     
     let ocImageArray = [UIImage(named: "3C"), UIImage(named: "Book"), UIImage(named: "Clothes"), UIImage(named: "Makeup"), UIImage(named: "Textbook"), UIImage(named: "Others")]
+    let imageArray = [UIImage(named: "羅生門"), UIImage(named: "蚱蜢"), UIImage(named: "賴和全集")]
+    let objNameArray = ["羅生門", "蚱蜢", "賴和全集"]
+    let objCategoriesArray = ["書籍", "書籍", "書籍"]
+    let objOwnerArray = ["萊布尼茲", "特斯拉", "賴和"]
+    let categoryIconArray = [UIImage(named: "Book"), UIImage(named: "Book"), UIImage(named: "Book")]
+    let ownerIconArray = [UIImage(named: "使用者"), UIImage(named: "使用者"), UIImage(named: "使用者")]
+
     
     // for dynamic column
     private let leftAndRightPaddings: CGFloat = 80.0
@@ -56,22 +66,20 @@ class ObjectCategoryCollectionViewController: UICollectionViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     
     // MARK: UICollectionViewDataSource
 
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
         return ocImageArray.count
     }
+    
     
     private struct Storyboard
     {
@@ -85,6 +93,33 @@ class ObjectCategoryCollectionViewController: UICollectionViewController {
         cell.categoryImageView?.image = self.ocImageArray[indexPath.row]
         
         return cell
+    }
+    
+    
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier("showObjects", sender: self)
+    }
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showObjects"{
+            
+            print("hi im working")
+            
+            let indexPaths = self.collectionView!.indexPathsForSelectedItems()!
+            let indexPath = indexPaths[0] as NSIndexPath
+            
+            let objinfo = segue.destinationViewController as! ObjectCollectionViewController
+            
+            objinfo.objimage = self.imageArray[indexPath.row]!
+            
+            /*
+            objinfo.objname.text = self.objNameArray[indexPath.row]
+            objinfo.objcategoryname.text = self.objCategoriesArray[indexPath.row]
+            objinfo.objowner.text = self.objOwnerArray[indexPath.row]
+            objinfo.objcategoryicon = self.categoryIconArray[indexPath.row]!
+            objinfo.objownericon = self.ownerIconArray[indexPath.row]!
+            */
+        }
     }
 
     
