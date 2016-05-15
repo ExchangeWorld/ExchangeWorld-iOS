@@ -1,0 +1,15 @@
+PODS:
+  - GoogleMaps (1.13.2)
+  - ObjectMapper (1.2.0)
+
+DEPENDENCIES:
+  - GoogleMaps
+  - ObjectMapper (~> 1.2.0)
+
+SPEC CHECKSUMS:
+  GoogleMaps: b20a103ff307f58392e603cf142e59d7e30374c1
+  ObjectMapper: b1e9c7c8a9f6400b72690c80072c131504caa66f
+
+PODFILE CHECKSUM: e84d41e264c56974195ec386e8e5e608022bf08a
+
+COCOAPODS: 1.0.0.beta.8
