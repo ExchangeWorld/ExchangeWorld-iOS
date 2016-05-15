@@ -14,11 +14,11 @@ class ObjectCategoryCollectionViewController: UICollectionViewController {
 
     @IBOutlet var ObjectCategoryCollectionView: UICollectionView!
     
-    
+    var ocImageArray = [String]()
+    var SecondArray = [SecondTable]()
     let objectcategories = ObjectCategories()
     
-    let ocImageArray = [UIImage(named: "3C"), UIImage(named: "Book"), UIImage(named: "Clothes"), UIImage(named: "Makeup"), UIImage(named: "Textbook"), UIImage(named: "Others")]
-    let imageArray = [UIImage(named: "羅生門"), UIImage(named: "蚱蜢"), UIImage(named: "賴和全集")]
+    
     let objNameArray = ["羅生門", "蚱蜢", "賴和全集"]
     let objCategoriesArray = ["書籍", "書籍", "書籍"]
     let objOwnerArray = ["萊布尼茲", "特斯拉", "賴和"]
@@ -38,6 +38,20 @@ class ObjectCategoryCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        ocImageArray = ["3C", "Book", "Clothes", "Makeup", "Textbook", "Others"]
+        
+        SecondArray = [
+        SecondTable(ObjectImage: ["羅生門", "賴和全集", "蚱蜢"]),
+        SecondTable(ObjectImage: ["羅生門", "蚱蜢", "賴和全集"]),
+        SecondTable(ObjectImage: ["蚱蜢", "羅生門", "賴和全集"]),
+        SecondTable(ObjectImage: ["蚱蜢", "賴和全集", "羅生門"]),
+        SecondTable(ObjectImage: ["賴和全集", "蚱蜢", "羅生門"]),
+        SecondTable(ObjectImage: ["賴和全集", "羅生門", "蚱蜢"])]
+        
+        
+       
+        
         
         
         let width = (CGRectGetWidth(collectionView!.frame)-leftAndRightPaddings) / numberOfItemsPerRow
@@ -81,16 +95,12 @@ class ObjectCategoryCollectionViewController: UICollectionViewController {
     }
     
     
-    private struct Storyboard
-    {
-        static let CellIdentifier = "ObjectCategoryCell"
-    }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
     {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("ObjectCategoryCell", forIndexPath: indexPath) as! ObjectCategoryCollectionViewCell
     
-        cell.categoryImageView?.image = self.ocImageArray[indexPath.row]
+        cell.categoryImageView?.image = UIImage(named : self.ocImageArray[indexPath.row])
         
         return cell
     }
@@ -103,14 +113,20 @@ class ObjectCategoryCollectionViewController: UICollectionViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showObjects"{
             
-            print("hi im working")
+            
             
             let indexPaths = self.collectionView!.indexPathsForSelectedItems()!
             let indexPath = indexPaths[0] as NSIndexPath
             
             let objinfo = segue.destinationViewController as! ObjectCollectionViewController
             
-            objinfo.objimage = self.imageArray[indexPath.row]!
+            var SecondTableArrayTwo : SecondTable
+            
+            SecondTableArrayTwo = SecondArray[indexPath.row]
+            
+            objinfo.SecondArray = SecondTableArrayTwo.ObjectImage
+            
+      
             
             /*
             objinfo.objname.text = self.objNameArray[indexPath.row]

@@ -267,24 +267,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.83898696669999995" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="d6G-IE-Z7z">
-                            <size key="itemSize" width="500" height="300"/>
+                            <size key="itemSize" width="400" height="300"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="objectCell" id="rRn-UE-7Rh" customClass="ObjectCollectionViewCell" customModule="UIPageViewController_Post" customModuleProvider="target">
-                                <rect key="frame" x="50" y="74" width="500" height="300"/>
+                                <rect key="frame" x="100" y="74" width="400" height="300"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="500" height="300"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="400" height="300"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="蚱蜢" translatesAutoresizingMaskIntoConstraints="NO" id="tFf-gK-Nc9">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="羅生門" translatesAutoresizingMaskIntoConstraints="NO" id="tFf-gK-Nc9">
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="300" id="8sJ-O0-IdS"/>
-                                                <constraint firstAttribute="height" constant="300" id="b9h-Xn-z8u"/>
+                                                <constraint firstAttribute="width" constant="300" id="Gts-n1-qg0"/>
                                             </constraints>
                                         </imageView>
                                     </subviews>
@@ -293,6 +292,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="tFf-gK-Nc9" firstAttribute="top" secondItem="rRn-UE-7Rh" secondAttribute="topMargin" id="Dea-ia-C8r"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="tFf-gK-Nc9" secondAttribute="bottom" id="XJU-XH-0qm"/>
                                     <constraint firstItem="tFf-gK-Nc9" firstAttribute="leading" secondItem="rRn-UE-7Rh" secondAttribute="leadingMargin" constant="-8" id="dMt-Zp-Hwi"/>
                                 </constraints>
                                 <connections>
@@ -305,6 +305,9 @@
                             <outlet property="delegate" destination="BsS-57-dIC" id="5Yj-hW-opg"/>
                         </connections>
                     </collectionView>
+                    <connections>
+                        <outlet property="ObjectCollecitonView" destination="OQa-qx-VT1" id="1kQ-BP-DcR"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="njH-mK-89w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -331,6 +334,6 @@
     </scenes>
     <resources>
         <image name="3C" width="279" height="279"/>
-        <image name="蚱蜢" width="175" height="250"/>
+        <image name="羅生門" width="1000" height="1241"/>
     </resources>
 </document>
