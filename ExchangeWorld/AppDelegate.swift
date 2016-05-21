@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import GoogleMaps
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +17,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	
 	
 	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-		// Override point for customization after application launch.
+
+        // Set navigation bar tint / background color
+        UINavigationBar.appearance().barTintColor = UIColor(red: 128.0/255.0, green: 192.0/255.0, blue: 189.0/255.0, alpha: 1.0)
+        
+        // Set navigation bar Title color
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor()]
+
+        GMSServices.provideAPIKey("AIzaSyDLHMK3MExBBwCeRDWZj38BzysD4qWAcIE")
+        
 		return true
 	}
 	

@@ -10,26 +10,41 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var homeNevigationBar: UINavigationBar!
+    @IBOutlet weak var homeSegmentedControl: HomeSegmentedControl!
+    
+    @IBOutlet weak var homeMapTabContainerView: UIView!
+    @IBOutlet weak var homeObjectCategoryTabContainerView: UIView!
+    @IBOutlet weak var homeAreaCategoryTabContainerView: UIView!
+    
+    @IBAction func homeSegmentedControlChangeTab(sender: UISegmentedControl) {
+ 
+        switch (homeSegmentedControl.selectedSegmentIndex) {
+        case 0:
+            self.homeMapTabContainerView.hidden = false
+            self.homeObjectCategoryTabContainerView.hidden = true
+            self.homeAreaCategoryTabContainerView.hidden = true
+            break
+        case 1:
+            self.homeMapTabContainerView.hidden = true
+            self.homeObjectCategoryTabContainerView.hidden = false
+            self.homeAreaCategoryTabContainerView.hidden = true
+            break
+        case 2:
+            self.homeMapTabContainerView.hidden = true
+            self.homeObjectCategoryTabContainerView.hidden = true
+            self.homeAreaCategoryTabContainerView.hidden = false
+            break
+        default:
+            break
+        }
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.homeSegmentedControl.initUI()
+        self.homeObjectCategoryTabContainerView.hidden = true
+        self.homeAreaCategoryTabContainerView.hidden = true
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
