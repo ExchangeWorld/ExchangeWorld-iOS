@@ -9,22 +9,29 @@
 import UIKit
 import GoogleMaps
 
-class HomeMapTabViewController: UIViewController {
+class HomeMapTabViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate {
 
+    let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let camera = GMSCameraPosition.cameraWithLatitude(-33.86,
-                                                          longitude: 151.20, zoom: 6)
+        self.locationManager.delegate = self
+        self.locationManager.requestWhenInUseAuthorization()
+        
+        let camera = GMSCameraPosition.cameraWithLatitude(24.987574,
+                                                          longitude: 121.575774, zoom: 16)
         let mapView = GMSMapView.mapWithFrame(CGRectZero, camera: camera)
         mapView.myLocationEnabled = true
+        mapView.settings.compassButton = true
+        mapView.settings.myLocationButton = true
+        
         self.view = mapView
         
         let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2DMake(-33.86, 151.20)
-        marker.title = "Sydney"
-        marker.snippet = "Australia"
+        marker.position = CLLocationCoordinate2DMake(24.987574, 121.575774)
+        marker.title = "Taipei"
+        marker.snippet = "NCCU"
         marker.map = mapView
     }
 }

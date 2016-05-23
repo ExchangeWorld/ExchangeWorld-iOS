@@ -16,7 +16,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var homeMapTabContainerView: UIView!
     @IBOutlet weak var homeObjectCategoryTabContainerView: UIView!
     @IBOutlet weak var homeAreaCategoryTabContainerView: UIView!
-    
+        
     @IBAction func homeSegmentedControlChangeTab(sender: UISegmentedControl) {
  
         switch (homeSegmentedControl.selectedSegmentIndex) {
@@ -40,6 +40,7 @@ class HomeViewController: UIViewController {
         }
         
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.homeSegmentedControl.initUI()

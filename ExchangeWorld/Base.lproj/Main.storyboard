@@ -78,7 +78,7 @@
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="L8i-PU-UvA" secondAttribute="bottom" id="yA7-4j-VMh"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="Find on Map" selectedImage="Find on Map" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="homeAreaCategoryTabContainerView" destination="JIC-Br-mSt" id="n70-k8-XRl"/>
                         <outlet property="homeMapTabContainerView" destination="GMH-Zo-fmV" id="Jhf-Ya-pnb"/>
@@ -102,15 +102,49 @@
                     <view key="view" contentMode="scaleToFill" id="pgE-9E-zA3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ln-QZ-2iA">
+                                <rect key="frame" x="488" y="28" width="92" height="30"/>
+                                <state key="normal" title="Photo Library"/>
+                                <connections>
+                                    <action selector="photoLibraryButtonClicked:" destination="vjL-8m-K4n" eventType="touchUpInside" id="CRO-Yn-Roa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fvf-Dq-ng0">
+                                <rect key="frame" x="20" y="28" width="54" height="30"/>
+                                <state key="normal" title="Camera"/>
+                                <connections>
+                                    <action selector="cameraButtonClicked:" destination="vjL-8m-K4n" eventType="touchUpInside" id="Hn7-BH-ElG"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lhS-MR-fJB">
+                                <rect key="frame" x="20" y="75" width="560" height="265"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lhS-MR-fJB" firstAttribute="leading" secondItem="pgE-9E-zA3" secondAttribute="leadingMargin" id="3Hf-yA-CpU"/>
+                            <constraint firstItem="7ln-QZ-2iA" firstAttribute="top" secondItem="WrM-0n-tio" secondAttribute="bottom" constant="8" id="7Dl-Qk-yyq"/>
+                            <constraint firstItem="lhS-MR-fJB" firstAttribute="top" secondItem="fvf-Dq-ng0" secondAttribute="bottom" constant="17" id="Jh8-BX-fC7"/>
+                            <constraint firstItem="lhS-MR-fJB" firstAttribute="trailing" secondItem="pgE-9E-zA3" secondAttribute="trailingMargin" id="UeE-xV-ZtJ"/>
+                            <constraint firstItem="7ln-QZ-2iA" firstAttribute="trailing" secondItem="pgE-9E-zA3" secondAttribute="trailingMargin" id="ZAn-Xk-7ia"/>
+                            <constraint firstItem="fvf-Dq-ng0" firstAttribute="top" secondItem="WrM-0n-tio" secondAttribute="bottom" constant="8" id="fkn-xv-2Dz"/>
+                            <constraint firstItem="MrI-dC-B9K" firstAttribute="top" secondItem="lhS-MR-fJB" secondAttribute="bottom" constant="211" id="jf7-1A-UXv"/>
+                            <constraint firstItem="fvf-Dq-ng0" firstAttribute="leading" secondItem="pgE-9E-zA3" secondAttribute="leadingMargin" id="mYG-WD-Z2L"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Camera" id="9pF-uF-qex"/>
+                    <tabBarItem key="tabBarItem" title="Camera" image="Camera" selectedImage="Camera" id="9pF-uF-qex"/>
+                    <connections>
+                        <outlet property="cameraButton" destination="fvf-Dq-ng0" id="4dN-Ab-aYZ"/>
+                        <outlet property="photoLibraryButton" destination="7ln-QZ-2iA" id="yzG-ee-zrT"/>
+                        <outlet property="showImage" destination="lhS-MR-fJB" id="LzC-gE-KBE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hbs-EC-e3m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="0.0" y="757"/>
         </scene>
-        <!--Account-->
+        <!--Profile-->
         <scene sceneID="zZd-ds-aQl">
             <objects>
                 <viewController id="NvM-Jz-2ma" sceneMemberID="viewController">
@@ -123,7 +157,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Account" id="C3j-fp-pym"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="Profile" selectedImage="Profile" id="C3j-fp-pym"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3MG-S5-LdO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -161,7 +195,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Exchange" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Exchange" image="Change" selectedImage="Change" id="cPa-gy-q4n"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
@@ -244,7 +278,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
+        <image name="Camera" width="28" height="25"/>
+        <image name="Change" width="23" height="31"/>
+        <image name="Find on Map" width="23" height="31"/>
+        <image name="Profile" width="28" height="28"/>
     </resources>
 </document>
