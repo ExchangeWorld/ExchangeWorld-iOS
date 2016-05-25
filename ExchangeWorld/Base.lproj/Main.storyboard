@@ -18,12 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Sp-SM-TOr">
-                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
-                                <items>
-                                    <navigationItem title="ExchangeWorld" id="CDH-Lb-Z5s"/>
-                                </items>
-                            </navigationBar>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="9x6-B3-cxO" customClass="HomeSegmentedControl" customModule="ExchangeWorld" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="64" width="600" height="29"/>
                                 <segments>
@@ -53,6 +47,12 @@
                                     <segue destination="5SU-zb-bDB" kind="embed" id="2wY-jd-7xw"/>
                                 </connections>
                             </containerView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Sp-SM-TOr">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="ExchangeWorld" id="CDH-Lb-Z5s"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -295,6 +295,7 @@
                                 </constraints>
                                 <connections>
                                     <outlet property="objImageView" destination="TlT-Jo-Oxo" id="1Pe-SP-9ci"/>
+                                    <segue destination="OEN-QL-Ak2" kind="show" identifier="showObjectInfo" id="eOJ-rl-xZD"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -311,6 +312,40 @@
             </objects>
             <point key="canvasLocation" x="-1510" y="2628.5"/>
         </scene>
+        <!--Object Info View Controller-->
+        <scene sceneID="eLI-cE-CdB">
+            <objects>
+                <viewController id="OEN-QL-Ak2" customClass="ObjectInfoViewController" customModule="ExchangeWorld" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EgF-O1-vb7"/>
+                        <viewControllerLayoutGuide type="bottom" id="Tga-Vf-boq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3iZ-Kd-ynV">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="459"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nGR-Ac-mwo">
+                                <rect key="frame" x="0.0" y="44" width="600" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="ZG8-RX-5nt"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nGR-Ac-mwo" firstAttribute="leading" secondItem="3iZ-Kd-ynV" secondAttribute="leadingMargin" constant="-20" id="TxJ-Oy-4F1"/>
+                            <constraint firstItem="nGR-Ac-mwo" firstAttribute="top" secondItem="EgF-O1-vb7" secondAttribute="bottom" id="Xfb-1M-1Fu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nGR-Ac-mwo" secondAttribute="trailing" constant="-20" id="i8i-kf-llR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="objImageView" destination="nGR-Ac-mwo" id="J4p-ST-h6c"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eKD-Hr-VFW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1510" y="3248.5"/>
+        </scene>
         <!--HomeAreaCategoryCollectionViewController-->
         <scene sceneID="jrH-VF-iVp">
             <objects>
@@ -320,33 +355,42 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="0.83898696669999995" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eTZ-B6-FWQ">
-                            <size key="itemSize" width="100" height="100"/>
+                            <size key="itemSize" width="100" height="107"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AreaCategoryCell" id="uOW-O4-4r0" customClass="HomeAreaCategoryCollectionViewCell" customModule="ExchangeWorld" customModuleProvider="target">
-                                <rect key="frame" x="10" y="10" width="100" height="100"/>
+                                <rect key="frame" x="10" y="10" width="100" height="107"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="107"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XAH-RR-01L">
-                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="82"/>
                                         </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VAD-vo-5ly">
+                                            <rect key="frame" x="29" y="86" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="XAH-RR-01L" firstAttribute="leading" secondItem="uOW-O4-4r0" secondAttribute="leadingMargin" id="tLY-5x-4eV"/>
-                                    <constraint firstItem="XAH-RR-01L" firstAttribute="top" secondItem="uOW-O4-4r0" secondAttribute="topMargin" id="xEF-cP-lEL"/>
-                                    <constraint firstAttribute="trailingMargin" secondItem="XAH-RR-01L" secondAttribute="trailing" id="xxV-ja-ict"/>
-                                    <constraint firstAttribute="bottomMargin" secondItem="XAH-RR-01L" secondAttribute="bottom" id="z5M-Z3-opf"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="XAH-RR-01L" secondAttribute="bottom" constant="30" id="0xF-0z-ih9"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="XAH-RR-01L" secondAttribute="trailing" id="B3L-83-TW8"/>
+                                    <constraint firstItem="VAD-vo-5ly" firstAttribute="centerX" secondItem="uOW-O4-4r0" secondAttribute="centerX" id="J1d-qu-a4s"/>
+                                    <constraint firstItem="XAH-RR-01L" firstAttribute="top" secondItem="uOW-O4-4r0" secondAttribute="topMargin" id="S8k-IP-4jM"/>
+                                    <constraint firstItem="XAH-RR-01L" firstAttribute="leading" secondItem="uOW-O4-4r0" secondAttribute="leadingMargin" id="eAH-q1-UoT"/>
+                                    <constraint firstItem="VAD-vo-5ly" firstAttribute="top" secondItem="XAH-RR-01L" secondAttribute="bottom" constant="5" id="evc-ud-9Vu"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="areaImageView" destination="XAH-RR-01L" id="cZ1-Z5-YZO"/>
+                                    <outlet property="areaNameLabel" destination="VAD-vo-5ly" id="7lD-eJ-VQ1"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>

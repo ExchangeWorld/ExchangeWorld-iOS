@@ -13,8 +13,9 @@ class HomeObjectCollectionViewController: UICollectionViewController {
 
     @IBOutlet var ObjectCollectionView: UICollectionView!
     
-    var ObjectArray = [String]()
     var objcollectionviewcell = HomeObjectCollectionViewCell()
+    var ObjectArray = [String]()
+    var SecondAnswerArray = [String]()
     
     private let leftAndRightPaddings: CGFloat = 20.0
     private let numberOfItemsPerRow: CGFloat = 2.0
@@ -57,6 +58,31 @@ class HomeObjectCollectionViewController: UICollectionViewController {
     
         return cell
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showObjectInfo"{
+            
+            let indexPaths = self.collectionView!.indexPathsForSelectedItems()!
+            let indexPath = indexPaths[0] as NSIndexPath
+            let DestViewController = segue.destinationViewController as! ObjectInfoViewController
+            
+            DestViewController.objimage = SecondAnswerArray[indexPath.row]
+        }
+    }
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
 }

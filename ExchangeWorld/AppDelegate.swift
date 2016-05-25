@@ -23,6 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Set navigation bar Title color
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor()]
+        
+        
 
         GMSServices.provideAPIKey("AIzaSyDLHMK3MExBBwCeRDWZj38BzysD4qWAcIE")
         

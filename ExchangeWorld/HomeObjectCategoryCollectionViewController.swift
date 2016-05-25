@@ -14,6 +14,7 @@ class HomeObjectCategoryCollectionViewController: UICollectionViewController {
     
     var ocImageArray = [String]()
     var ObjectArray = [ObjectTable]()
+    var ObjInfoImageArray = [ObjectInfoTable]()
     
     
     // for dynamic column
@@ -37,6 +38,21 @@ class HomeObjectCategoryCollectionViewController: UICollectionViewController {
         ObjectTable(ObjectImage: ["蚱蜢", "賴和全集", "羅生門"]),
         ObjectTable(ObjectImage: ["賴和全集", "蚱蜢", "羅生門"]),
         ObjectTable(ObjectImage: ["賴和全集", "羅生門", "蚱蜢"])]
+        
+        ObjInfoImageArray = [
+        ObjectInfoTable(objImageArray:["羅生門", "賴和全集", "蚱蜢"]),
+        ObjectInfoTable(objImageArray:["羅生門", "蚱蜢", "賴和全集"]),
+        ObjectInfoTable(objImageArray:["蚱蜢", "羅生門", "賴和全集"]),
+        ObjectInfoTable(objImageArray:["蚱蜢", "賴和全集", "羅生門"]),
+        ObjectInfoTable(objImageArray:["賴和全集", "蚱蜢", "羅生門"]),
+        ObjectInfoTable(objImageArray:["賴和全集", "羅生門", "蚱蜢"]),
+        ]
+        
+//        for i in 1 ... ObjectArray.count{
+//            ObjInfoImageArray[i].objImageArray = ObjectArray[i].ObjectImage
+//        }
+        
+        //print (ObjInfoImageArray)
         
     }
 
@@ -78,11 +94,15 @@ class HomeObjectCategoryCollectionViewController: UICollectionViewController {
             
             let objinfo = segue.destinationViewController as! HomeObjectCollectionViewController
             
+            
             var ObjectTableArrayTwo : ObjectTable
-            
             ObjectTableArrayTwo = ObjectArray[indexPath.row]
-            
             objinfo.ObjectArray = ObjectTableArrayTwo.ObjectImage
+            
+            
+            var ObjectInfoImageArrayTwo : ObjectInfoTable
+            ObjectInfoImageArrayTwo = ObjInfoImageArray[indexPath.row]
+            objinfo.SecondAnswerArray = ObjectInfoImageArrayTwo.objImageArray
             
             
             

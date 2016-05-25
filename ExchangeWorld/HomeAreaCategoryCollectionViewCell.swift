@@ -11,4 +11,6 @@ import UIKit
 class HomeAreaCategoryCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var areaImageView: UIImageView!
+    @IBOutlet var areaNameLabel: UILabel!
+    
 }

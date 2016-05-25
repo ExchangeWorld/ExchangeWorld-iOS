@@ -21,6 +21,8 @@
 		7284BD811CF209E800D24286 /* HomeObjectCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7284BD801CF209E800D24286 /* HomeObjectCollectionViewController.swift */; };
 		7284BD831CF20C3100D24286 /* ObjectTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7284BD821CF20C3100D24286 /* ObjectTable.swift */; };
 		7284BD851CF21F7800D24286 /* HomeAreaCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7284BD841CF21F7800D24286 /* HomeAreaCategoryCollectionViewCell.swift */; };
+		72EAF6791CF5732E0089EA02 /* ObjectInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EAF6781CF5732E0089EA02 /* ObjectInfoViewController.swift */; };
+		72EAF67B1CF575280089EA02 /* ObjectInfoTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EAF67A1CF575280089EA02 /* ObjectInfoTable.swift */; };
 		C9BE7B5BEB182177EB7DB55B /* Pods_ExchangeWorld.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FA932E1BA21826F6C4B3D51 /* Pods_ExchangeWorld.framework */; };
 		F922BA941CE8EE860077D7EE /* HomeObjectCategoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F922BA931CE8EE860077D7EE /* HomeObjectCategoryCollectionViewController.swift */; };
 		F922BA961CE8EE9D0077D7EE /* HomeAreaCategoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F922BA951CE8EE9D0077D7EE /* HomeAreaCategoryCollectionViewController.swift */; };
@@ -68,6 +70,8 @@
 		7284BD801CF209E800D24286 /* HomeObjectCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeObjectCollectionViewController.swift; sourceTree = "<group>"; };
 		7284BD821CF20C3100D24286 /* ObjectTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectTable.swift; sourceTree = "<group>"; };
 		7284BD841CF21F7800D24286 /* HomeAreaCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeAreaCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		72EAF6781CF5732E0089EA02 /* ObjectInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectInfoViewController.swift; sourceTree = "<group>"; };
+		72EAF67A1CF575280089EA02 /* ObjectInfoTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectInfoTable.swift; sourceTree = "<group>"; };
 		F922BA931CE8EE860077D7EE /* HomeObjectCategoryCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeObjectCategoryCollectionViewController.swift; sourceTree = "<group>"; };
 		F922BA951CE8EE9D0077D7EE /* HomeAreaCategoryCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeAreaCategoryCollectionViewController.swift; sourceTree = "<group>"; };
 		F922BA971CE968420077D7EE /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
@@ -135,10 +139,12 @@
 				F9B48E5D1CE8DB0400048AFC /* HomeSegmentedControl.swift */,
 				F985FF171CE8DE9F00676DB3 /* HomeMapTabViewController.swift */,
 				F922BA931CE8EE860077D7EE /* HomeObjectCategoryCollectionViewController.swift */,
-				7284BD7C1CF206A100D24286 /* HomeObjectCategoryCollectionViewCell.swift */,
 				7284BD801CF209E800D24286 /* HomeObjectCollectionViewController.swift */,
+				72EAF6781CF5732E0089EA02 /* ObjectInfoViewController.swift */,
+				7284BD7C1CF206A100D24286 /* HomeObjectCategoryCollectionViewCell.swift */,
 				7284BD7E1CF209C900D24286 /* HomeObjectCollectionViewCell.swift */,
 				7284BD821CF20C3100D24286 /* ObjectTable.swift */,
+				72EAF67A1CF575280089EA02 /* ObjectInfoTable.swift */,
 				F922BA951CE8EE9D0077D7EE /* HomeAreaCategoryCollectionViewController.swift */,
 				7284BD841CF21F7800D24286 /* HomeAreaCategoryCollectionViewCell.swift */,
 				F922BA971CE968420077D7EE /* CameraViewController.swift */,
@@ -386,6 +392,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				34AA5CAC1C592B900011C3C4 /* AppDelegate.swift in Sources */,
+				72EAF67B1CF575280089EA02 /* ObjectInfoTable.swift in Sources */,
+				72EAF6791CF5732E0089EA02 /* ObjectInfoViewController.swift in Sources */,
 				F9B48E5C1CE8DADA00048AFC /* HomeViewController.swift in Sources */,
 				7284BD7F1CF209C900D24286 /* HomeObjectCollectionViewCell.swift in Sources */,
 				7284BD7D1CF206A100D24286 /* HomeObjectCategoryCollectionViewCell.swift in Sources */,
