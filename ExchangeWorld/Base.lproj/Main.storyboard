@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -279,22 +279,31 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TlT-Jo-Oxo">
-                                            <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                                            <rect key="frame" x="8" y="8" width="290" height="284"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="280" id="Tgb-qx-5Hj"/>
                                             </constraints>
                                         </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EsT-tE-gyy">
+                                            <rect key="frame" x="326" y="66" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottomMargin" secondItem="TlT-Jo-Oxo" secondAttribute="bottom" id="DI8-sj-App"/>
-                                    <constraint firstItem="TlT-Jo-Oxo" firstAttribute="top" secondItem="LLb-O9-LNc" secondAttribute="topMargin" id="lIt-F5-1pJ"/>
-                                    <constraint firstItem="TlT-Jo-Oxo" firstAttribute="leading" secondItem="LLb-O9-LNc" secondAttribute="leadingMargin" id="oBx-eP-Hbu"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="TlT-Jo-Oxo" secondAttribute="bottom" constant="-20" id="DI8-sj-App"/>
+                                    <constraint firstItem="EsT-tE-gyy" firstAttribute="leading" secondItem="TlT-Jo-Oxo" secondAttribute="trailing" constant="8" id="Ohz-Bp-MgD"/>
+                                    <constraint firstItem="EsT-tE-gyy" firstAttribute="top" secondItem="LLb-O9-LNc" secondAttribute="topMargin" constant="50" id="a9a-kX-Owu"/>
+                                    <constraint firstItem="TlT-Jo-Oxo" firstAttribute="top" secondItem="LLb-O9-LNc" secondAttribute="topMargin" constant="-20" id="lIt-F5-1pJ"/>
+                                    <constraint firstItem="TlT-Jo-Oxo" firstAttribute="leading" secondItem="LLb-O9-LNc" secondAttribute="leadingMargin" constant="-20" id="oBx-eP-Hbu"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="objImageView" destination="TlT-Jo-Oxo" id="1Pe-SP-9ci"/>
+                                    <outlet property="objNameLabel" destination="EsT-tE-gyy" id="lzJ-Ns-MsM"/>
                                     <segue destination="OEN-QL-Ak2" kind="show" identifier="showObjectInfo" id="eOJ-rl-xZD"/>
                                 </connections>
                             </collectionViewCell>

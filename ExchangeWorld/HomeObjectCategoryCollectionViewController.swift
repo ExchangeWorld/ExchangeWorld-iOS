@@ -32,12 +32,12 @@ class HomeObjectCategoryCollectionViewController: UICollectionViewController {
         ocImageArray = ["3C", "Book", "Clothes", "Makeup", "Textbook", "Others"]
         
         ObjectArray = [
-        ObjectTable(ObjectImage: ["羅生門", "賴和全集", "蚱蜢"]),
-        ObjectTable(ObjectImage: ["羅生門", "蚱蜢", "賴和全集"]),
-        ObjectTable(ObjectImage: ["蚱蜢", "羅生門", "賴和全集"]),
-        ObjectTable(ObjectImage: ["蚱蜢", "賴和全集", "羅生門"]),
-        ObjectTable(ObjectImage: ["賴和全集", "蚱蜢", "羅生門"]),
-        ObjectTable(ObjectImage: ["賴和全集", "羅生門", "蚱蜢"])]
+        ObjectTable(ObjectImage: ["羅生門", "賴和全集", "蚱蜢"],ObjectName:["羅生門", "賴和全集123123123123123123", "蚱蜢"]),
+        ObjectTable(ObjectImage: ["羅生門", "蚱蜢", "賴和全集"],ObjectName:["羅生門", "蚱蜢", "賴和全集"]),
+        ObjectTable(ObjectImage: ["蚱蜢", "羅生門", "賴和全集"],ObjectName:["蚱蜢", "羅生門", "賴和全集"]),
+        ObjectTable(ObjectImage: ["蚱蜢", "賴和全集", "羅生門"],ObjectName:["蚱蜢", "賴和全集", "羅生門"]),
+        ObjectTable(ObjectImage: ["賴和全集", "蚱蜢", "羅生門"],ObjectName:["賴和全集", "蚱蜢", "羅生門"]),
+        ObjectTable(ObjectImage: ["賴和全集", "羅生門", "蚱蜢"],ObjectName:["賴和全集", "羅生門", "蚱蜢"])]
         
         ObjInfoImageArray = [
         ObjectInfoTable(objImageArray:["羅生門", "賴和全集", "蚱蜢"]),
@@ -97,7 +97,10 @@ class HomeObjectCategoryCollectionViewController: UICollectionViewController {
             
             var ObjectTableArrayTwo : ObjectTable
             ObjectTableArrayTwo = ObjectArray[indexPath.row]
-            objinfo.ObjectArray = ObjectTableArrayTwo.ObjectImage
+            objinfo.ObjectImageArray = ObjectTableArrayTwo.ObjectImage
+            objinfo.ObjectNameArray = ObjectTableArrayTwo.ObjectName
+            //print(ObjectTableArrayTwo)
+            //print(ObjectArray)
             
             
             var ObjectInfoImageArrayTwo : ObjectInfoTable

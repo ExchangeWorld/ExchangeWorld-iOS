@@ -14,7 +14,8 @@ class HomeObjectCollectionViewController: UICollectionViewController {
     @IBOutlet var ObjectCollectionView: UICollectionView!
     
     var objcollectionviewcell = HomeObjectCollectionViewCell()
-    var ObjectArray = [String]()
+    var ObjectImageArray = [String]()
+    var ObjectNameArray = [String]()
     var SecondAnswerArray = [String]()
     
     private let leftAndRightPaddings: CGFloat = 20.0
@@ -27,7 +28,7 @@ class HomeObjectCollectionViewController: UICollectionViewController {
 
         let width = CGRectGetWidth(collectionView!.frame)-leftAndRightPaddings
         let layout = collectionViewLayout as! UICollectionViewFlowLayout
-        layout.itemSize = CGSizeMake(width, (width*3/4))
+        layout.itemSize = CGSizeMake(width, (width*0.5))
         
 //        objcollectionviewcell.objImageView.frame = CGRectMake(0, 0, width*3/4, width*3/4)
 //        print(width*3/4)
@@ -48,13 +49,14 @@ class HomeObjectCollectionViewController: UICollectionViewController {
 
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return ObjectArray.count
+        return ObjectImageArray.count
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("objectCell", forIndexPath: indexPath) as! HomeObjectCollectionViewCell
         
-        cell.objImageView.image = UIImage(named: ObjectArray[indexPath.row])
+        cell.objImageView.image = UIImage(named: ObjectImageArray[indexPath.row])
+        cell.objNameLabel.text = ObjectNameArray[indexPath.row]
     
         return cell
     }

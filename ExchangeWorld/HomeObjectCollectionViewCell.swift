@@ -11,6 +11,7 @@ import UIKit
 class HomeObjectCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var objImageView: UIImageView!
+    @IBOutlet var objNameLabel: UILabel!
     
     
     
