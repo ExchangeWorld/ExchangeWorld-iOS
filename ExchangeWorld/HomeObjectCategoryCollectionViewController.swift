@@ -18,13 +18,15 @@ class HomeObjectCategoryCollectionViewController: UICollectionViewController {
     
     
     // for dynamic column
-    private let leftAndRightPaddings: CGFloat = 80.0
+    //private let leftAndRightPaddings: CGFloat = 80.0
+   
     private let numberOfItemsPerRow: CGFloat = 2.0
     private let heightAdjustment: CGFloat = 100.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let leftAndRightPaddings = self.view.frame.width*83/377
         let width = (CGRectGetWidth(collectionView!.frame)-leftAndRightPaddings) / numberOfItemsPerRow
         let layout = collectionViewLayout as! UICollectionViewFlowLayout
         layout.itemSize = CGSizeMake(width, width)
