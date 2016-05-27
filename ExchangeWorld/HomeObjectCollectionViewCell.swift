@@ -12,6 +12,10 @@ class HomeObjectCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var objImageView: UIImageView!
     @IBOutlet var objNameLabel: UILabel!
+    @IBOutlet var objCategoryImageView: UIImageView!
+    @IBOutlet var objOwnerImageView: UIImageView!
+    @IBOutlet var objCategoryNameLabel: UILabel!
+    @IBOutlet var objOwnerNameLabel: UILabel!
     
     
     

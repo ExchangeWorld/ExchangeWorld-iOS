@@ -11,4 +11,8 @@ import Foundation
 struct ObjectTable{
     var ObjectImage : [String]
     var ObjectName : [String]
+    var ObjectCategoryIcon : [String]
+    var ObjectOwnerIcon : [String]
+    var ObjectCategoryName : [String]
+    var ObjectOwnerName : [String]
 }

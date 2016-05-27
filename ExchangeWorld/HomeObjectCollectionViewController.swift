@@ -16,7 +16,13 @@ class HomeObjectCollectionViewController: UICollectionViewController {
     var objcollectionviewcell = HomeObjectCollectionViewCell()
     var ObjectImageArray = [String]()
     var ObjectNameArray = [String]()
-    var SecondAnswerArray = [String]()
+    var ObjectCategoryIconArray = [String]()
+    var ObjectOwnerIconArray = [String]()
+    var ObjectCategoryNameArray = [String]()
+    var ObjectOwnerNameArray = [String]()
+    var ObjectInfoImageArray = [String]()
+    var ObjectInfoNameArray = [String]()
+    
     
     private let leftAndRightPaddings: CGFloat = 20.0
     private let numberOfItemsPerRow: CGFloat = 2.0
@@ -57,6 +63,10 @@ class HomeObjectCollectionViewController: UICollectionViewController {
         
         cell.objImageView.image = UIImage(named: ObjectImageArray[indexPath.row])
         cell.objNameLabel.text = ObjectNameArray[indexPath.row]
+        cell.objCategoryImageView.image = UIImage(named: ObjectCategoryIconArray[indexPath.row])
+        cell.objOwnerImageView.image = UIImage(named: ObjectOwnerIconArray[indexPath.row])
+        cell.objCategoryNameLabel.text = ObjectCategoryNameArray[indexPath.row]
+        cell.objOwnerNameLabel.text = ObjectOwnerNameArray[indexPath.row]
     
         return cell
     }
@@ -68,7 +78,9 @@ class HomeObjectCollectionViewController: UICollectionViewController {
             let indexPath = indexPaths[0] as NSIndexPath
             let DestViewController = segue.destinationViewController as! ObjectInfoViewController
             
-            DestViewController.objimage = SecondAnswerArray[indexPath.row]
+            DestViewController.objimage = ObjectInfoImageArray[indexPath.row]
+            DestViewController.objname = ObjectInfoNameArray[indexPath.row]
+            
         }
     }
 

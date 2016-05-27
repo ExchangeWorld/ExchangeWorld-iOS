@@ -32,20 +32,20 @@ class HomeObjectCategoryCollectionViewController: UICollectionViewController {
         ocImageArray = ["3C", "Book", "Clothes", "Makeup", "Textbook", "Others"]
         
         ObjectArray = [
-        ObjectTable(ObjectImage: ["羅生門", "賴和全集", "蚱蜢"],ObjectName:["羅生門", "賴和全集123123123123123123", "蚱蜢"]),
-        ObjectTable(ObjectImage: ["羅生門", "蚱蜢", "賴和全集"],ObjectName:["羅生門", "蚱蜢", "賴和全集"]),
-        ObjectTable(ObjectImage: ["蚱蜢", "羅生門", "賴和全集"],ObjectName:["蚱蜢", "羅生門", "賴和全集"]),
-        ObjectTable(ObjectImage: ["蚱蜢", "賴和全集", "羅生門"],ObjectName:["蚱蜢", "賴和全集", "羅生門"]),
-        ObjectTable(ObjectImage: ["賴和全集", "蚱蜢", "羅生門"],ObjectName:["賴和全集", "蚱蜢", "羅生門"]),
-        ObjectTable(ObjectImage: ["賴和全集", "羅生門", "蚱蜢"],ObjectName:["賴和全集", "羅生門", "蚱蜢"])]
+            ObjectTable(ObjectImage: ["羅生門", "賴和全集", "蚱蜢"],ObjectName:["羅生門", "賴和全集", "蚱蜢"],ObjectCategoryIcon:["3Cicon","3Cicon","3Cicon"],ObjectOwnerIcon: ["usericon","usericon","usericon"],ObjectCategoryName: ["3C產品","3C產品","3C產品"], ObjectOwnerName: ["萊布尼茲","賴和","特斯拉"]),
+        ObjectTable(ObjectImage: ["羅生門", "蚱蜢", "賴和全集"],ObjectName:["羅生門", "蚱蜢", "賴和全集"],ObjectCategoryIcon:["Bookicon","Bookicon","Bookicon"],ObjectOwnerIcon: ["usericon","usericon","usericon"],ObjectCategoryName: ["書籍","書籍","書籍"], ObjectOwnerName: ["萊布尼茲","特斯拉","賴和"]),
+        ObjectTable(ObjectImage: ["蚱蜢", "羅生門", "賴和全集"],ObjectName:["蚱蜢", "羅生門", "賴和全集"],ObjectCategoryIcon:["Clothesicon","Clothesicon","Clothesicon"],ObjectOwnerIcon: ["usericon","usericon","usericon"],ObjectCategoryName: ["流行服飾","流行服飾","流行服飾"], ObjectOwnerName: ["特斯拉","萊布尼茲","賴和"]),
+        ObjectTable(ObjectImage: ["蚱蜢", "賴和全集", "羅生門"],ObjectName:["蚱蜢", "賴和全集", "羅生門"],ObjectCategoryIcon:["Mackupicon","Makeupicon","Makeupicon"],ObjectOwnerIcon: ["usericon","usericon","usericon"],ObjectCategoryName: ["美妝用品","美妝用品","美妝用品"], ObjectOwnerName: ["特斯拉","賴和","萊布尼茲"]),
+        ObjectTable(ObjectImage: ["賴和全集", "蚱蜢", "羅生門"],ObjectName:["賴和全集", "蚱蜢", "羅生門"],ObjectCategoryIcon:["Textbookicon","Textbookicon","Textbookicon"],ObjectOwnerIcon: ["usericon","usericon","usericon"],ObjectCategoryName: ["教科書","教科書","教科書"], ObjectOwnerName: ["賴和","特斯拉","萊布尼茲"]),
+        ObjectTable(ObjectImage: ["賴和全集", "羅生門", "蚱蜢"],ObjectName:["賴和全集", "羅生門", "蚱蜢"],ObjectCategoryIcon:["Othersicon","Othersicon","Othersicon"],ObjectOwnerIcon: ["usericon","usericon","usericon"],ObjectCategoryName: ["其他","其他","其他"], ObjectOwnerName: ["賴和","萊布尼茲","特斯拉",])]
         
         ObjInfoImageArray = [
-        ObjectInfoTable(objImageArray:["羅生門", "賴和全集", "蚱蜢"]),
-        ObjectInfoTable(objImageArray:["羅生門", "蚱蜢", "賴和全集"]),
-        ObjectInfoTable(objImageArray:["蚱蜢", "羅生門", "賴和全集"]),
-        ObjectInfoTable(objImageArray:["蚱蜢", "賴和全集", "羅生門"]),
-        ObjectInfoTable(objImageArray:["賴和全集", "蚱蜢", "羅生門"]),
-        ObjectInfoTable(objImageArray:["賴和全集", "羅生門", "蚱蜢"]),
+            ObjectInfoTable(objImageArray:["羅生門", "賴和全集", "蚱蜢"],objNameArray:["羅生門", "賴和全集", "蚱蜢"]),
+        ObjectInfoTable(objImageArray:["羅生門", "蚱蜢", "賴和全集"],objNameArray:["羅生門", "蚱蜢", "賴和全集"]),
+        ObjectInfoTable(objImageArray:["蚱蜢", "羅生門", "賴和全集"],objNameArray:["蚱蜢", "羅生門", "賴和全集"]),
+        ObjectInfoTable(objImageArray:["蚱蜢", "賴和全集", "羅生門"],objNameArray:["蚱蜢", "賴和全集", "羅生門"]),
+        ObjectInfoTable(objImageArray:["賴和全集", "蚱蜢", "羅生門"],objNameArray:["賴和全集", "蚱蜢", "羅生門"]),
+        ObjectInfoTable(objImageArray:["賴和全集", "羅生門", "蚱蜢"],objNameArray:["賴和全集", "羅生門", "蚱蜢"]),
         ]
         
 //        for i in 1 ... ObjectArray.count{
@@ -58,13 +58,11 @@ class HomeObjectCategoryCollectionViewController: UICollectionViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
     }
-    
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return ocImageArray.count
@@ -99,13 +97,18 @@ class HomeObjectCategoryCollectionViewController: UICollectionViewController {
             ObjectTableArrayTwo = ObjectArray[indexPath.row]
             objinfo.ObjectImageArray = ObjectTableArrayTwo.ObjectImage
             objinfo.ObjectNameArray = ObjectTableArrayTwo.ObjectName
+            objinfo.ObjectCategoryIconArray = ObjectTableArrayTwo.ObjectCategoryIcon
+            objinfo.ObjectOwnerIconArray = ObjectTableArrayTwo.ObjectOwnerIcon
+            objinfo.ObjectCategoryNameArray = ObjectTableArrayTwo.ObjectCategoryName
+            objinfo.ObjectOwnerNameArray = ObjectTableArrayTwo.ObjectOwnerName
             //print(ObjectTableArrayTwo)
             //print(ObjectArray)
             
             
-            var ObjectInfoImageArrayTwo : ObjectInfoTable
-            ObjectInfoImageArrayTwo = ObjInfoImageArray[indexPath.row]
-            objinfo.SecondAnswerArray = ObjectInfoImageArrayTwo.objImageArray
+            var ObjectInfoTableArrayTwo : ObjectInfoTable
+            ObjectInfoTableArrayTwo = ObjInfoImageArray[indexPath.row]
+            objinfo.ObjectInfoImageArray = ObjectInfoTableArrayTwo.objImageArray
+            objinfo.ObjectInfoNameArray = ObjectInfoTableArrayTwo.objNameArray
             
             
             
