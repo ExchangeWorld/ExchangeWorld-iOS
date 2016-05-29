@@ -46,5 +46,13 @@ class HomeViewController: UIViewController {
         self.homeObjectCategoryTabContainerView.hidden = true
         self.homeAreaCategoryTabContainerView.hidden = true
     }
+    
+    override func willTransitionToTraitCollection(newCollection: UITraitCollection, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        super.willTransitionToTraitCollection(newCollection, withTransitionCoordinator: coordinator)
+        
+        for cvc in self.childViewControllers {
+            self.overrideTraitCollectionForChildViewController(cvc)
+        }
+    }
 
 }

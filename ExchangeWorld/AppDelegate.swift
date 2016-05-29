@@ -25,6 +25,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor()]
         
         
+        
+        let tabBarController = self.window?.rootViewController as! UITabBarController
+        for viewController in tabBarController.viewControllers! {
+            if let navigationController = viewController as? UINavigationController {
+                navigationController.navigationBar.titleTextAttributes = [
+                    NSFontAttributeName: UIFont(name: "AmericanTypewriter", size: 17.0)!,
+                ]
+            }
+        }
+        
+        
 
         GMSServices.provideAPIKey("AIzaSyDLHMK3MExBBwCeRDWZj38BzysD4qWAcIE")
         

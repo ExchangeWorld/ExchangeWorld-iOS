@@ -9,6 +9,11 @@
 import UIKit
 
 
+class MyLayout: UICollectionViewLayout {
+    
+}
+
+
 class HomeObjectCollectionViewController: UICollectionViewController {
 
     @IBOutlet var ObjectCollectionView: UICollectionView!
@@ -22,10 +27,10 @@ class HomeObjectCollectionViewController: UICollectionViewController {
     var ObjectOwnerNameArray = [String]()
     var ObjectInfoImageArray = [String]()
     var ObjectInfoNameArray = [String]()
+    var ObjectInfoDescriptionArray = [String]()
     
     
     private let leftAndRightPaddings: CGFloat = 20.0
-    private let numberOfItemsPerRow: CGFloat = 2.0
     private let heightAdjustment: CGFloat = 100.0
     
     
@@ -40,6 +45,15 @@ class HomeObjectCollectionViewController: UICollectionViewController {
 //        print(width*3/4)
 //        objcollectionviewcell.objImageView.frame.size.width = width*3/4
     }
+    
+//    override func viewDidLayoutSubviews() {
+//        super.viewDidLayoutSubviews()
+//        //let width = CGRectGetWidth(collectionView!.frame)-leftAndRightPaddings
+//        //objcollectionviewcell.objImageView.frame = CGRectMake(0,0, width*232/377,width*174/377 )
+//        
+//        
+//        }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -60,8 +74,10 @@ class HomeObjectCollectionViewController: UICollectionViewController {
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("objectCell", forIndexPath: indexPath) as! HomeObjectCollectionViewCell
+        let width = CGRectGetWidth(collectionView.frame)-leftAndRightPaddings
         
         cell.objImageView.image = UIImage(named: ObjectImageArray[indexPath.row])
+        //cell.objImageView.frame = CGRectMake(0,0, width*232/377,width*174/377 )
         cell.objNameLabel.text = ObjectNameArray[indexPath.row]
         cell.objCategoryImageView.image = UIImage(named: ObjectCategoryIconArray[indexPath.row])
         cell.objOwnerImageView.image = UIImage(named: ObjectOwnerIconArray[indexPath.row])
@@ -80,6 +96,7 @@ class HomeObjectCollectionViewController: UICollectionViewController {
             
             DestViewController.objimage = ObjectInfoImageArray[indexPath.row]
             DestViewController.objname = ObjectInfoNameArray[indexPath.row]
+            DestViewController.objdescription = ObjectInfoDescriptionArray[indexPath.row]
             
         }
     }

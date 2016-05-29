@@ -11,6 +11,7 @@ import Foundation
 struct ObjectInfoTable {
     var objImageArray = [String]()
     var objNameArray = [String]()
+    var objDescriptionArray = [String]()
 //    var objSharingArray = [String]()
 //    var objFollowingArray = [String]()
 //    var objLiningArray = [String]()
