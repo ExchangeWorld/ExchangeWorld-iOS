@@ -17,10 +17,16 @@
 		34AA5CC31C592B900011C3C4 /* ExchangeWorldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AA5CC21C592B900011C3C4 /* ExchangeWorldTests.swift */; };
 		34AA5CCE1C592B900011C3C4 /* ExchangeWorldUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AA5CCD1C592B900011C3C4 /* ExchangeWorldUITests.swift */; };
 		C9BE7B5BEB182177EB7DB55B /* Pods_ExchangeWorld.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FA932E1BA21826F6C4B3D51 /* Pods_ExchangeWorld.framework */; };
-		F922BA941CE8EE860077D7EE /* HomeObjectCategoryTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F922BA931CE8EE860077D7EE /* HomeObjectCategoryTabViewController.swift */; };
-		F922BA961CE8EE9D0077D7EE /* HomeAreaCategoryTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F922BA951CE8EE9D0077D7EE /* HomeAreaCategoryTabViewController.swift */; };
+		F90E7ED11D00708C00F567D2 /* ObjectInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90E7ED01D00708C00F567D2 /* ObjectInfoViewController.swift */; };
 		F922BA981CE968420077D7EE /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F922BA971CE968420077D7EE /* CameraViewController.swift */; };
+		F961DBED1CFBF0F200FF7361 /* HomeObjectCategoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F961DBEC1CFBF0F200FF7361 /* HomeObjectCategoryCollectionViewController.swift */; };
+		F961DBEF1CFBF11C00FF7361 /* HomeObjectCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F961DBEE1CFBF11C00FF7361 /* HomeObjectCategoryCollectionViewCell.swift */; };
+		F961DBF11CFC083500FF7361 /* HomeObjectCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F961DBF01CFC083500FF7361 /* HomeObjectCollectionViewController.swift */; };
+		F961DBF31CFC085F00FF7361 /* HomeObjectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F961DBF21CFC085F00FF7361 /* HomeObjectCollectionViewCell.swift */; };
+		F961DBF51CFC5E9B00FF7361 /* HomeObjectData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F961DBF41CFC5E9B00FF7361 /* HomeObjectData.swift */; };
 		F985FF181CE8DE9F00676DB3 /* HomeMapTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F985FF171CE8DE9F00676DB3 /* HomeMapTabViewController.swift */; };
+		F9901F831CFB523D000E98E9 /* HomeAreaCategoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9901F821CFB523D000E98E9 /* HomeAreaCategoryCollectionViewController.swift */; };
+		F9901F851CFB5599000E98E9 /* HomeAreaCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9901F841CFB5599000E98E9 /* HomeAreaCategoryCollectionViewCell.swift */; };
 		F9B48E5C1CE8DADA00048AFC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B48E5B1CE8DADA00048AFC /* HomeViewController.swift */; };
 		F9B48E5E1CE8DB0400048AFC /* HomeSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B48E5D1CE8DB0400048AFC /* HomeSegmentedControl.swift */; };
 /* End PBXBuildFile section */
@@ -58,10 +64,16 @@
 		34AA5CCD1C592B900011C3C4 /* ExchangeWorldUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeWorldUITests.swift; sourceTree = "<group>"; };
 		34AA5CCF1C592B900011C3C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4FA932E1BA21826F6C4B3D51 /* Pods_ExchangeWorld.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExchangeWorld.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F922BA931CE8EE860077D7EE /* HomeObjectCategoryTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeObjectCategoryTabViewController.swift; sourceTree = "<group>"; };
-		F922BA951CE8EE9D0077D7EE /* HomeAreaCategoryTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeAreaCategoryTabViewController.swift; sourceTree = "<group>"; };
+		F90E7ED01D00708C00F567D2 /* ObjectInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectInfoViewController.swift; sourceTree = "<group>"; };
 		F922BA971CE968420077D7EE /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		F961DBEC1CFBF0F200FF7361 /* HomeObjectCategoryCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeObjectCategoryCollectionViewController.swift; sourceTree = "<group>"; };
+		F961DBEE1CFBF11C00FF7361 /* HomeObjectCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeObjectCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		F961DBF01CFC083500FF7361 /* HomeObjectCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeObjectCollectionViewController.swift; sourceTree = "<group>"; };
+		F961DBF21CFC085F00FF7361 /* HomeObjectCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeObjectCollectionViewCell.swift; sourceTree = "<group>"; };
+		F961DBF41CFC5E9B00FF7361 /* HomeObjectData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeObjectData.swift; sourceTree = "<group>"; };
 		F985FF171CE8DE9F00676DB3 /* HomeMapTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeMapTabViewController.swift; sourceTree = "<group>"; };
+		F9901F821CFB523D000E98E9 /* HomeAreaCategoryCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeAreaCategoryCollectionViewController.swift; sourceTree = "<group>"; };
+		F9901F841CFB5599000E98E9 /* HomeAreaCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeAreaCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		F9B48E5B1CE8DADA00048AFC /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F9B48E5D1CE8DB0400048AFC /* HomeSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeSegmentedControl.swift; sourceTree = "<group>"; };
 		FF55A473F4A49DD992328379 /* Pods-ExchangeWorld.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExchangeWorld.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ExchangeWorld/Pods-ExchangeWorld.debug.xcconfig"; sourceTree = "<group>"; };
@@ -124,8 +136,14 @@
 				F9B48E5B1CE8DADA00048AFC /* HomeViewController.swift */,
 				F9B48E5D1CE8DB0400048AFC /* HomeSegmentedControl.swift */,
 				F985FF171CE8DE9F00676DB3 /* HomeMapTabViewController.swift */,
-				F922BA931CE8EE860077D7EE /* HomeObjectCategoryTabViewController.swift */,
-				F922BA951CE8EE9D0077D7EE /* HomeAreaCategoryTabViewController.swift */,
+				F961DBF41CFC5E9B00FF7361 /* HomeObjectData.swift */,
+				F961DBEC1CFBF0F200FF7361 /* HomeObjectCategoryCollectionViewController.swift */,
+				F961DBEE1CFBF11C00FF7361 /* HomeObjectCategoryCollectionViewCell.swift */,
+				F961DBF01CFC083500FF7361 /* HomeObjectCollectionViewController.swift */,
+				F961DBF21CFC085F00FF7361 /* HomeObjectCollectionViewCell.swift */,
+				F90E7ED01D00708C00F567D2 /* ObjectInfoViewController.swift */,
+				F9901F821CFB523D000E98E9 /* HomeAreaCategoryCollectionViewController.swift */,
+				F9901F841CFB5599000E98E9 /* HomeAreaCategoryCollectionViewCell.swift */,
 				F922BA971CE968420077D7EE /* CameraViewController.swift */,
 				34AA5CB41C592B900011C3C4 /* Assets.xcassets */,
 				34AA5CB61C592B900011C3C4 /* LaunchScreen.storyboard */,
@@ -371,12 +389,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				34AA5CAC1C592B900011C3C4 /* AppDelegate.swift in Sources */,
+				F90E7ED11D00708C00F567D2 /* ObjectInfoViewController.swift in Sources */,
 				F9B48E5C1CE8DADA00048AFC /* HomeViewController.swift in Sources */,
-				F922BA961CE8EE9D0077D7EE /* HomeAreaCategoryTabViewController.swift in Sources */,
+				F9901F851CFB5599000E98E9 /* HomeAreaCategoryCollectionViewCell.swift in Sources */,
 				F985FF181CE8DE9F00676DB3 /* HomeMapTabViewController.swift in Sources */,
+				F961DBED1CFBF0F200FF7361 /* HomeObjectCategoryCollectionViewController.swift in Sources */,
+				F961DBF51CFC5E9B00FF7361 /* HomeObjectData.swift in Sources */,
+				F961DBF31CFC085F00FF7361 /* HomeObjectCollectionViewCell.swift in Sources */,
 				F922BA981CE968420077D7EE /* CameraViewController.swift in Sources */,
+				F961DBF11CFC083500FF7361 /* HomeObjectCollectionViewController.swift in Sources */,
+				F961DBEF1CFBF11C00FF7361 /* HomeObjectCategoryCollectionViewCell.swift in Sources */,
 				F9B48E5E1CE8DB0400048AFC /* HomeSegmentedControl.swift in Sources */,
-				F922BA941CE8EE860077D7EE /* HomeObjectCategoryTabViewController.swift in Sources */,
+				F9901F831CFB523D000E98E9 /* HomeAreaCategoryCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
