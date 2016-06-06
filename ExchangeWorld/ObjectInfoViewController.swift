@@ -34,7 +34,7 @@ class ObjectInfoViewController: UIViewController {
         self.objImageView.image = UIImage(named: self.object.category)
 //        self.objImageView.image = UIImage(data: NSData(contentsOfURL: NSURL(string: self.object.photo_path)!)!)
         self.objNameLabel.text = self.object.name
-        self.descriptionLabel.text = self.object.name
+        self.descriptionLabel.text = self.object.description
         self.sharingImageView.image = UIImage(named: "分享")
         self.liningImageView.image = UIImage(named: "排_01")
         self.followingImageView.image = UIImage(named: "關注_01")

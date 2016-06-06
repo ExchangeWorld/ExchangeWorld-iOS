@@ -54,6 +54,7 @@ struct Object {
     var category: String = ""
     var positionx: String = ""
     var positiony: String = ""
+    var description: String = ""
     var owner: OwnerDict!
     var star_goods: [StarGoodDict]!
     
@@ -79,6 +80,7 @@ extension Object: Mappable {
         self.category <- map["category"]
         self.positionx <- map["positionx"]
         self.positiony <- map["positiony"]
+        self.description <- map["description"]
         self.owner <- map["owner"]
         self.star_goods <- map["star_goods"]
     }
