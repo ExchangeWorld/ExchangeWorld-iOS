@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class HomeViewController: UIViewController {
 
@@ -16,7 +17,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var homeMapTabContainerView: UIView!
     @IBOutlet weak var homeObjectCategoryTabContainerView: UIView!
     @IBOutlet weak var homeAreaCategoryTabContainerView: UIView!
-        
+    
     @IBAction func homeSegmentedControlChangeTab(sender: UISegmentedControl) {
  
         switch (homeSegmentedControl.selectedSegmentIndex) {
@@ -47,5 +48,5 @@ class HomeViewController: UIViewController {
         self.homeObjectCategoryTabContainerView.hidden = true
         self.homeAreaCategoryTabContainerView.hidden = true
     }
-
+    
 }

@@ -39,7 +39,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GMH-Zo-fmV">
                                 <rect key="frame" x="0.0" y="92" width="600" height="459"/>
                                 <connections>
-                                    <segue destination="EAp-1w-LFb" kind="embed" id="BdU-Cc-TSA"/>
+                                    <segue destination="EAp-1w-LFb" kind="embed" identifier="" id="BdU-Cc-TSA"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L8i-PU-UvA">
@@ -156,6 +156,18 @@
                     <view key="view" contentMode="scaleToFill" id="GeQ-5P-x3X">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="j9l-co-ete">
+                                <rect key="frame" x="0.0" y="216" width="600" height="29"/>
+                                <segments>
+                                    <segment title=""/>
+                                    <segment title=""/>
+                                    <segment title=""/>
+                                    <segment title=""/>
+                                    <segment title=""/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="Profile" selectedImage="Profile" id="C3j-fp-pym"/>
