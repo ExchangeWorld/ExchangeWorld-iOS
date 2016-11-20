@@ -22,9 +22,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         loginbutton.delegate = self
         
         
-        //performsegue(123)
-        //self.performsegue(123)
-        self.performSegue(withIdentifier: "LoginSegue", sender: nil)
     }
 
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
@@ -59,11 +56,10 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             //self.posting(URL: "http://exwd.csie.org:43002/api/goods/post?token=a8127148e28cdac117c80b77c1d7527795104f36")
         }
         
-        //performsegue(sender: 123)
+        let storyboard: UIStoryboard = self.storyboard!
+        let TabBarController = storyboard.instantiateViewController(withIdentifier: "tabBarController") as! UITabBarController
+        self.present(TabBarController, animated: true, completion: nil)
         
-        //performSegue(withIdentifier: "LoginSegue", sender: nil)
-//        let destViewController = self.storyboard?.instantiateViewController(withIdentifier: "tabBarViewController")
-//        self.navigationController?.pushViewController(destViewController!, animated: true)
     }
     
     @IBAction func performsegue(_ sender: Any) {

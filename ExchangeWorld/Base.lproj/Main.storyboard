@@ -31,7 +31,7 @@
         <!--Home-->
         <scene sceneID="6xN-oP-HUz">
             <objects>
-                <viewController id="QgR-Dg-hXq" userLabel="Home" customClass="HomeViewController" customModule="ExchangeWorld" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" id="QgR-Dg-hXq" userLabel="Home" customClass="HomeViewController" customModule="ExchangeWorld" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Unr-Ry-irZ"/>
                         <viewControllerLayoutGuide type="bottom" id="xr0-Af-dFF"/>
@@ -149,7 +149,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="MKC-Zd-hPC">
             <objects>
-                <tabBarController storyboardIdentifier="tabBarViewController" id="cKx-nd-KyL" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabBarController" id="cKx-nd-KyL" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="VhR-bY-B4O">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -272,7 +272,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HZP-7F-jkw" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="u3n-RI-JL2">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="u3n-RI-JL2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -289,7 +289,7 @@
         <scene sceneID="dLq-sc-Hb6">
             <objects>
                 <collectionViewController id="X7D-HH-PgX" userLabel="Home Object Category Collection View Controller" customClass="HomeObjectCategoryCollectionViewController" customModule="ExchangeWorld" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="8Up-yy-Bbj" userLabel="Home Object Category Collection View">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="8Up-yy-Bbj" userLabel="Home Object Category Collection View">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="427"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.58865832759535774" green="0.72336632013320923" blue="0.65426311330282372" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
