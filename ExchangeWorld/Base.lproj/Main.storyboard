@@ -208,7 +208,7 @@
         <!--Profile-->
         <scene sceneID="JpX-7h-Doh">
             <objects>
-                <viewController id="6I0-3D-Hto" userLabel="Profile" sceneMemberID="viewController">
+                <viewController id="6I0-3D-Hto" userLabel="Profile" customClass="ProfileViewController" customModule="ExchangeWorld" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Q8J-f0-FcG"/>
                         <viewControllerLayoutGuide type="bottom" id="Qwy-Aa-47B"/>
@@ -216,9 +216,18 @@
                     <view key="view" contentMode="scaleToFill" id="ktS-a6-ETR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oRl-CO-bIA">
+                                <rect key="frame" x="40" y="68" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" id="ZqP-qa-GaQ" userLabel="Profile"/>
+                    <connections>
+                        <outlet property="userProfilePic" destination="oRl-CO-bIA" id="FQR-pM-dMO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Qa-iJ-b7h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

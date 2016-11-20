@@ -25,6 +25,7 @@
 		18D9926B1DBC521E00538F00 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D992691DBC521E00538F00 /* LaunchScreen.storyboard */; };
 		18D992761DBC521E00538F00 /* ExchangeWorldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D992751DBC521E00538F00 /* ExchangeWorldTests.swift */; };
 		18D992811DBC521E00538F00 /* ExchangeWorldUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D992801DBC521E00538F00 /* ExchangeWorldUITests.swift */; };
+		7203BF591DE1F903007C99B6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7203BF581DE1F903007C99B6 /* ProfileViewController.swift */; };
 		E1ADB407C1F4447CA9F48694 /* Pods_ExchangeWorld.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F21E3FFA0DFA9649412216E0 /* Pods_ExchangeWorld.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +74,7 @@
 		18D992801DBC521E00538F00 /* ExchangeWorldUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeWorldUITests.swift; sourceTree = "<group>"; };
 		18D992821DBC521E00538F00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D3C19982F5BA4E9121B65E2 /* Pods-ExchangeWorld.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExchangeWorld.release.xcconfig"; path = "Pods/Target Support Files/Pods-ExchangeWorld/Pods-ExchangeWorld.release.xcconfig"; sourceTree = "<group>"; };
+		7203BF581DE1F903007C99B6 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F21E3FFA0DFA9649412216E0 /* Pods_ExchangeWorld.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExchangeWorld.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -133,6 +135,7 @@
 				184A3D601DDEA37900CA3541 /* LoginViewController.swift */,
 				184A3D641DDEA5AA00CA3541 /* PostFunction.swift */,
 				184A3D621DDEA47800CA3541 /* Constants.swift */,
+				7203BF581DE1F903007C99B6 /* ProfileViewController.swift */,
 				1870D6BF1DC078D100C697DA /* HomeViewController.swift */,
 				18006E4D1DC9905700C89A91 /* HomeSegmentedControl.swift */,
 				1870D6C11DC07EB000C697DA /* HomeMapViewController.swift */,
@@ -379,6 +382,7 @@
 				184A3D651DDEA5AA00CA3541 /* PostFunction.swift in Sources */,
 				1870D6C61DC0952600C697DA /* HomeObjectCategoryCollectionViewController.swift in Sources */,
 				1870D6C21DC07EB000C697DA /* HomeMapViewController.swift in Sources */,
+				7203BF591DE1F903007C99B6 /* ProfileViewController.swift in Sources */,
 				1870D6C41DC083AF00C697DA /* ObjectDataStructure.swift in Sources */,
 				1870D6CC1DC09E4100C697DA /* HomeObjectCollectionViewCell.swift in Sources */,
 				18006E4E1DC9905700C89A91 /* HomeSegmentedControl.swift in Sources */,

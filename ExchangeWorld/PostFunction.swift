@@ -8,11 +8,11 @@
 
 import Foundation
 
-func httpPost(URL:String,parameters: [String : Any],returnString:String) {
+func httpPost(URL:String,parameters: [String : Any]) {
     let URL:NSURL = NSURL(string:URL)!
     let request:NSMutableURLRequest = NSMutableURLRequest(url: URL as URL, cachePolicy: NSURLRequest.CachePolicy.reloadIgnoringLocalCacheData, timeoutInterval: 10)
     let semaphore = DispatchSemaphore(value: 0)
-    var returnStringInFunc = returnString
+    
     
     
     request.httpMethod = "POST"
@@ -36,8 +36,8 @@ func httpPost(URL:String,parameters: [String : Any],returnString:String) {
             let json = try JSONSerialization.jsonObject(with: data!,options: .mutableContainers)
             for dictionary in json as! [String: Any] {
                 if(dictionary.key == "token"){
-                    returnStringInFunc = dictionary.value as! String
-                    print(returnStringInFunc)
+                    Constants.exwdToken = dictionary.value as! String
+                    print(Constants.exwdToken)
                 }
             }
         }catch let jsonError{
