@@ -22,7 +22,7 @@ struct Constants {
     }
     
     static var facebookID : String = ""
-    static var facebookProfilePic : String = ""
+    static var facebookProfilePicURL : String = ""
     static var exwdToken : String = ""
 }
 

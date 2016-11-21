@@ -57,8 +57,8 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
                             let resultInFunc3 = value2 as! Dictionary<String,AnyObject>
                             for (key3,value3) in resultInFunc3{
                                 if(key3 == "url"){
-                                    Constants.facebookProfilePic = value3 as! String
-                                    print(Constants.facebookProfilePic)
+                                    Constants.facebookProfilePicURL = value3 as! String
+                                    print(Constants.facebookProfilePicURL)
                                 }
                             }
                         }
