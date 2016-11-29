@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Exchange-->
+        <!--Upload View Controller-->
         <scene sceneID="jAx-UM-rjD">
             <objects>
-                <viewController id="ApY-hn-Wzh" userLabel="Exchange" sceneMemberID="viewController">
+                <viewController id="ApY-hn-Wzh" customClass="uploadViewController" customModule="ExchangeWorld" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9Cx-j1-rYM"/>
                         <viewControllerLayoutGuide type="bottom" id="89K-cX-P1o"/>
@@ -20,18 +20,69 @@
                     <view key="view" contentMode="scaleToFill" id="D38-cS-SI8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OfY-si-2aE">
+                                <rect key="frame" x="40" y="92" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rRF-CA-4yA">
+                                <rect key="frame" x="48" y="260" width="31" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="相機"/>
+                                <connections>
+                                    <action selector="cameraAction:" destination="ApY-hn-Wzh" eventType="touchUpInside" id="rhh-6G-n4y"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U5e-0M-osM">
+                                <rect key="frame" x="48" y="322" width="77" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="相簿內選取"/>
+                                <connections>
+                                    <action selector="photoLibraryAction:" destination="ApY-hn-Wzh" eventType="touchUpInside" id="azl-mf-UBg"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Exchange" id="km5-bD-NOO" userLabel="Exchange"/>
+                    <navigationItem key="navigationItem" id="4KF-IO-5ip">
+                        <barButtonItem key="rightBarButtonItem" title="下一步" id="lht-kW-JwQ">
+                            <connections>
+                                <segue destination="6v6-29-QM7" kind="show" identifier="sendImage" id="GhP-ir-1GA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cameraButton" destination="rRF-CA-4yA" id="sSa-IN-7sN"/>
+                        <outlet property="imageDisplay" destination="OfY-si-2aE" id="3Ne-Op-avG"/>
+                        <outlet property="photoLibraryButton" destination="U5e-0M-osM" id="Kiv-95-Yss"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bwN-1y-Kga" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1671" y="841"/>
+            <point key="canvasLocation" x="-844" y="1618"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="biU-ph-F0l">
+            <objects>
+                <viewController id="6v6-29-QM7" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zJF-hA-2an"/>
+                        <viewControllerLayoutGuide type="bottom" id="veL-7F-1J7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9Lw-Eg-QT9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q1Y-xk-Vqv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-846" y="2346"/>
         </scene>
         <!--Home-->
         <scene sceneID="6xN-oP-HUz">
             <objects>
-                <viewController id="QgR-Dg-hXq" userLabel="Home" customClass="HomeViewController" customModule="ExchangeWorld" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" id="QgR-Dg-hXq" userLabel="Home" customClass="HomeViewController" customModule="ExchangeWorld" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Unr-Ry-irZ"/>
                         <viewControllerLayoutGuide type="bottom" id="xr0-Af-dFF"/>
@@ -124,17 +175,32 @@
                     <view key="view" contentMode="scaleToFill" id="CLg-iO-6FI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XgF-Jp-Ud9">
+                                <rect key="frame" x="137" y="467" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="performsegue:" destination="AEI-It-OyE" eventType="touchUpInside" id="LaE-B6-vOi"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="b2k-fm-MUs"/>
+                    <connections>
+                        <outlet property="view" destination="CLg-iO-6FI" id="V5V-Tk-qem"/>
+                        <segue destination="cKx-nd-KyL" kind="show" identifier="LoginSegue" id="MhK-11-CbY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VS5-op-DZN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-904" y="-626"/>
+            <point key="canvasLocation" x="-904" y="-649"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="MKC-Zd-hPC">
             <objects>
-                <tabBarController storyboardIdentifier="tabBarViewController" id="cKx-nd-KyL" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabBarController" id="cKx-nd-KyL" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="VhR-bY-B4O">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -142,8 +208,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="QgR-Dg-hXq" kind="relationship" relationship="viewControllers" id="HhV-RH-6f1"/>
-                        <segue destination="ApY-hn-Wzh" kind="relationship" relationship="viewControllers" id="2aJ-zx-WUD"/>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="q65-cv-G3i"/>
+                        <segue destination="u0e-gw-uJF" kind="relationship" relationship="viewControllers" id="2aJ-zx-WUD"/>
                         <segue destination="6I0-3D-Hto" kind="relationship" relationship="viewControllers" id="AlI-2e-6KI"/>
                         <segue destination="E61-xL-Ddz" kind="relationship" relationship="viewControllers" id="45v-gd-hv3"/>
                     </connections>
@@ -151,25 +216,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xf7-Ca-s2l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-903" y="123"/>
-        </scene>
-        <!--Camera-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" userLabel="Camera" customClass="ViewController" customModule="ExchangeWorld" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Camera" id="dN4-LH-Who" userLabel="Camera"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1044" y="841"/>
         </scene>
         <!--Settings-->
         <scene sceneID="lhA-q2-1e1">
@@ -188,12 +234,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XWP-fC-37D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="315" y="841"/>
+            <point key="canvasLocation" x="1312.5" y="840.84507042253517"/>
         </scene>
         <!--Profile-->
         <scene sceneID="JpX-7h-Doh">
             <objects>
-                <viewController id="6I0-3D-Hto" userLabel="Profile" sceneMemberID="viewController">
+                <viewController id="6I0-3D-Hto" userLabel="Profile" customClass="ProfileViewController" customModule="ExchangeWorld" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Q8J-f0-FcG"/>
                         <viewControllerLayoutGuide type="bottom" id="Qwy-Aa-47B"/>
@@ -201,13 +247,25 @@
                     <view key="view" contentMode="scaleToFill" id="ktS-a6-ETR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oRl-CO-bIA">
+                                <rect key="frame" x="40" y="28" width="240" height="128"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oRl-CO-bIA" firstAttribute="top" secondItem="Q8J-f0-FcG" secondAttribute="bottom" constant="8" id="LMf-jM-bVj"/>
+                            <constraint firstItem="oRl-CO-bIA" firstAttribute="centerX" secondItem="ktS-a6-ETR" secondAttribute="centerX" id="u00-Sv-0Yv"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" id="ZqP-qa-GaQ" userLabel="Profile"/>
+                    <connections>
+                        <outlet property="userProfilePic" destination="oRl-CO-bIA" id="FQR-pM-dMO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Qa-iJ-b7h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-398" y="841"/>
+            <point key="canvasLocation" x="598.125" y="840.84507042253517"/>
         </scene>
         <!--HomeMapViewController-->
         <scene sceneID="fQM-fl-G8q">
@@ -277,7 +335,7 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="8Up-yy-Bbj" userLabel="Home Object Category Collection View">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="427"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.58865832759535774" green="0.72336632013320923" blue="0.65426311330282372" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="0.89805201480263153" colorSpace="calibratedRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BoD-dC-9ic">
                             <size key="itemSize" width="213" height="187"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -400,6 +458,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yak-3k-h7e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1635" y="3352.2887323943664"/>
+        </scene>
+        <!--上傳-->
+        <scene sceneID="ohB-MZ-NGF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="u0e-gw-uJF" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="上傳" id="km5-bD-NOO"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Gho-Gy-aq4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ApY-hn-Wzh" kind="relationship" relationship="rootViewController" id="0yp-a2-3k0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wqa-Uc-Hnt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1179.375" y="840.84507042253517"/>
         </scene>
     </scenes>
 </document>

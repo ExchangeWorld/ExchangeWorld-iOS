@@ -17,11 +17,10 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         super.viewDidLoad()
 
         let loginbutton = FBSDKLoginButton()
-        
         view.addSubview(loginbutton)
         loginbutton.frame = CGRect(x: 16, y: 50, width: view.frame.width-32, height: 50)
-        
         loginbutton.delegate = self
+        
         
     }
 
@@ -29,24 +28,61 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     }
     
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+        
+        //var facebookID : String = ""
+        //var facebookProfilePic : String = ""
+        
         if error != nil {
             print(error)
             return
         }
         
-        FBSDKGraphRequest(graphPath: "/me", parameters: ["fields": "id, name, email"]).start { (connection, result, err) in
+        FBSDKGraphRequest(graphPath: "/me", parameters: ["fields": "id, name, email, picture.type(large)"]).start { (connection, result, err) in
             
             if err != nil {
-                print("Failed to start graph request: ",err)
+                print("Failed to start graph request: ",err!)
                 return
             }
             
-            print(result)
-            httpPost(URL: "\(Constants.API_SERVER_URL)/api/authenticate/login", parameters: ["fb": true , "identity": "991503670923024"],token: self.token)
+            // result -> facebookID
+            let resultInFunc = result as! Dictionary<String, AnyObject>
+            for (key,value) in resultInFunc{
+                if(key == "id"){
+                    Constants.facebookID = value as! String
+                }
+                if(key == "picture"){
+                    let resultInFunc2 = value as! Dictionary<String,AnyObject>
+                    for(key2,value2) in resultInFunc2{
+                        if(key2 == "data"){
+                            let resultInFunc3 = value2 as! Dictionary<String,AnyObject>
+                            for (key3,value3) in resultInFunc3{
+                                if(key3 == "url"){
+                                    Constants.facebookProfilePicURL = value3 as! String
+                                    print(Constants.facebookProfilePicURL)
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+           
+         
+            
+            httpPost(URL: "\(Constants.API_SERVER_URL)/api/authenticate/login", parameters: ["fb": true , "identity": Constants.facebookID])
             //self.posting(URL: "http://exwd.csie.org:43002/api/goods/post?token=a8127148e28cdac117c80b77c1d7527795104f36")
         }
-        let destViewController = self.storyboard?.instantiateViewController(withIdentifier: "tabBarViewController")
-        self.navigationController?.pushViewController(destViewController!, animated: true)
+        
+        let storyboard: UIStoryboard = self.storyboard!
+        let TabBarController = storyboard.instantiateViewController(withIdentifier: "tabBarController") as! UITabBarController
+        self.present(TabBarController, animated: true, completion: nil)
+        
     }
+    
+    @IBAction func performsegue(_ sender: Any) {
+        self.performSegue(withIdentifier: "LoginSegue", sender: nil)
+        print("--------------")
+    }
+    
+    
     
 }

@@ -31,7 +31,7 @@ class HomeMapViewController: UIViewController, GMSMapViewDelegate, CLLocationMan
                 marker.title = object.name
                 marker.snippet = object.category
                 marker.icon = UIImage(named: object.category)
-                marker.icon = GMSMarker.markerImage(with: UIColor(red: 128.0/255.0, green: 192.0/255.0, blue: 189.0/255.0, alpha: 1.0))
+//                marker.icon = GMSMarker.markerImage(with: UIColor(red: 128.0/255.0, green: 192.0/255.0, blue: 189.0/255.0, alpha: 1.0))
                 marker.map = mapView
                 marker.appearAnimation = kGMSMarkerAnimationPop
                 

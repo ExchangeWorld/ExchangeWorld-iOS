@@ -20,9 +20,9 @@ struct Constants {
         }
         return url
     }
+    
+    static var facebookID : String = ""
+    static var facebookProfilePicURL : String = ""
+    static var exwdToken : String = ""
 }
 
-class authentication {
-    var authentication : String!
-    var token : String!
-}
