@@ -14,9 +14,9 @@ class HomeObjectCategoryCollectionViewController: UICollectionViewController {
 
     @IBOutlet var homeObjectCategoryCollectionView: UICollectionView!
 
-//    let objectImageArray = ["Book", "Textbooks", "3C", "3C配件", "Clothes", "Cosmetic", "Accessories", "Food", "Houseware", "體育用品", "電玩遊戲", "Others"] //缺 Food, Accessories, Houseware
+    let categoryImageArray = ["Book", "Textbooks", "3C", "3C_accessories", "Clothes", "Cosmetic", "Accessories", "Food", "Houseware", "Sports", "Games", "Others"] 
     
-    let categoryImageArray = ["Textbooks", "Textbooks", "Textbooks", "Textbooks", "Textbooks", "Textbooks", "Textbooks", "Textbooks", "Textbooks", "Textbooks", "Textbooks", "Textbooks"]
+//    let categoryImageArray = ["Textbooks", "Textbooks", "Textbooks", "Textbooks", "Textbooks", "Textbooks", "Textbooks", "Textbooks", "Textbooks", "Textbooks", "Textbooks", "Textbooks"]
     
     override func viewDidLoad() {
         super.viewDidLoad()

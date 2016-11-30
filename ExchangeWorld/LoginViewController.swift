@@ -44,11 +44,17 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
                 return
             }
             
+            print(result)
+            
             // result -> facebookID
             let resultInFunc = result as! Dictionary<String, AnyObject>
             for (key,value) in resultInFunc{
                 if(key == "id"){
                     Constants.facebookID = value as! String
+                }
+                if(key == "name"){
+                    Constants.facebookName = value as! String
+                    print(Constants.facebookName)
                 }
                 if(key == "picture"){
                     let resultInFunc2 = value as! Dictionary<String,AnyObject>
