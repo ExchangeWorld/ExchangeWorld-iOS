@@ -28,7 +28,6 @@ class HomeObjectCategoryCollectionViewController: UICollectionViewController {
         // Register cell classes
 //        self.collectionView!.register(HomeObjectCategoryCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,13 +38,11 @@ class HomeObjectCategoryCollectionViewController: UICollectionViewController {
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
         return categoryImageArray.count
     }
 

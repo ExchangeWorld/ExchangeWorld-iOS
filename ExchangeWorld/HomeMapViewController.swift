@@ -69,6 +69,9 @@ class HomeMapViewController: UIViewController, GMSMapViewDelegate, CLLocationMan
         
         self.locationManager.delegate = self
         self.locationManager.requestWhenInUseAuthorization()
+        self.tabBarItem.imageInsets = UIEdgeInsetsMake(9, 7, 9, 7)
+        
+
     }
     
 

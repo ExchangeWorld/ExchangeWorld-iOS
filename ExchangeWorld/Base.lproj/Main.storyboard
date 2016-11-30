@@ -26,7 +26,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rRF-CA-4yA">
-                                <rect key="frame" x="48" y="260" width="31" height="30"/>
+                                <rect key="frame" x="53" y="228" width="31" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="相機"/>
                                 <connections>
@@ -34,18 +34,30 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U5e-0M-osM">
-                                <rect key="frame" x="48" y="322" width="77" height="30"/>
+                                <rect key="frame" x="53" y="266" width="77" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="相簿內選取"/>
                                 <connections>
                                     <action selector="photoLibraryAction:" destination="ApY-hn-Wzh" eventType="touchUpInside" id="azl-mf-UBg"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="商品名稱與說明" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TKu-ax-Lna">
+                                <rect key="frame" x="20" y="304" width="122" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XIr-dW-hxj">
+                                <rect key="frame" x="0.0" y="354" width="320" height="140"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.83898696669999995" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="4KF-IO-5ip">
-                        <barButtonItem key="rightBarButtonItem" title="下一步" id="lht-kW-JwQ">
+                        <barButtonItem key="rightBarButtonItem" title="刊登" id="lht-kW-JwQ">
                             <connections>
                                 <segue destination="6v6-29-QM7" kind="show" identifier="sendImage" id="GhP-ir-1GA"/>
                             </connections>
@@ -55,11 +67,13 @@
                         <outlet property="cameraButton" destination="rRF-CA-4yA" id="sSa-IN-7sN"/>
                         <outlet property="imageDisplay" destination="OfY-si-2aE" id="3Ne-Op-avG"/>
                         <outlet property="photoLibraryButton" destination="U5e-0M-osM" id="Kiv-95-Yss"/>
+                        <outlet property="userInputTableView" destination="XIr-dW-hxj" id="ilE-Vc-dXA"/>
+                        <outlet property="userInputTitleLabel" destination="TKu-ax-Lna" id="ud7-YF-GJD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bwN-1y-Kga" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-844" y="1618"/>
+            <point key="canvasLocation" x="-845.625" y="1617.2535211267607"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="biU-ph-F0l">
@@ -151,13 +165,19 @@
                             <constraint firstItem="l5b-0C-Q6Q" firstAttribute="top" secondItem="3Cf-ah-cQ0" secondAttribute="bottom" id="wd6-wM-2MB"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" id="ppY-O0-Pxu" userLabel="Home"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="pin-map" id="ppY-O0-Pxu" userLabel="Home">
+                        <inset key="imageInsets" minX="7" minY="9" maxX="7" maxY="9"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <connections>
                         <outlet property="homeAreaCategoryContainerView" destination="aKt-Dz-gnB" id="ZCh-ed-fOQ"/>
                         <outlet property="homeMapContainerView" destination="XfF-ce-OQu" id="hl0-3N-Qvw"/>
                         <outlet property="homeNavigationBar" destination="iN3-Su-rpe" id="c4B-fD-8Q9"/>
                         <outlet property="homeObjectCategoryContainerView" destination="l5b-0C-Q6Q" id="rSs-v3-QRX"/>
                         <outlet property="homeSegmentedControl" destination="3Cf-ah-cQ0" id="z1b-19-g78"/>
+                        <outlet property="homeTabBar" destination="ppY-O0-Pxu" id="aNr-mZ-QRs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t8D-5G-5L1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -209,7 +229,7 @@
                     <connections>
                         <segue destination="QgR-Dg-hXq" kind="relationship" relationship="viewControllers" id="HhV-RH-6f1"/>
                         <segue destination="u0e-gw-uJF" kind="relationship" relationship="viewControllers" id="2aJ-zx-WUD"/>
-                        <segue destination="6I0-3D-Hto" kind="relationship" relationship="viewControllers" id="AlI-2e-6KI"/>
+                        <segue destination="Gby-rR-WHW" kind="relationship" relationship="viewControllers" id="AlI-2e-6KI"/>
                         <segue destination="E61-xL-Ddz" kind="relationship" relationship="viewControllers" id="45v-gd-hv3"/>
                     </connections>
                 </tabBarController>
@@ -230,11 +250,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Setting" id="C4j-YQ-AJZ" userLabel="Settings"/>
+                    <tabBarItem key="tabBarItem" title="Setting" image="Setting" id="C4j-YQ-AJZ" userLabel="Settings">
+                        <inset key="imageInsets" minX="6" minY="6" maxX="6" maxY="6"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XWP-fC-37D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1312.5" y="840.84507042253517"/>
+            <point key="canvasLocation" x="2310" y="840.84507042253517"/>
         </scene>
         <!--Profile-->
         <scene sceneID="JpX-7h-Doh">
@@ -319,7 +341,7 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" id="ZqP-qa-GaQ" userLabel="Profile"/>
+                    <navigationItem key="navigationItem" title="Exchange World" id="JCj-Qv-R16"/>
                     <connections>
                         <outlet property="exchangeHistoryView" destination="Pfs-9H-QyZ" id="SN0-bp-Cl7"/>
                         <outlet property="exchangeRequestView" destination="3Hm-7d-cQg" id="XnT-6u-OpH"/>
@@ -334,7 +356,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Qa-iJ-b7h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="598.125" y="840.84507042253517"/>
+            <point key="canvasLocation" x="1595.625" y="840.84507042253517"/>
         </scene>
         <!--HomeMapViewController-->
         <scene sceneID="fQM-fl-G8q">
@@ -532,7 +554,9 @@
         <scene sceneID="ohB-MZ-NGF">
             <objects>
                 <navigationController title="ExchangeWorld" automaticallyAdjustsScrollViewInsets="NO" id="u0e-gw-uJF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="上傳" id="km5-bD-NOO"/>
+                    <tabBarItem key="tabBarItem" title="上傳" image="Upload" id="km5-bD-NOO">
+                        <inset key="imageInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Gho-Gy-aq4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -637,5 +661,32 @@
             </objects>
             <point key="canvasLocation" x="2601" y="1501"/>
         </scene>
+        <!--Profile-->
+        <scene sceneID="fdV-rD-QNu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Gby-rR-WHW" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" image="user" id="ZqP-qa-GaQ" userLabel="Profile">
+                        <inset key="imageInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="4Rm-Iz-K2G">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6I0-3D-Hto" kind="relationship" relationship="rootViewController" id="Dst-Or-jYI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gmm-VM-SLj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="598.125" y="840.84507042253517"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="Setting" width="50" height="50"/>
+        <image name="Upload" width="48" height="48"/>
+        <image name="pin-map" width="49" height="64"/>
+        <image name="user" width="50" height="50"/>
+    </resources>
 </document>
