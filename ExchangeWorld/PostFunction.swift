@@ -40,6 +40,7 @@ func httpPost(URL:String,parameters: [String : Any]) {
                     print(Constants.exwdToken)
                 }
             }
+            print(data)
         }catch let jsonError{
             print(jsonError)
         }

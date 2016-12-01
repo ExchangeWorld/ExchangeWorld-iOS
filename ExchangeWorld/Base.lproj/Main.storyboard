@@ -49,9 +49,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XIr-dW-hxj">
-                                <rect key="frame" x="0.0" y="354" width="320" height="140"/>
+                                <rect key="frame" x="20" y="359" width="284" height="134"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="ApY-hn-Wzh" id="KCG-Jy-RqE"/>
+                                    <outlet property="delegate" destination="ApY-hn-Wzh" id="zpu-wF-h80"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="0.83898696669999995" alpha="1" colorSpace="calibratedWhite"/>

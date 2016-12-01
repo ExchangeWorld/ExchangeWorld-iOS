@@ -25,5 +25,6 @@ struct Constants {
     static var facebookProfilePicURL : String = ""
     static var facebookName : String = ""
     static var exwdToken : String = ""
+    static var imageInBase64 : String = ""
 }
 
