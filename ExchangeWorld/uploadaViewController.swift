@@ -67,12 +67,14 @@ class uploadViewController: UIViewController, UIImagePickerControllerDelegate, U
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         imageDisplay.image = info[UIImagePickerControllerOriginalImage] as? UIImage; dismiss(animated: true, completion: nil)
         self.pickedImage = info[UIImagePickerControllerOriginalImage] as! UIImage!
+        let imageNSData = NSData(data: UIImageJPEGRepresentation(pickedImage, 0.9)!)
         
         if let base64String = UIImageJPEGRepresentation(pickedImage, 0.9)?.base64EncodedString() {
-//            print("-----------------")
-//            print(base64String)
-//            print("-----------------")
             Constants.imageInBase64 = base64String
+            Constants.imageSize = imageNSData.length
+            Constants.imageType = getImageType(imgData : imageNSData)
+            print(Constants.imageSize)
+            print(Constants.imageType)
         }
         
 //        let imageData: NSData = UIImagePNGRepresentation(self.pickedImage) as NSData!
@@ -86,7 +88,10 @@ class uploadViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         if segueIdentifier == "sendImage" {
             print("111111111")
-            httpPost(URL: "\(Constants.API_SERVER_URL)/api/upload/image?token=\(Constants.exwdToken)", parameters: ["filename": "uploadImgTRY1" , "base64": Constants.imageInBase64, "filetype":"jpg"])
+            //httpPost(URL: "\(Constants.API_SERVER_URL)/api/upload/image?token=\(Constants.exwdToken)", parameters: ["filesize":Constants.imageSize, "filename": "uploadImgTRY1" , "base64": "\(Constants.imageInBase64)", "filetype": Constants.imageType],returnJsonFormat: false)
+            
+            //httpPost(URL: "\(Constants.API_SERVER_URL)/api/goods/post?token=\(Constants.exwdToken)", parameters: ["name":"1203try1", "category":"Others", "description":"1203try1", "photo_path":"[\"\(Constants.imageURL)\"]", "position_x":121.5453914, "position_y":25.0261973],returnJsonFormat: true)
+            
 //            guard let detailViewController = segue.destination as? HomeObjectCollectionViewController else {
 //                return
 //            }
@@ -149,7 +154,31 @@ class uploadViewController: UIViewController, UIImagePickerControllerDelegate, U
         }
     }
     
-    
+    func getImageType(imgData : NSData) -> String
+    {
+        var c = [UInt8](repeatElement(0, count: 1))
+        imgData.getBytes(&c, length: 1)
+        
+        let ext : String
+        
+        switch (c[0]) {
+        case 0xFF:
+            
+            ext = "jpg"
+            
+        case 0x89:
+            
+            ext = "png"
+        case 0x47:
+            
+            ext = "gif"
+        case 0x49, 0x4D :
+            ext = "tiff"
+        default:
+            ext = "" //unknown
+        }
+        return ext
+    }
     
     
     

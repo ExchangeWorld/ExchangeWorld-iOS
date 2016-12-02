@@ -74,7 +74,8 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
            
          
             
-            httpPost(URL: "\(Constants.API_SERVER_URL)/api/authenticate/login", parameters: ["fb": true , "identity": Constants.facebookID])
+            httpPost(URL: "\(Constants.API_SERVER_URL)/api/authenticate/login", parameters: ["fb": true , "identity": Constants.facebookID], returnJsonFormat : true)
+            //httpPost(URL: "\(Constants.API_SERVER_URL)/api/goods/post?token=\(Constants.exwdToken)", parameters: ["name":"1202try1", "category":"Others", "description":"1202try1", "photo_path":"[\"http://exwd.csie.org/images/a5cc1dc3b5b0b3b4a44c346be5a8eccfd13a475f3a304405662b9c5ae8ac66fb.jpeg\"]", "position_x":121.5453914, "position_y":25.0261973])
             //self.posting(URL: "http://exwd.csie.org:43002/api/goods/post?token=a8127148e28cdac117c80b77c1d7527795104f36")
         }
         

@@ -169,8 +169,7 @@
                             <constraint firstItem="l5b-0C-Q6Q" firstAttribute="top" secondItem="3Cf-ah-cQ0" secondAttribute="bottom" id="wd6-wM-2MB"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="pin-map" id="ppY-O0-Pxu" userLabel="Home">
-                        <inset key="imageInsets" minX="7" minY="9" maxX="7" maxY="9"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="pin-map50" id="ppY-O0-Pxu" userLabel="Home">
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
                         </userDefinedRuntimeAttributes>
@@ -254,9 +253,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Setting" image="Setting" id="C4j-YQ-AJZ" userLabel="Settings">
-                        <inset key="imageInsets" minX="6" minY="6" maxX="6" maxY="6"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="Setting" image="Setting" id="C4j-YQ-AJZ" userLabel="Settings"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XWP-fC-37D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -558,9 +555,7 @@
         <scene sceneID="ohB-MZ-NGF">
             <objects>
                 <navigationController title="ExchangeWorld" automaticallyAdjustsScrollViewInsets="NO" id="u0e-gw-uJF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="上傳" image="Upload" id="km5-bD-NOO">
-                        <inset key="imageInsets" minX="5" minY="5" maxX="5" maxY="5"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="上傳" image="upload50" id="km5-bD-NOO"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Gho-Gy-aq4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -669,9 +664,7 @@
         <scene sceneID="fdV-rD-QNu">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Gby-rR-WHW" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" image="user" id="ZqP-qa-GaQ" userLabel="Profile">
-                        <inset key="imageInsets" minX="5" minY="5" maxX="5" maxY="5"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="Profile" image="user" id="ZqP-qa-GaQ" userLabel="Profile"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="4Rm-Iz-K2G">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -688,9 +681,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Setting" width="50" height="50"/>
-        <image name="Upload" width="48" height="48"/>
-        <image name="pin-map" width="49" height="64"/>
-        <image name="user" width="50" height="50"/>
+        <image name="Setting" width="25" height="25"/>
+        <image name="pin-map50" width="19" height="25"/>
+        <image name="upload50" width="25" height="25"/>
+        <image name="user" width="25" height="25"/>
     </resources>
 </document>
