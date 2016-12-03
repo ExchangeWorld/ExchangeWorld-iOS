@@ -91,6 +91,19 @@ class uploadViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         httpPost(URL: "\(Constants.API_SERVER_URL)/api/goods/post?token=\(Constants.exwdToken)", parameters: ["name":"\(uploadNameTextField.text!)", "category":"\(uploadCategoryTextField.text!)", "description":"\(uploadContextTextView.text!)", "photo_path":"[\"\(Constants.imageURL)\"]", "position_x":121.5453914, "position_y":25.0261973],returnJsonFormat: true)
         
+//        var alert = UIAlertController(title: "新增物品", message: "上傳成功", preferredStyle: UIAlertControllerStyle.alert)
+//        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+//        
+//        self.presentingViewController()
+        
+        
+        let alertView = UIAlertView()
+        alertView.title = "系统提示"
+        alertView.message = "物品上傳成功"
+        alertView.addButton(withTitle: "確認")
+        alertView.delegate=self
+        alertView.show()
+        
     }
     
     
