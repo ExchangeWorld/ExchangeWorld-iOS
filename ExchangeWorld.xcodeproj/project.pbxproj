@@ -27,12 +27,6 @@
 		18D992761DBC521E00538F00 /* ExchangeWorldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D992751DBC521E00538F00 /* ExchangeWorldTests.swift */; };
 		18D992811DBC521E00538F00 /* ExchangeWorldUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D992801DBC521E00538F00 /* ExchangeWorldUITests.swift */; };
 		7203BF591DE1F903007C99B6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7203BF581DE1F903007C99B6 /* ProfileViewController.swift */; };
-		721F464B1DEF98EA00AAA83D /* uploadNameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721F46491DEF98EA00AAA83D /* uploadNameTableViewCell.swift */; };
-		721F464C1DEF98EA00AAA83D /* uploadNameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 721F464A1DEF98EA00AAA83D /* uploadNameTableViewCell.xib */; };
-		721F46531DEF9B2100AAA83D /* uploadCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721F46511DEF9B2100AAA83D /* uploadCategoryTableViewCell.swift */; };
-		721F46541DEF9B2100AAA83D /* uploadCategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 721F46521DEF9B2100AAA83D /* uploadCategoryTableViewCell.xib */; };
-		721F46B51DF2A3DE00AAA83D /* uploadContextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721F46B31DF2A3DE00AAA83D /* uploadContextTableViewCell.swift */; };
-		721F46B61DF2A3DE00AAA83D /* uploadContextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 721F46B41DF2A3DE00AAA83D /* uploadContextTableViewCell.xib */; };
 		7224FF851DEEB1540020CE85 /* ProfileSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7224FF841DEEB1540020CE85 /* ProfileSegmentedControl.swift */; };
 		E1ADB407C1F4447CA9F48694 /* Pods_ExchangeWorld.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F21E3FFA0DFA9649412216E0 /* Pods_ExchangeWorld.framework */; };
 /* End PBXBuildFile section */
@@ -84,12 +78,6 @@
 		18D992821DBC521E00538F00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D3C19982F5BA4E9121B65E2 /* Pods-ExchangeWorld.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExchangeWorld.release.xcconfig"; path = "Pods/Target Support Files/Pods-ExchangeWorld/Pods-ExchangeWorld.release.xcconfig"; sourceTree = "<group>"; };
 		7203BF581DE1F903007C99B6 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		721F46491DEF98EA00AAA83D /* uploadNameTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = uploadNameTableViewCell.swift; sourceTree = "<group>"; };
-		721F464A1DEF98EA00AAA83D /* uploadNameTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = uploadNameTableViewCell.xib; sourceTree = "<group>"; };
-		721F46511DEF9B2100AAA83D /* uploadCategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = uploadCategoryTableViewCell.swift; sourceTree = "<group>"; };
-		721F46521DEF9B2100AAA83D /* uploadCategoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = uploadCategoryTableViewCell.xib; sourceTree = "<group>"; };
-		721F46B31DF2A3DE00AAA83D /* uploadContextTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = uploadContextTableViewCell.swift; sourceTree = "<group>"; };
-		721F46B41DF2A3DE00AAA83D /* uploadContextTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = uploadContextTableViewCell.xib; sourceTree = "<group>"; };
 		7224FF841DEEB1540020CE85 /* ProfileSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileSegmentedControl.swift; sourceTree = "<group>"; };
 		F21E3FFA0DFA9649412216E0 /* Pods_ExchangeWorld.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExchangeWorld.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -161,12 +149,6 @@
 				1870D6CB1DC09E4100C697DA /* HomeObjectCollectionViewCell.swift */,
 				18006E4F1DC99A1B00C89A91 /* ObjectInfoViewController.swift */,
 				18812D9B1DE572B500BA0B56 /* uploadaViewController.swift */,
-				721F46491DEF98EA00AAA83D /* uploadNameTableViewCell.swift */,
-				721F464A1DEF98EA00AAA83D /* uploadNameTableViewCell.xib */,
-				721F46511DEF9B2100AAA83D /* uploadCategoryTableViewCell.swift */,
-				721F46521DEF9B2100AAA83D /* uploadCategoryTableViewCell.xib */,
-				721F46B31DF2A3DE00AAA83D /* uploadContextTableViewCell.swift */,
-				721F46B41DF2A3DE00AAA83D /* uploadContextTableViewCell.xib */,
 				7203BF581DE1F903007C99B6 /* ProfileViewController.swift */,
 				7224FF841DEEB1540020CE85 /* ProfileSegmentedControl.swift */,
 				18D992671DBC521E00538F00 /* Assets.xcassets */,
@@ -328,9 +310,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				18D9926B1DBC521E00538F00 /* LaunchScreen.storyboard in Resources */,
-				721F464C1DEF98EA00AAA83D /* uploadNameTableViewCell.xib in Resources */,
-				721F46B61DF2A3DE00AAA83D /* uploadContextTableViewCell.xib in Resources */,
-				721F46541DEF9B2100AAA83D /* uploadCategoryTableViewCell.xib in Resources */,
 				18D992681DBC521E00538F00 /* Assets.xcassets in Resources */,
 				18D992661DBC521E00538F00 /* Main.storyboard in Resources */,
 			);
@@ -409,16 +388,13 @@
 				184A3D651DDEA5AA00CA3541 /* PostFunction.swift in Sources */,
 				1870D6C61DC0952600C697DA /* HomeObjectCategoryCollectionViewController.swift in Sources */,
 				1870D6C21DC07EB000C697DA /* HomeMapViewController.swift in Sources */,
-				721F464B1DEF98EA00AAA83D /* uploadNameTableViewCell.swift in Sources */,
 				7203BF591DE1F903007C99B6 /* ProfileViewController.swift in Sources */,
 				1870D6C41DC083AF00C697DA /* ObjectDataStructure.swift in Sources */,
 				7224FF851DEEB1540020CE85 /* ProfileSegmentedControl.swift in Sources */,
-				721F46B51DF2A3DE00AAA83D /* uploadContextTableViewCell.swift in Sources */,
 				1870D6CC1DC09E4100C697DA /* HomeObjectCollectionViewCell.swift in Sources */,
 				18006E4E1DC9905700C89A91 /* HomeSegmentedControl.swift in Sources */,
 				18D992611DBC521E00538F00 /* AppDelegate.swift in Sources */,
 				1870D6C01DC078D100C697DA /* HomeViewController.swift in Sources */,
-				721F46531DEF9B2100AAA83D /* uploadCategoryTableViewCell.swift in Sources */,
 				1870D6CA1DC09E2C00C697DA /* HomeObjectCollectionViewController.swift in Sources */,
 				18812D9C1DE572B500BA0B56 /* uploadaViewController.swift in Sources */,
 				18006E501DC99A1B00C89A91 /* ObjectInfoViewController.swift in Sources */,
