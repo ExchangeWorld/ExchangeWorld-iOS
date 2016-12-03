@@ -23,6 +23,7 @@ class uploadViewController: UIViewController, UIImagePickerControllerDelegate, U
     var pickedImage: UIImage!
     var arrayOfCellData = [cellData]()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,7 +38,7 @@ class uploadViewController: UIViewController, UIImagePickerControllerDelegate, U
         userInputTitleLabel.frame = CGRect(x: screenSize.width*0.02, y: screenSize.height*0.44, width: screenSize.width*0.3, height: screenSize.width*0.05)
         userInputTitleLabel.font = UIFont.systemFont(ofSize: 17)
         userInputTitleLabel.textColor = UIColor(red: 100.0/255.0, green: 100.0/255.0, blue: 100.0/255.0, alpha: 1.0)
-        userInputTableView.frame = CGRect(x: 10, y: screenSize.height*0.48, width: screenSize.width-20, height: 240)
+        userInputTableView.frame = CGRect(x: 10, y: screenSize.height*0.48, width: screenSize.width-20, height: 279)
         
         arrayOfCellData = [cellData(cell: 1, text: "商品名稱（必填）"),
                            cellData(cell: 2, text: "商品種類"),
@@ -45,6 +46,18 @@ class uploadViewController: UIViewController, UIImagePickerControllerDelegate, U
         
     }
     
+    @IBAction func postingObjectButton(_ sender: Any) {
+        print("111")
+        let cell1 = Bundle.main.loadNibNamed("uploadNameTableViewCell", owner: self, options: nil)?.first as!uploadNameTableViewCell
+            print(cell1.uploadNameTitleLabel.text)
+            print(cell1.uploadNameTextField.text)
+            let cell2 = Bundle.main.loadNibNamed("uploadCategoryTableViewCell", owner: self, options: nil)?.first as! uploadCategoryTableViewCell
+            print(cell2.uploadCategoryTitleLabel.text)
+            print(cell2.uploadCategoryTextField.text)
+
+        //print(uploadNameTableViewCell().uploadNameTitleLabel.text)
+        //print(uploadNameTableViewCell().uploadNameTitleLabel)
+    }
     @IBAction func cameraAction(_ sender: Any) {
         let picker = UIImagePickerController()
         
@@ -81,30 +94,37 @@ class uploadViewController: UIViewController, UIImagePickerControllerDelegate, U
 //        let imageBase64: String = imageData.base64EncodedData(options: .lineLength64Characters)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let segueIdentifier = segue.identifier else {
-            return
-        }
-        
-        if segueIdentifier == "sendImage" {
-            print("111111111")
-            //httpPost(URL: "\(Constants.API_SERVER_URL)/api/upload/image?token=\(Constants.exwdToken)", parameters: ["filesize":Constants.imageSize, "filename": "uploadImgTRY1" , "base64": "\(Constants.imageInBase64)", "filetype": Constants.imageType],returnJsonFormat: false)
-            
-            //httpPost(URL: "\(Constants.API_SERVER_URL)/api/goods/post?token=\(Constants.exwdToken)", parameters: ["name":"1203try1", "category":"Others", "description":"1203try1", "photo_path":"[\"\(Constants.imageURL)\"]", "position_x":121.5453914, "position_y":25.0261973],returnJsonFormat: true)
-            
-//            guard let detailViewController = segue.destination as? HomeObjectCollectionViewController else {
-//                return
-//            }
-//            guard let cell = sender as? UICollectionViewCell else {
-//                return
-//            }
-//            let indexPath = self.collectionView?.indexPath(for: cell)
-//            
-//            detailViewController.categoryName = self.categoryImageArray[indexPath!.row]
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        guard let segueIdentifier = segue.identifier else {
+//            return
 //        }
-        }
-    
-    }
+//        
+//        if segueIdentifier == "sendImage" {
+//            print("111111111")
+//            let cell1 = Bundle.main.loadNibNamed("uploadNameTableViewCell", owner: self, options: nil)?.first as! uploadNameTableViewCell
+//            print(cell1.uploadNameTextField.text!)
+//            let cell2 = Bundle.main.loadNibNamed("uploadCategoryTableViewCell", owner: self, options: nil)?.first as! uploadCategoryTableViewCell
+//            print(cell2.uploadCategoryTextField.text!)
+//            
+//            
+//            
+//            //httpPost(URL: "\(Constants.API_SERVER_URL)/api/upload/image?token=\(Constants.exwdToken)", parameters: ["filesize":Constants.imageSize, "filename": "uploadImgTRY1" , "base64": "\(Constants.imageInBase64)", "filetype": Constants.imageType],returnJsonFormat: false)
+//            
+//            //httpPost(URL: "\(Constants.API_SERVER_URL)/api/goods/post?token=\(Constants.exwdToken)", parameters: ["name":"1203try1", "category":"Others", "description":"1203try1", "photo_path":"[\"\(Constants.imageURL)\"]", "position_x":121.5453914, "position_y":25.0261973],returnJsonFormat: true)
+//            
+////            guard let detailViewController = segue.destination as? HomeObjectCollectionViewController else {
+////                return
+////            }
+////            guard let cell = sender as? UICollectionViewCell else {
+////                return
+////            }
+////            let indexPath = self.collectionView?.indexPath(for: cell)
+////            
+////            detailViewController.categoryName = self.categoryImageArray[indexPath!.row]
+////        }
+//        }
+//    
+//    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrayOfCellData.count
@@ -126,9 +146,8 @@ class uploadViewController: UIViewController, UIImagePickerControllerDelegate, U
             return cell
         }
         else if arrayOfCellData[indexPath.row].cell == 3{
-            let cell = Bundle.main.loadNibNamed("uploadNameTableViewCell", owner: self, options: nil)?.first as! uploadNameTableViewCell
-            cell.uploadNameTitleLabel.text = arrayOfCellData[indexPath.row].text
-            
+            let cell = Bundle.main.loadNibNamed("uploadContextTableViewCell", owner: self, options: nil)?.first as! uploadContextTableViewCell
+            cell.uploadContextTitleLabel.text = arrayOfCellData[indexPath.row].text
             return cell
         }
         else{
@@ -148,12 +167,16 @@ class uploadViewController: UIViewController, UIImagePickerControllerDelegate, U
         else if arrayOfCellData[indexPath.row].cell == 2{
             return 80
         }
+        else if arrayOfCellData[indexPath.row].cell == 3{
+            return 120
+        }
         else{
             return 80
             
         }
     }
     
+        
     func getImageType(imgData : NSData) -> String
     {
         var c = [UInt8](repeatElement(0, count: 1))

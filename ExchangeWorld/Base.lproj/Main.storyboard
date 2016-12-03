@@ -63,7 +63,7 @@
                     <navigationItem key="navigationItem" id="4KF-IO-5ip">
                         <barButtonItem key="rightBarButtonItem" title="刊登" id="lht-kW-JwQ">
                             <connections>
-                                <segue destination="6v6-29-QM7" kind="show" identifier="sendImage" id="GhP-ir-1GA"/>
+                                <action selector="postingObjectButton:" destination="ApY-hn-Wzh" id="FAh-Na-prj"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -424,7 +424,7 @@
         <scene sceneID="dLq-sc-Hb6">
             <objects>
                 <collectionViewController id="X7D-HH-PgX" userLabel="Home Object Category Collection View Controller" customClass="HomeObjectCategoryCollectionViewController" customModule="ExchangeWorld" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="8Up-yy-Bbj" userLabel="Home Object Category Collection View">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="8Up-yy-Bbj" userLabel="Home Object Category Collection View">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="427"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="0.89805201480263153" colorSpace="calibratedRGB"/>
@@ -557,7 +557,7 @@
                 <navigationController title="ExchangeWorld" automaticallyAdjustsScrollViewInsets="NO" id="u0e-gw-uJF" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="上傳" image="upload50" id="km5-bD-NOO"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Gho-Gy-aq4">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Gho-Gy-aq4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
