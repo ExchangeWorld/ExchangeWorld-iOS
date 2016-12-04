@@ -118,11 +118,78 @@ class ProfileViewController: UIViewController {
         self.exchangeRequestView.frame = self.wishListView.frame
         self.exchangeHistoryView.frame = self.wishListView.frame
         self.view.backgroundColor = UIColor(patternImage: UIImage(named:"profileBackground")!)
+        
+        //get uid
+        
+        let url = NSURL(string: "\(Constants.API_SERVER_URL)/api/user?identity=\(Constants.facebookID)")
+        
+        let task = URLSession.shared.dataTask(with: url! as URL) {(data, response, error) in
+            //let ogData = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+            //print(ogData!)
+            if error != nil
+            {
+                print("error=\(error)")
+            }
+            
+            do {
+                let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers)
+                
+                for dictionary in json as! [String: Any] {
+                    if(dictionary.key == "star_starring_user"){
+                        print((dictionary.value as AnyObject).count)
+                        print((dictionary.value as AnyObject)[0])
+                        
+                        for count in 1...(dictionary.value as AnyObject).count{
+                            print((dictionary.value as AnyObject)[count-1])
+                        }
+                    }
+                }
+
+                
+            }catch{
+                print("JSONERROR")
+            }
+            
+            
+//            let resultInFunc = ogData as! Dictionary<String, AnyObject>
+//            print(resultInFunc)
+//            for (key,value) in resultInFunc{
+//                if(key == "id"){
+//                    Constants.facebookID = value as! String
+//                }
+//                if(key == "name"){
+//                    Constants.facebookName = value as! String
+//                    print(Constants.facebookName)
+//                }
+//                if(key == "picture"){
+//                    let resultInFunc2 = value as! Dictionary<String,AnyObject>
+//                    for(key2,value2) in resultInFunc2{
+//                        if(key2 == "data"){
+//                            let resultInFunc3 = value2 as! Dictionary<String,AnyObject>
+//                            for (key3,value3) in resultInFunc3{
+//                                if(key3 == "url"){
+//                                    Constants.facebookProfilePicURL = value3 as! String
+//                                    print(Constants.facebookProfilePicURL)
+//                                }
+//                            }
+//                        }
+//                    }
+//                }
+//            }
+            
+            
+            
+        }
+        
+        task.resume()
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
     
     func getDataFromUrl(url: URL, completion: @escaping (_ data: Data?, _  response: URLResponse?, _ error: Error?) -> Void) {
         URLSession.shared.dataTask(with: url) {
@@ -142,6 +209,5 @@ class ProfileViewController: UIViewController {
             }
         }
     }
-    
 
 }

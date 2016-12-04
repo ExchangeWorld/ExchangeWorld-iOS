@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -158,24 +159,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bwN-1y-Kga" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-845.625" y="1617.2535211267607"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="biU-ph-F0l">
-            <objects>
-                <viewController id="6v6-29-QM7" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="zJF-hA-2an"/>
-                        <viewControllerLayoutGuide type="bottom" id="veL-7F-1J7"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="9Lw-Eg-QT9">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="q1Y-xk-Vqv" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-846" y="2311"/>
         </scene>
         <!--Home-->
         <scene sceneID="6xN-oP-HUz">
@@ -635,7 +618,7 @@
         <scene sceneID="ohB-MZ-NGF">
             <objects>
                 <navigationController title="ExchangeWorld" automaticallyAdjustsScrollViewInsets="NO" id="u0e-gw-uJF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="上傳" image="upload50" id="km5-bD-NOO"/>
+                    <tabBarItem key="tabBarItem" title="Upload" image="upload50" id="km5-bD-NOO"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Gho-Gy-aq4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -650,10 +633,10 @@
             </objects>
             <point key="canvasLocation" x="-1179.375" y="840.84507042253517"/>
         </scene>
-        <!--View Controller-->
+        <!--User Star View Controller-->
         <scene sceneID="6NS-Ld-YrD">
             <objects>
-                <viewController id="bms-Qs-nAw" sceneMemberID="viewController">
+                <viewController id="bms-Qs-nAw" customClass="UserStarViewController" customModule="ExchangeWorld" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ayH-Rz-m81"/>
                         <viewControllerLayoutGuide type="bottom" id="4LH-eC-BfL"/>
@@ -661,12 +644,61 @@
                     <view key="view" contentMode="scaleToFill" id="PXm-rR-cdJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="332"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jNK-f3-gov">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="332"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SwN-nT-qum">
+                                    <size key="itemSize" width="282" height="141"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="15" minY="15" maxX="15" maxY="15"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="lg2-C0-b3J">
+                                        <rect key="frame" x="19" y="15" width="282" height="141"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="282" height="141"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HhV-j7-2wf">
+                                                    <rect key="frame" x="0.0" y="0.0" width="180" height="141"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="HhV-j7-2wf" secondAttribute="height" multiplier="60:47" id="H9S-2H-LjB"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="HhV-j7-2wf" firstAttribute="top" secondItem="lg2-C0-b3J" secondAttribute="top" id="kej-wc-niH"/>
+                                            <constraint firstItem="HhV-j7-2wf" firstAttribute="leading" secondItem="lg2-C0-b3J" secondAttribute="leading" id="mAs-oA-3xd"/>
+                                            <constraint firstAttribute="bottom" secondItem="HhV-j7-2wf" secondAttribute="bottom" id="skk-7s-RdH"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="bms-Qs-nAw" id="RHm-94-EYo"/>
+                                    <outlet property="delegate" destination="bms-Qs-nAw" id="rXP-jC-0jZ"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="0.89805201479999996" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="jNK-f3-gov" secondAttribute="trailing" id="81r-nn-Zf0"/>
+                            <constraint firstItem="jNK-f3-gov" firstAttribute="leading" secondItem="PXm-rR-cdJ" secondAttribute="leading" id="I85-Yr-1Kw"/>
+                            <constraint firstItem="jNK-f3-gov" firstAttribute="top" secondItem="ayH-Rz-m81" secondAttribute="bottom" id="NnP-Nu-Hrb"/>
+                            <constraint firstItem="4LH-eC-BfL" firstAttribute="top" secondItem="jNK-f3-gov" secondAttribute="bottom" id="oZK-P7-CK0"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="userStarCollectionView" destination="jNK-f3-gov" id="9hn-MW-lgg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PW3-u4-LTV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="39" y="1507"/>
+            <point key="canvasLocation" x="37.5" y="1506.338028169014"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="lgd-x9-up6">
@@ -684,7 +716,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q2C-ud-vYz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="679" y="1507"/>
+            <point key="canvasLocation" x="744" y="1506"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tbM-cN-jXJ">
@@ -702,7 +734,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DQL-qy-KsC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1313" y="1506"/>
+            <point key="canvasLocation" x="1448" y="1507"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="8yR-Yz-8nk">
@@ -720,7 +752,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FEt-H4-vfY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1956" y="1501"/>
+            <point key="canvasLocation" x="2160" y="1506"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="XUP-zc-nMB">
@@ -738,7 +770,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wqs-L7-CiY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2601" y="1501"/>
+            <point key="canvasLocation" x="2884" y="1506"/>
         </scene>
         <!--Profile-->
         <scene sceneID="fdV-rD-QNu">

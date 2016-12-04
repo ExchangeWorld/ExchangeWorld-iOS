@@ -27,8 +27,9 @@ class uploadViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     var pickedImage: UIImage!
     
-    
+    var categoryNum = 0
     let categories = ["書籍", "教科書", "電子產品", "3C配件", "服飾", "化妝品", "飾品", "食物", "家庭用品", "體育用品", "電玩遊戲", "其他"]
+    let categoriesEng = ["Books", "Textbooks", "3C", "Clothes", "Cosmetic", "Accessories", "Food", "HouseWare", "Sports", "Games", "Others"]
     let picker = UIPickerView()
     
     
@@ -77,6 +78,7 @@ class uploadViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         uploadCategoryTextField.text = categories[row]
+        categoryNum = row
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
@@ -89,7 +91,7 @@ class uploadViewController: UIViewController, UIImagePickerControllerDelegate, U
         print("111")
         httpPost(URL: "\(Constants.API_SERVER_URL)/api/upload/image?token=\(Constants.exwdToken)", parameters: ["filesize":Constants.imageSize, "filename": "\(uploadNameTextField.text)" , "base64": "\(Constants.imageInBase64)", "filetype": Constants.imageType],returnJsonFormat: false)
         
-        httpPost(URL: "\(Constants.API_SERVER_URL)/api/goods/post?token=\(Constants.exwdToken)", parameters: ["name":"\(uploadNameTextField.text!)", "category":"\(uploadCategoryTextField.text!)", "description":"\(uploadContextTextView.text!)", "photo_path":"[\"\(Constants.imageURL)\"]", "position_x":121.5453914, "position_y":25.0261973],returnJsonFormat: true)
+        httpPost(URL: "\(Constants.API_SERVER_URL)/api/goods/post?token=\(Constants.exwdToken)", parameters: ["name":"\(uploadNameTextField.text!)", "category":"\(categoriesEng[categoryNum])", "description":"\(uploadContextTextView.text!)", "photo_path":"[\"\(Constants.imageURL)\"]", "position_x":121.5453914, "position_y":25.0261973],returnJsonFormat: true)
         
 //        var alert = UIAlertController(title: "新增物品", message: "上傳成功", preferredStyle: UIAlertControllerStyle.alert)
 //        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
