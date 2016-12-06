@@ -29,5 +29,8 @@ struct Constants {
     static var imageSize : Int = 0
     static var imageType : String = ""
     static var imageURL : String = ""
+    static var uid : Int = 0
+    static var userStarImageURLArrayNP : [String] = []
+    static var userStarImageURLArrayP : [String] = []
 }
 

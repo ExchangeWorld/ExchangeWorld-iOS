@@ -22,6 +22,8 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         loginbutton.delegate = self
         
         
+        
+        
     }
 
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
@@ -75,8 +77,50 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
          
             
             httpPost(URL: "\(Constants.API_SERVER_URL)/api/authenticate/login", parameters: ["fb": true , "identity": Constants.facebookID], returnJsonFormat : true)
-            //httpPost(URL: "\(Constants.API_SERVER_URL)/api/goods/post?token=\(Constants.exwdToken)", parameters: ["name":"1202try1", "category":"Others", "description":"1202try1", "photo_path":"[\"http://exwd.csie.org/images/a5cc1dc3b5b0b3b4a44c346be5a8eccfd13a475f3a304405662b9c5ae8ac66fb.jpeg\"]", "position_x":121.5453914, "position_y":25.0261973])
-            //self.posting(URL: "http://exwd.csie.org:43002/api/goods/post?token=a8127148e28cdac117c80b77c1d7527795104f36")
+        
+            //get uid, userStarImage
+            
+            let url = NSURL(string: "\(Constants.API_SERVER_URL)/api/user?identity=\(Constants.facebookID)")
+            
+            let task = URLSession.shared.dataTask(with: url! as URL) {(data, response, error) in
+                if error != nil
+                {
+                    print("error=\(error)")
+                }
+                
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers)
+                    
+                    for dictionary1 in json as! [String: Any] {
+                        if(dictionary1.key == "uid"){
+                            Constants.uid = dictionary1.value as! Int
+                            print(Constants.uid)
+                        }
+                        if(dictionary1.key == "star_starring_user"){
+                            let dictionary1Value = (dictionary1.value as AnyObject)
+                            for count in 1...dictionary1Value.count{
+                                for dictionary2 in dictionary1Value[count-1] as! [String: Any]{
+                                    if(dictionary2.key == "goods"){
+                                        let dictionary2Value = (dictionary2.value as AnyObject)
+                                        
+                                        for dictionary3 in dictionary2Value as! [String: Any]{
+                                            if(dictionary3.key == "photo_path"){
+                                                Constants.userStarImageURLArrayNP.append(dictionary3.value as! String)
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    Constants.userStarImageURLArrayP = urlArrayTranformation(url: Constants.userStarImageURLArrayNP)
+                    print(Constants.userStarImageURLArrayP)
+                }catch{
+                    print("JSONERROR")
+                }
+            }
+            task.resume()
+        
         }
         
         let storyboard: UIStoryboard = self.storyboard!
