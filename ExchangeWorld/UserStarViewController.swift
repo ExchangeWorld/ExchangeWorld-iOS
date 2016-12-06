@@ -52,6 +52,11 @@ class UserStarViewController: UIViewController, UICollectionViewDataSource, UICo
         
         
         cell.userStarImageView.image = self.starImageArray[indexPath.row]
+        cell.userStarObjNameLabel.text = Constants.userStarObjNameArray[indexPath.row]
+        cell.userStarCategoryNameLabel.text = Constants.userStarCategotyArray[indexPath.row]
+        cell.userStarOwnerNameLabel.text = Constants.userStarOwnerNameArray[indexPath.row]
+        
+    
         
 //        if var Image1 : UIImage = cell.viewWithTag(1) as? UIImage{
 //        
@@ -80,23 +85,6 @@ class UserStarViewController: UIViewController, UICollectionViewDataSource, UICo
         task.resume()
         semaphore.wait()
     }
-    
-//    func downloadImage(url: URL) {
-//        print("Download Started")
-//        getDataFromUrl(url: url) { (data, response, error)  in
-//            guard let data = data, error == nil else { return }
-//            print(response?.suggestedFilename ?? url.lastPathComponent)
-//            print("Download Finished")
-//            DispatchQueue.main.async() { () -> Void in
-//                self.image1 = UIImage(data: data)
-//                if (self.image1 != nil){
-//                    print("wtfFFFFFFF")
-//                    
-//                }
-//            }
-//        }
-//    }
-    
     
     
 }

@@ -11,4 +11,7 @@ import UIKit
 class UserStarCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var userStarImageView: UIImageView!
+    @IBOutlet weak var userStarObjNameLabel: UILabel!
+    @IBOutlet weak var userStarCategoryNameLabel: UILabel!
+    @IBOutlet weak var userStarOwnerNameLabel: UILabel!
 }

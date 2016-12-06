@@ -149,15 +149,5 @@ class ProfileViewController: UIViewController {
     }
     
     
-
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "UserStar" {
-//            let destViewController = segue.destination as? UserStarViewController
-//            
-//            destViewController?.starImageArray = Constants.userStarImageURLArrayP
-//        }
-//    }
-    
-    
     
 }

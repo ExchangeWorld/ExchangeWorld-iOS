@@ -96,16 +96,30 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
                             Constants.uid = dictionary1.value as! Int
                             print(Constants.uid)
                         }
+                        print(dictionary1.value)
                         if(dictionary1.key == "star_starring_user"){
                             let dictionary1Value = (dictionary1.value as AnyObject)
                             for count in 1...dictionary1Value.count{
                                 for dictionary2 in dictionary1Value[count-1] as! [String: Any]{
                                     if(dictionary2.key == "goods"){
                                         let dictionary2Value = (dictionary2.value as AnyObject)
-                                        
                                         for dictionary3 in dictionary2Value as! [String: Any]{
                                             if(dictionary3.key == "photo_path"){
                                                 Constants.userStarImageURLArrayNP.append(dictionary3.value as! String)
+                                            }
+                                            if (dictionary3.key == "category"){
+                                                Constants.userStarCategotyArray.append(dictionary3.value as! String)
+                                            }
+                                            if (dictionary3.key == "name"){
+                                                Constants.userStarObjNameArray.append(dictionary3.value as! String)
+                                            }
+                                            if (dictionary3.key == "owner"){
+                                                let dictionary3Value = (dictionary3.value as AnyObject)
+                                                for dictionary4 in dictionary3Value as! [String: Any]{
+                                                    if (dictionary4.key == "name"){
+                                                        Constants.userStarOwnerNameArray.append(dictionary4.value as! String)
+                                                    }
+                                                }
                                             }
                                         }
                                     }
@@ -114,7 +128,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
                         }
                     }
                     Constants.userStarImageURLArrayP = urlArrayTranformation(url: Constants.userStarImageURLArrayNP)
-                    print(Constants.userStarImageURLArrayP)
+                    
                 }catch{
                     print("JSONERROR")
                 }

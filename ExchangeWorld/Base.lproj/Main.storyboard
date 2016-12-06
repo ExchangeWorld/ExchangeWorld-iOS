@@ -662,22 +662,70 @@
                                             <rect key="frame" x="0.0" y="0.0" width="282" height="141"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileBackground" translatesAutoresizingMaskIntoConstraints="NO" id="HhV-j7-2wf">
+                                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="road_1-1.png" translatesAutoresizingMaskIntoConstraints="NO" id="HhV-j7-2wf">
                                                     <rect key="frame" x="0.0" y="0.0" width="180" height="141"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="HhV-j7-2wf" secondAttribute="height" multiplier="60:47" id="H9S-2H-LjB"/>
                                                     </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WUM-UR-TbH">
+                                                    <rect key="frame" x="195" y="43" width="71" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="ex6-uF-mKB">
+                                                    <rect key="frame" x="195" y="106" width="19" height="19"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="19" id="3I0-OJ-pFu"/>
+                                                        <constraint firstAttribute="width" constant="19" id="M4g-fp-XVN"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="3C_accessories" translatesAutoresizingMaskIntoConstraints="NO" id="rKG-On-b1Y">
+                                                    <rect key="frame" x="195" y="82" width="19" height="19"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="19" id="elZ-8A-T95"/>
+                                                        <constraint firstAttribute="width" constant="19" id="uJk-ok-xg9"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SA8-yM-UhN">
+                                                    <rect key="frame" x="222" y="104" width="44" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ktl-DE-CCc">
+                                                    <rect key="frame" x="222" y="78" width="44" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="SA8-yM-UhN" firstAttribute="leading" secondItem="ex6-uF-mKB" secondAttribute="trailing" constant="8" id="28C-up-YQJ"/>
+                                            <constraint firstItem="WUM-UR-TbH" firstAttribute="top" secondItem="lg2-C0-b3J" secondAttribute="topMargin" constant="35" id="3bg-a8-KwL"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="WUM-UR-TbH" secondAttribute="trailing" constant="8" id="Co0-Zi-Ydm"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="ex6-uF-mKB" secondAttribute="bottom" constant="8" id="HMB-cA-tJ0"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="ktl-DE-CCc" secondAttribute="trailing" constant="8" id="Sna-Ts-E2O"/>
+                                            <constraint firstItem="ex6-uF-mKB" firstAttribute="leading" secondItem="HhV-j7-2wf" secondAttribute="trailing" constant="15" id="UOM-4c-928"/>
+                                            <constraint firstItem="ktl-DE-CCc" firstAttribute="leading" secondItem="rKG-On-b1Y" secondAttribute="trailing" constant="8" id="VCX-kg-Twc"/>
+                                            <constraint firstItem="ex6-uF-mKB" firstAttribute="top" secondItem="rKG-On-b1Y" secondAttribute="bottom" constant="5" id="ZiR-g9-0J9"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="SA8-yM-UhN" secondAttribute="trailing" constant="8" id="ffr-tc-TbM"/>
+                                            <constraint firstItem="rKG-On-b1Y" firstAttribute="leading" secondItem="HhV-j7-2wf" secondAttribute="trailing" constant="15" id="g3I-Dz-Z4D"/>
+                                            <constraint firstItem="SA8-yM-UhN" firstAttribute="top" secondItem="ktl-DE-CCc" secondAttribute="bottom" constant="5" id="iwa-kR-fUb"/>
                                             <constraint firstItem="HhV-j7-2wf" firstAttribute="top" secondItem="lg2-C0-b3J" secondAttribute="top" id="kej-wc-niH"/>
                                             <constraint firstItem="HhV-j7-2wf" firstAttribute="leading" secondItem="lg2-C0-b3J" secondAttribute="leading" id="mAs-oA-3xd"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="SA8-yM-UhN" secondAttribute="bottom" constant="8" id="orI-sZ-AdZ"/>
+                                            <constraint firstItem="WUM-UR-TbH" firstAttribute="leading" secondItem="HhV-j7-2wf" secondAttribute="trailing" constant="15" id="sZL-SR-3hT"/>
                                             <constraint firstAttribute="bottom" secondItem="HhV-j7-2wf" secondAttribute="bottom" id="skk-7s-RdH"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="userStarCategoryNameLabel" destination="ktl-DE-CCc" id="NpQ-j6-AJ0"/>
                                             <outlet property="userStarImageView" destination="HhV-j7-2wf" id="1Pn-lW-Z2p"/>
+                                            <outlet property="userStarObjNameLabel" destination="WUM-UR-TbH" id="GMX-vI-IbM"/>
+                                            <outlet property="userStarOwnerNameLabel" destination="SA8-yM-UhN" id="RhL-Fc-M5n"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -796,9 +844,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="3C_accessories" width="128" height="128"/>
         <image name="Setting" width="25" height="25"/>
         <image name="pin-map50" width="19" height="25"/>
-        <image name="profileBackground" width="400" height="209"/>
+        <image name="road_1-1.png" width="1" height="1"/>
         <image name="upload50" width="25" height="25"/>
         <image name="user" width="25" height="25"/>
     </resources>

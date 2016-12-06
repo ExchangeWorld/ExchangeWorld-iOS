@@ -21,6 +21,9 @@ struct Constants {
         return url
     }
     
+    static let categoriesCHIName = ["書籍", "教科書", "電子產品", "3C配件", "服飾", "化妝品", "飾品", "食物", "家庭用品", "體育用品", "電玩遊戲", "其他"]
+    static let categoriesEngName = ["Books", "Textbooks", "3C", "Clothes", "Cosmetic", "Accessories", "Food", "HouseWare", "Sports", "Games", "Others"]
+    
     static var facebookID : String = ""
     static var facebookProfilePicURL : String = ""
     static var facebookName : String = ""
@@ -32,5 +35,9 @@ struct Constants {
     static var uid : Int = 0
     static var userStarImageURLArrayNP : [String] = []
     static var userStarImageURLArrayP : [String] = []
+    static var userStarCategotyArray : [String] = []
+    static var userStarObjNameArray : [String] = []
+    static var userStarOwnerNameArray : [String] = []
+    
 }
 
