@@ -53,10 +53,12 @@ func httpGet(URL: String, alreadyGetUID: Int){
                                             }
                                             if (dictionary3.key == "owner"){
                                                 let dictionary3Value = (dictionary3.value as AnyObject)
+                                                if(dictionary3Value.count != 0){
                                                 for dictionary4 in dictionary3Value as! [String: Any]{
                                                     if (dictionary4.key == "name"){
                                                         Constants.userStarOwnerNameArray.append(dictionary4.value as! String)
                                                     }
+                                                }
                                                 }
                                             }
                                         }
