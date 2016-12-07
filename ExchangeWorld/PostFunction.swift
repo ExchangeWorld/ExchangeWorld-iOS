@@ -38,7 +38,6 @@ func httpPost(URL:String,parameters: [String : Any],returnJsonFormat: Bool) {
                 let NSresponseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
                 let responseString: String = NSresponseString! as String
                 Constants.imageURL = responseString
-                print(Constants.imageURL)
                 
             }
             else if (returnJsonFormat == true){
@@ -47,7 +46,6 @@ func httpPost(URL:String,parameters: [String : Any],returnJsonFormat: Bool) {
                 for dictionary in json as! [String: Any] {
                     if(dictionary.key == "token"){
                         Constants.exwdToken = dictionary.value as! String
-                        print(Constants.exwdToken)
                     }
                 }
             }

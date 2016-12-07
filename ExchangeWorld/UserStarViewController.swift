@@ -25,7 +25,7 @@ class UserStarViewController: UIViewController, UICollectionViewDataSource, UICo
         print(starImageURLArray)
         
         
-        
+        if(starImageURLArray.count != 0){
         for i in 1 ... starImageURLArray.count{
             if let checkedUrl = URL(string: starImageURLArray[i-1]) {
                 
@@ -33,7 +33,7 @@ class UserStarViewController: UIViewController, UICollectionViewDataSource, UICo
                 getDataFromUrl(url: checkedUrl){(data, response, error) in }
             }
         }
-
+        }
         
     }
 

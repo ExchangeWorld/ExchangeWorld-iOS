@@ -46,7 +46,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
                 return
             }
             
-            print(result)
+            //print(result)
             
             // result -> facebookID
             let resultInFunc = result as! Dictionary<String, AnyObject>
@@ -56,7 +56,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
                 }
                 if(key == "name"){
                     Constants.facebookName = value as! String
-                    print(Constants.facebookName)
+                    //print(Constants.facebookName)
                 }
                 if(key == "picture"){
                     let resultInFunc2 = value as! Dictionary<String,AnyObject>
@@ -66,7 +66,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
                             for (key3,value3) in resultInFunc3{
                                 if(key3 == "url"){
                                     Constants.facebookProfilePicURL = value3 as! String
-                                    print(Constants.facebookProfilePicURL)
+                                    //print(Constants.facebookProfilePicURL)
                                 }
                             }
                         }
@@ -77,63 +77,8 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
          
             
             httpPost(URL: "\(Constants.API_SERVER_URL)/api/authenticate/login", parameters: ["fb": true , "identity": Constants.facebookID], returnJsonFormat : true)
-        
-            //get uid, userStarImage
             
-            let url = NSURL(string: "\(Constants.API_SERVER_URL)/api/user?identity=\(Constants.facebookID)")
-            
-            let task = URLSession.shared.dataTask(with: url! as URL) {(data, response, error) in
-                if error != nil
-                {
-                    print("error=\(error)")
-                }
-                
-                do {
-                    let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers)
-                    
-                    for dictionary1 in json as! [String: Any] {
-                        if(dictionary1.key == "uid"){
-                            Constants.uid = dictionary1.value as! Int
-                            print(Constants.uid)
-                        }
-                        print(dictionary1.value)
-                        if(dictionary1.key == "star_starring_user"){
-                            let dictionary1Value = (dictionary1.value as AnyObject)
-                            for count in 1...dictionary1Value.count{
-                                for dictionary2 in dictionary1Value[count-1] as! [String: Any]{
-                                    if(dictionary2.key == "goods"){
-                                        let dictionary2Value = (dictionary2.value as AnyObject)
-                                        for dictionary3 in dictionary2Value as! [String: Any]{
-                                            if(dictionary3.key == "photo_path"){
-                                                Constants.userStarImageURLArrayNP.append(dictionary3.value as! String)
-                                            }
-                                            if (dictionary3.key == "category"){
-                                                Constants.userStarCategotyArray.append(dictionary3.value as! String)
-                                            }
-                                            if (dictionary3.key == "name"){
-                                                Constants.userStarObjNameArray.append(dictionary3.value as! String)
-                                            }
-                                            if (dictionary3.key == "owner"){
-                                                let dictionary3Value = (dictionary3.value as AnyObject)
-                                                for dictionary4 in dictionary3Value as! [String: Any]{
-                                                    if (dictionary4.key == "name"){
-                                                        Constants.userStarOwnerNameArray.append(dictionary4.value as! String)
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    Constants.userStarImageURLArrayP = urlArrayTranformation(url: Constants.userStarImageURLArrayNP)
-                    
-                }catch{
-                    print("JSONERROR")
-                }
-            }
-            task.resume()
+            httpGet(URL: "\(Constants.API_SERVER_URL)/api/user?identity=\(Constants.facebookID)",alreadyGetUID : 1)
         
         }
         

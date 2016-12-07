@@ -10,7 +10,7 @@ import Foundation
 
 func urlArrayTranformation(url : [String]) -> [String]{
     var imageURLArray : [String] = []
-    
+    if(url.count != 0){
     for Count in 1 ... url.count {
         
         let imageArray2 = url[Count-1].characters.map { String($0) }
@@ -20,6 +20,7 @@ func urlArrayTranformation(url : [String]) -> [String]{
             imageURL = imageURL + imageArray2[i-1]
         }
         imageURLArray.append(imageURL)
+    }
     }
     return imageURLArray
 }

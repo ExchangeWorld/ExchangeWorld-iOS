@@ -662,7 +662,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="282" height="141"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="road_1-1.png" translatesAutoresizingMaskIntoConstraints="NO" id="HhV-j7-2wf">
+                                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="road_1-1.png" translatesAutoresizingMaskIntoConstraints="NO" id="HhV-j7-2wf">
                                                     <rect key="frame" x="0.0" y="0.0" width="180" height="141"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="HhV-j7-2wf" secondAttribute="height" multiplier="60:47" id="H9S-2H-LjB"/>
