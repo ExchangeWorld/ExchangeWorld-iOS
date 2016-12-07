@@ -34,11 +34,12 @@ func httpGet(URL: String, alreadyGetUID: Int){
                     if(dictionary1.key == "star_starring_user"){
                     
                         let dictionary1Value = (dictionary1.value as? [AnyObject] ?? [])
-                        //if (dictionary1Value != NSNull){
+                        
                         if(dictionary1Value.count != 0){
                             for count in 0...dictionary1Value.count-1{
                                 for dictionary2 in dictionary1Value[count] as! [String: Any]{
-                                    if(dictionary2.key == "goods" && (dictionary2.value as? String) != nil){
+                                    if(dictionary2.key == "goods" && (dictionary2.value as? String) != ""){
+                                        
                                         let dictionary2Value = (dictionary2.value as AnyObject )
                                         
                                         for dictionary3 in dictionary2Value as! [String: Any]{
@@ -60,6 +61,7 @@ func httpGet(URL: String, alreadyGetUID: Int){
                                                 }    
                                             }
                                         }
+                                        
                                     }
                                     
                                 }
