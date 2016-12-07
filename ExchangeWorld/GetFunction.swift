@@ -38,9 +38,9 @@ func httpGet(URL: String, alreadyGetUID: Int){
                         if(dictionary1Value.count != 0){
                             for count in 0...dictionary1Value.count-1{
                                 for dictionary2 in dictionary1Value[count] as! [String: Any]{
-                                    if(dictionary2.key == "goods"){
-                                        let dictionary2Value = (dictionary2.value as AnyObject)
-                                        if(dictionary2Value.count != 0){
+                                    if(dictionary2.key == "goods" && (dictionary2.value as? String) != nil){
+                                        let dictionary2Value = (dictionary2.value as AnyObject )
+                                        
                                         for dictionary3 in dictionary2Value as! [String: Any]{
                                             if(dictionary3.key == "photo_path"){
                                                 Constants.userStarImageURLArrayNP.append(dictionary3.value as! String)
@@ -53,17 +53,15 @@ func httpGet(URL: String, alreadyGetUID: Int){
                                             }
                                             if (dictionary3.key == "owner"){
                                                 let dictionary3Value = (dictionary3.value as AnyObject)
-                                                if(dictionary3Value.count != 0){
                                                 for dictionary4 in dictionary3Value as! [String: Any]{
                                                     if (dictionary4.key == "name"){
                                                         Constants.userStarOwnerNameArray.append(dictionary4.value as! String)
                                                     }
-                                                }
-                                                }
+                                                }    
                                             }
                                         }
                                     }
-                                    }
+                                    
                                 }
                             }
                         }
