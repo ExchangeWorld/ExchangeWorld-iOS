@@ -40,7 +40,7 @@ func httpGet(URL: String, alreadyGetUID: Int){
                                 for dictionary2 in dictionary1Value[count] as! [String: Any]{
                                     if(dictionary2.key == "goods"){
                                         let dictionary2Value = (dictionary2.value as AnyObject)
-                                    
+                                        if(dictionary2Value.count != 0){
                                         for dictionary3 in dictionary2Value as! [String: Any]{
                                             if(dictionary3.key == "photo_path"){
                                                 Constants.userStarImageURLArrayNP.append(dictionary3.value as! String)
@@ -60,6 +60,7 @@ func httpGet(URL: String, alreadyGetUID: Int){
                                                 }
                                             }
                                         }
+                                    }
                                     }
                                 }
                             }
