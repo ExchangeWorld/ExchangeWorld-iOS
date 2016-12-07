@@ -32,6 +32,8 @@
 		7224FF851DEEB1540020CE85 /* ProfileSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7224FF841DEEB1540020CE85 /* ProfileSegmentedControl.swift */; };
 		72BA14F71DF67346006393E9 /* URLProcessingFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BA14F61DF67346006393E9 /* URLProcessingFunction.swift */; };
 		72BA14F91DF7E6C0006393E9 /* GetFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BA14F81DF7E6C0006393E9 /* GetFunction.swift */; };
+		72BA14FB1DF87C25006393E9 /* Wait4ExchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BA14FA1DF87C25006393E9 /* Wait4ExchCollectionViewCell.swift */; };
+		72BA14FD1DF87C49006393E9 /* Wait4ExchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BA14FC1DF87C49006393E9 /* Wait4ExchViewController.swift */; };
 		E1ADB407C1F4447CA9F48694 /* Pods_ExchangeWorld.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F21E3FFA0DFA9649412216E0 /* Pods_ExchangeWorld.framework */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +89,8 @@
 		7224FF841DEEB1540020CE85 /* ProfileSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileSegmentedControl.swift; sourceTree = "<group>"; };
 		72BA14F61DF67346006393E9 /* URLProcessingFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLProcessingFunction.swift; sourceTree = "<group>"; };
 		72BA14F81DF7E6C0006393E9 /* GetFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFunction.swift; sourceTree = "<group>"; };
+		72BA14FA1DF87C25006393E9 /* Wait4ExchCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wait4ExchCollectionViewCell.swift; sourceTree = "<group>"; };
+		72BA14FC1DF87C49006393E9 /* Wait4ExchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wait4ExchViewController.swift; sourceTree = "<group>"; };
 		F21E3FFA0DFA9649412216E0 /* Pods_ExchangeWorld.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExchangeWorld.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -163,6 +167,8 @@
 				7224FF841DEEB1540020CE85 /* ProfileSegmentedControl.swift */,
 				721F46BD1DF463AF00AAA83D /* UserStarViewController.swift */,
 				721F46FB1DF5344900AAA83D /* UserStarCollectionViewCell.swift */,
+				72BA14FC1DF87C49006393E9 /* Wait4ExchViewController.swift */,
+				72BA14FA1DF87C25006393E9 /* Wait4ExchCollectionViewCell.swift */,
 				18D992671DBC521E00538F00 /* Assets.xcassets */,
 				18D992691DBC521E00538F00 /* LaunchScreen.storyboard */,
 				18D9926C1DBC521E00538F00 /* Info.plist */,
@@ -410,7 +416,9 @@
 				18D992611DBC521E00538F00 /* AppDelegate.swift in Sources */,
 				721F46FC1DF5344900AAA83D /* UserStarCollectionViewCell.swift in Sources */,
 				1870D6C01DC078D100C697DA /* HomeViewController.swift in Sources */,
+				72BA14FB1DF87C25006393E9 /* Wait4ExchCollectionViewCell.swift in Sources */,
 				72BA14F91DF7E6C0006393E9 /* GetFunction.swift in Sources */,
+				72BA14FD1DF87C49006393E9 /* Wait4ExchViewController.swift in Sources */,
 				1870D6CA1DC09E2C00C697DA /* HomeObjectCollectionViewController.swift in Sources */,
 				18812D9C1DE572B500BA0B56 /* uploadaViewController.swift in Sources */,
 				18006E501DC99A1B00C89A91 /* ObjectInfoViewController.swift in Sources */,

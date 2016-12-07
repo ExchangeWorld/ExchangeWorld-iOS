@@ -8,10 +8,11 @@
 
 import Foundation
 
+// alreadyGetUID : 1 -> facebookID, 2 -> uid
+
 func httpGet(URL: String, alreadyGetUID: Int){
-    //get uid, userStarImage
-    
-//    let url = NSURL(string: "\(Constants.API_SERVER_URL)/api/user?identity=\(Constants.facebookID)")
+
+
     let url = NSURL(string: URL)
     
     let task = URLSession.shared.dataTask(with: url! as URL) {(data, response, error) in
@@ -31,6 +32,35 @@ func httpGet(URL: String, alreadyGetUID: Int){
                         Constants.uid = dictionary1.value as! Int
                     }
                 
+                    if(dictionary1.key == "goods"){
+                        let dictionary1Value = (dictionary1.value as? [AnyObject] ?? [])
+                        
+                        if(dictionary1Value.count != 0){
+                            for count in 0...dictionary1Value.count-1{
+                                for dictionary2 in dictionary1Value[count] as! [String: Any]{
+                                    if(dictionary2.key == "exchanged"){
+                                        if(dictionary2.value as! Int == 0){
+                                            for dictionary2 in dictionary1Value[count] as! [String: Any]{
+                                                if(dictionary2.key == "photo_path"){
+                                                    Constants.userWait4ExchImageURLArrayNP.append(dictionary2.value as! String)
+                                                }
+                                                if(dictionary2.key == "name"){
+                                                    Constants.userWait4ExchObjNameArray.append(dictionary2.value as! String)
+                                                }
+                                                if(dictionary2.key == "category"){
+                                                    Constants.userWait4ExchCategoryArray.append(dictionary2.value as! String)
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+                    
+                    
+                    
                     if(dictionary1.key == "star_starring_user"){
                     
                         let dictionary1Value = (dictionary1.value as? [AnyObject] ?? [])
@@ -38,7 +68,7 @@ func httpGet(URL: String, alreadyGetUID: Int){
                         if(dictionary1Value.count != 0){
                             for count in 0...dictionary1Value.count-1{
                                 for dictionary2 in dictionary1Value[count] as! [String: Any]{
-                                    if(dictionary2.key == "goods" && (dictionary2.value as? String) != ""){
+                                    if(dictionary2.key == "goods" && nullToNil(value: dictionary2.value as AnyObject?) != nil){
                                         
                                         let dictionary2Value = (dictionary2.value as AnyObject )
                                         
@@ -70,14 +100,14 @@ func httpGet(URL: String, alreadyGetUID: Int){
                     }
                 }
             }
-            
+            Constants.userWait4ExchImageURLArrayP = urlArrayTranformation(url: Constants.userWait4ExchImageURLArrayNP)
             Constants.userStarImageURLArrayP = urlArrayTranformation(url: Constants.userStarImageURLArrayNP)
-            if(alreadyGetUID == 1){
-                httpGet(URL: "\(Constants.API_SERVER_URL)/api/user?uid=\(Constants.uid)",alreadyGetUID: 2)
-            }
-            else if(alreadyGetUID == 2){
-                print("successed called uid func")
-            }
+//            if(alreadyGetUID == 1){
+//                httpGet(URL: "\(Constants.API_SERVER_URL)/api/user?uid=\(Constants.uid)",alreadyGetUID: 2)
+//            }
+//            else if(alreadyGetUID == 2){
+//                print("successed called uid func")
+//            }
             
             
         }catch{

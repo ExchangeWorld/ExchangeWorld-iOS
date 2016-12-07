@@ -38,6 +38,9 @@ struct Constants {
     static var userStarCategotyArray : [String] = []
     static var userStarObjNameArray : [String] = []
     static var userStarOwnerNameArray : [String] = []
-    
+    static var userWait4ExchImageURLArrayNP : [String] = []
+    static var userWait4ExchImageURLArrayP : [String] = []
+    static var userWait4ExchObjNameArray : [String] = []
+    static var userWait4ExchCategoryArray : [String] = []
 }
 

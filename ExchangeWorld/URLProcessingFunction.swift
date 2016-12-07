@@ -24,3 +24,12 @@ func urlArrayTranformation(url : [String]) -> [String]{
     }
     return imageURLArray
 }
+
+func nullToNil(value : AnyObject?) -> AnyObject? {
+    if value is NSNull {
+        return nil
+    } else {
+        return value
+    }
+}
+
