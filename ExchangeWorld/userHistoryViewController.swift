@@ -53,7 +53,7 @@ class userHistoryViewController: UIViewController, UICollectionViewDataSource, U
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! userHistoryCollectionViewCell
         
-        cell.userOwnerObjImageView.frame = CGRect(x: 0, y: 0, width: collectionView.bounds.size.width*0.5-14, height: collectionView.bounds.size.width*0.5-15)
+        cell.userOwnerObjImageView.frame = CGRect(x: 0, y: 0, width: collectionView.bounds.size.width*0.5-15, height: collectionView.bounds.size.width*0.5-15)
         
         cell.userOtherObjImageView.frame = CGRect(x: collectionView.bounds.size.width*0.5-15, y: 0, width: collectionView.bounds.size.width*0.5-15, height: collectionView.bounds.size.width*0.5-15)
 //

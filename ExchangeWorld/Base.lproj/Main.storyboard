@@ -24,34 +24,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OfY-si-2aE">
-                                <rect key="frame" x="40" y="76" width="240" height="128"/>
+                                <rect key="frame" x="31" y="76" width="258" height="203"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="CxT-x5-2hW"/>
-                                    <constraint firstAttribute="width" constant="240" id="hta-h4-49s"/>
+                                    <constraint firstAttribute="width" secondItem="OfY-si-2aE" secondAttribute="height" multiplier="139:109" id="rVk-cX-kV1"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rRF-CA-4yA">
-                                <rect key="frame" x="53" y="212" width="31" height="30"/>
-                                <state key="normal" title="相機"/>
-                                <connections>
-                                    <action selector="cameraAction:" destination="ApY-hn-Wzh" eventType="touchUpInside" id="rhh-6G-n4y"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U5e-0M-osM">
-                                <rect key="frame" x="53" y="250" width="77" height="30"/>
-                                <state key="normal" title="相簿內選取"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U5e-0M-osM">
+                                <rect key="frame" x="252" y="245" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="UK7-pH-EHh"/>
+                                    <constraint firstAttribute="height" constant="32" id="stp-G2-ue2"/>
+                                </constraints>
+                                <state key="normal" image="Photos50&amp;whiteedge"/>
                                 <connections>
                                     <action selector="photoLibraryAction:" destination="ApY-hn-Wzh" eventType="touchUpInside" id="azl-mf-UBg"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="商品名稱與說明" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TKu-ax-Lna">
-                                <rect key="frame" x="16" y="288" width="122" height="21"/>
+                                <rect key="frame" x="16" y="291" width="122" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jIN-xr-bfa">
-                                <rect key="frame" x="20" y="317" width="288" height="200"/>
+                                <rect key="frame" x="16" y="315" width="288" height="200"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bUd-mV-G00">
                                         <rect key="frame" x="8" y="8" width="100" height="21"/>
@@ -119,20 +115,32 @@
                                     <constraint firstItem="BET-aB-VLv" firstAttribute="leading" secondItem="jIN-xr-bfa" secondAttribute="leading" constant="8" id="r6b-mU-16W"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rRF-CA-4yA">
+                                <rect key="frame" x="36" y="244" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="dXK-ih-o2h"/>
+                                    <constraint firstAttribute="width" constant="30" id="t25-Es-YgH"/>
+                                </constraints>
+                                <state key="normal" image="Camera50&amp;whiteedge"/>
+                                <connections>
+                                    <action selector="cameraAction:" destination="ApY-hn-Wzh" eventType="touchUpInside" id="rhh-6G-n4y"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.83898696669999995" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="rRF-CA-4yA" firstAttribute="top" secondItem="OfY-si-2aE" secondAttribute="bottom" constant="8" id="4xe-en-OK3"/>
-                            <constraint firstItem="U5e-0M-osM" firstAttribute="top" secondItem="rRF-CA-4yA" secondAttribute="bottom" constant="8" id="Ifv-Bo-Cmx"/>
-                            <constraint firstItem="OfY-si-2aE" firstAttribute="centerX" secondItem="D38-cS-SI8" secondAttribute="centerX" id="KF3-NE-n16"/>
-                            <constraint firstItem="TKu-ax-Lna" firstAttribute="top" secondItem="U5e-0M-osM" secondAttribute="bottom" constant="8" id="KVh-y3-bqZ"/>
+                            <constraint firstItem="TKu-ax-Lna" firstAttribute="top" secondItem="OfY-si-2aE" secondAttribute="bottom" constant="12" id="2Fm-8c-bdO"/>
+                            <constraint firstItem="jIN-xr-bfa" firstAttribute="top" secondItem="TKu-ax-Lna" secondAttribute="bottom" constant="8" id="3b9-ND-Q2C"/>
+                            <constraint firstItem="rRF-CA-4yA" firstAttribute="leading" secondItem="D38-cS-SI8" secondAttribute="leadingMargin" constant="20" id="98O-nY-mRk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="U5e-0M-osM" secondAttribute="trailing" constant="20" id="EC2-Xl-9Za"/>
+                            <constraint firstItem="OfY-si-2aE" firstAttribute="leading" secondItem="D38-cS-SI8" secondAttribute="leadingMargin" constant="15" id="ETJ-39-zny"/>
                             <constraint firstItem="jIN-xr-bfa" firstAttribute="trailing" secondItem="D38-cS-SI8" secondAttribute="trailingMargin" constant="4" id="RK1-CJ-W9N"/>
-                            <constraint firstItem="jIN-xr-bfa" firstAttribute="top" secondItem="TKu-ax-Lna" secondAttribute="bottom" constant="8" id="UKE-Ep-PjJ"/>
-                            <constraint firstItem="rRF-CA-4yA" firstAttribute="leading" secondItem="D38-cS-SI8" secondAttribute="leadingMargin" constant="37" id="Vmr-4U-g0K"/>
-                            <constraint firstItem="TKu-ax-Lna" firstAttribute="leading" secondItem="D38-cS-SI8" secondAttribute="leadingMargin" id="Y9m-oS-SNR"/>
-                            <constraint firstItem="OfY-si-2aE" firstAttribute="top" secondItem="9Cx-j1-rYM" secondAttribute="bottom" constant="12" id="ZcO-zM-Vl1"/>
-                            <constraint firstItem="U5e-0M-osM" firstAttribute="leading" secondItem="D38-cS-SI8" secondAttribute="leadingMargin" constant="37" id="aNY-iP-7w9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="OfY-si-2aE" secondAttribute="trailing" constant="15" id="aCi-TW-tya"/>
+                            <constraint firstItem="OfY-si-2aE" firstAttribute="top" secondItem="9Cx-j1-rYM" secondAttribute="bottom" constant="12" id="bEh-Eb-vI9"/>
+                            <constraint firstItem="jIN-xr-bfa" firstAttribute="top" secondItem="U5e-0M-osM" secondAttribute="bottom" constant="43" id="e5b-fr-mWG"/>
+                            <constraint firstItem="TKu-ax-Lna" firstAttribute="leading" secondItem="D38-cS-SI8" secondAttribute="leadingMargin" id="eWN-gB-GFe"/>
                             <constraint firstItem="jIN-xr-bfa" firstAttribute="leading" secondItem="D38-cS-SI8" secondAttribute="leadingMargin" constant="4" id="kuV-a8-rGL"/>
+                            <constraint firstItem="TKu-ax-Lna" firstAttribute="top" secondItem="rRF-CA-4yA" secondAttribute="bottom" constant="17" id="n7d-LM-Xjz"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="4KF-IO-5ip">
@@ -964,11 +972,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="282" height="197"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uGt-CR-ryJ">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uGt-CR-ryJ">
                                                     <rect key="frame" x="0.0" y="0.0" width="141" height="141"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="el7-Om-s8S">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="el7-Om-s8S">
                                                     <rect key="frame" x="141" y="0.0" width="141" height="141"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -1133,6 +1141,8 @@
     </scenes>
     <resources>
         <image name="3C_accessories" width="128" height="128"/>
+        <image name="Camera50&amp;whiteedge" width="50" height="50"/>
+        <image name="Photos50&amp;whiteedge" width="50" height="50"/>
         <image name="Setting" width="25" height="25"/>
         <image name="icon(48-48)" width="48" height="48"/>
         <image name="pin-map50" width="19" height="25"/>
