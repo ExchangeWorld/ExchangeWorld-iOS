@@ -40,7 +40,18 @@ struct Constants {
     static var userStarOwnerNameArray : [String] = []
     static var userWait4ExchImageURLArrayNP : [String] = []
     static var userWait4ExchImageURLArrayP : [String] = []
-    static var userWait4ExchObjNameArray : [String] = []
     static var userWait4ExchCategoryArray : [String] = []
+    static var userWait4ExchObjNameArray : [String] = []
+    static var userExchangingImageURLArrayNP : [String] = []
+    static var userExchangingImageURLArrayP : [String] = []
+    static var userExchangingCategoryArray : [String] = []
+    static var userExchangingObjNameArray : [String] = []
+    static var userExchHistoryImageURLArrayNP : [String] = []
+    static var userExchHistoryImageURLArrayP : [String] = []
+    static var userExchHistoryCategoryArray : [String] = []
+    static var userExchHistoryObjNameArray : [String] = []
+    
+    
+    
 }
 

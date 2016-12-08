@@ -8,9 +8,9 @@
 
 import Foundation
 
-// alreadyGetUID : 1 -> facebookID, 2 -> uid
+// getType : 1 -> facebookID, 2 -> uid
 
-func httpGet(URL: String, alreadyGetUID: Int){
+func httpGet(URL: String, getType: Int){
 
 
     let url = NSURL(string: URL)
@@ -26,7 +26,7 @@ func httpGet(URL: String, alreadyGetUID: Int){
             print("--------------------------")
             print(json)
             print("--------------------------")
-            if(alreadyGetUID == 1){
+            if(getType == 1){
                 for dictionary1 in json as! [String: Any] {
                     if(dictionary1.key == "uid"){
                         Constants.uid = dictionary1.value as! Int
@@ -57,8 +57,6 @@ func httpGet(URL: String, alreadyGetUID: Int){
                             }
                         }
                     }
-                    
-                    
                     
                     
                     if(dictionary1.key == "star_starring_user"){
@@ -100,14 +98,25 @@ func httpGet(URL: String, alreadyGetUID: Int){
                     }
                 }
             }
+            else if(getType == 2){
+//                for dictionary1 in json as! [String: Any]{
+//                    let dictionary1Value = (dictionary1.value as? [AnyObject] ?? [])
+//                    if(dictionary1Value.count != 0){
+//                        for count in 0...dictionary1Value.count-1{
+//                            for dictionary2 in dictionary1Value[count] as! [String: Any]{
+//                                if(dictionary2.key == "status" && dictionary2.value as! String == "initiated"){
+//                                    let dictionary2Value = (dictionary2.value as AnyObject )
+//                                    print(dictionary2Value)
+//                                }
+//                            }
+//                        }
+//                    }
+//                }
+//                let JSON = json as
+            }
             Constants.userWait4ExchImageURLArrayP = urlArrayTranformation(url: Constants.userWait4ExchImageURLArrayNP)
             Constants.userStarImageURLArrayP = urlArrayTranformation(url: Constants.userStarImageURLArrayNP)
-//            if(alreadyGetUID == 1){
-//                httpGet(URL: "\(Constants.API_SERVER_URL)/api/user?uid=\(Constants.uid)",alreadyGetUID: 2)
-//            }
-//            else if(alreadyGetUID == 2){
-//                print("successed called uid func")
-//            }
+            
             
             
         }catch{
