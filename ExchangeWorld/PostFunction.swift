@@ -46,6 +46,7 @@ func httpPost(URL:String,parameters: [String : Any],returnJsonFormat: Bool) {
                 for dictionary in json as! [String: Any] {
                     if(dictionary.key == "token"){
                         Constants.exwdToken = dictionary.value as! String
+                        print(Constants.exwdToken)
                     }
                 }
             }
