@@ -114,12 +114,15 @@ class ProfileViewController: UIViewController {
         self.exchangeRequestView.isHidden = true
         self.exchangeHistoryView.isHidden = true
         self.profileSegmentedControl.initUI()
-        self.wishListView.frame = CGRect(x: 0, y: screenSize.height*0.39, width: screenSize.width, height: screenSize.height*0.63)
+        self.wishListView.frame = CGRect(x: 0, y: screenSize.height*0.39, width: screenSize.width, height: screenSize.height*0.55)
         self.waitingForExchangeView.frame = self.wishListView.frame
         self.exchangeSecceedView.frame = self.wishListView.frame
         self.exchangeRequestView.frame = self.wishListView.frame
         self.exchangeHistoryView.frame = self.wishListView.frame
         self.view.backgroundColor = UIColor(patternImage: UIImage(named:"profileBackground")!)
+        
+//        let heightConstraint = NSLayoutConstraint(item: exchangeHistoryView, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: screenSize.height*0.53)
+//        exchangeHistoryView.addConstraint(heightConstraint)
         
         
     }
