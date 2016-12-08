@@ -100,7 +100,7 @@ class ProfileViewController: UIViewController {
         print("End of code. The image will continue downloading in the background and it will be loaded when it ends.")
         
         userProfileName.text = Constants.facebookName
-        userProfileName.frame = CGRect(x: screenSize.width*0.54, y: screenSize.height*0.15, width: screenSize.width*0.2, height: screenSize.width*0.1)
+        userProfileName.frame = CGRect(x: screenSize.width*0.54, y: screenSize.height*0.15, width: screenSize.width*0.4, height: screenSize.width*0.1)
         userProfileName.font = UIFont.systemFont(ofSize: 25, weight: 0.14)
         userLocationName.text = "台北市文山區"
         userLocationName.frame = CGRect(x: screenSize.width*0.54, y: screenSize.height*0.2, width: screenSize.width*0.4, height: screenSize.width*0.1)

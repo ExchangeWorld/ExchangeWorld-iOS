@@ -34,6 +34,10 @@
 		72BA14F91DF7E6C0006393E9 /* GetFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BA14F81DF7E6C0006393E9 /* GetFunction.swift */; };
 		72BA14FB1DF87C25006393E9 /* Wait4ExchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BA14FA1DF87C25006393E9 /* Wait4ExchCollectionViewCell.swift */; };
 		72BA14FD1DF87C49006393E9 /* Wait4ExchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BA14FC1DF87C49006393E9 /* Wait4ExchViewController.swift */; };
+		72BA14FF1DF99007006393E9 /* userHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BA14FE1DF99007006393E9 /* userHistoryViewController.swift */; };
+		72BA15011DF9901B006393E9 /* userHistoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BA15001DF9901B006393E9 /* userHistoryCollectionViewCell.swift */; };
+		72BA15031DF9C71F006393E9 /* userExchangingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BA15021DF9C71F006393E9 /* userExchangingCollectionViewCell.swift */; };
+		72BA15051DF9C733006393E9 /* userExchangingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BA15041DF9C733006393E9 /* userExchangingViewController.swift */; };
 		E1ADB407C1F4447CA9F48694 /* Pods_ExchangeWorld.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F21E3FFA0DFA9649412216E0 /* Pods_ExchangeWorld.framework */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +95,10 @@
 		72BA14F81DF7E6C0006393E9 /* GetFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFunction.swift; sourceTree = "<group>"; };
 		72BA14FA1DF87C25006393E9 /* Wait4ExchCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wait4ExchCollectionViewCell.swift; sourceTree = "<group>"; };
 		72BA14FC1DF87C49006393E9 /* Wait4ExchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wait4ExchViewController.swift; sourceTree = "<group>"; };
+		72BA14FE1DF99007006393E9 /* userHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userHistoryViewController.swift; sourceTree = "<group>"; };
+		72BA15001DF9901B006393E9 /* userHistoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userHistoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		72BA15021DF9C71F006393E9 /* userExchangingCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userExchangingCollectionViewCell.swift; sourceTree = "<group>"; };
+		72BA15041DF9C733006393E9 /* userExchangingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userExchangingViewController.swift; sourceTree = "<group>"; };
 		F21E3FFA0DFA9649412216E0 /* Pods_ExchangeWorld.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExchangeWorld.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -169,6 +177,10 @@
 				721F46FB1DF5344900AAA83D /* UserStarCollectionViewCell.swift */,
 				72BA14FC1DF87C49006393E9 /* Wait4ExchViewController.swift */,
 				72BA14FA1DF87C25006393E9 /* Wait4ExchCollectionViewCell.swift */,
+				72BA15041DF9C733006393E9 /* userExchangingViewController.swift */,
+				72BA15021DF9C71F006393E9 /* userExchangingCollectionViewCell.swift */,
+				72BA14FE1DF99007006393E9 /* userHistoryViewController.swift */,
+				72BA15001DF9901B006393E9 /* userHistoryCollectionViewCell.swift */,
 				18D992671DBC521E00538F00 /* Assets.xcassets */,
 				18D992691DBC521E00538F00 /* LaunchScreen.storyboard */,
 				18D9926C1DBC521E00538F00 /* Info.plist */,
@@ -408,7 +420,9 @@
 				1870D6C61DC0952600C697DA /* HomeObjectCategoryCollectionViewController.swift in Sources */,
 				1870D6C21DC07EB000C697DA /* HomeMapViewController.swift in Sources */,
 				721F46BE1DF463AF00AAA83D /* UserStarViewController.swift in Sources */,
+				72BA15011DF9901B006393E9 /* userHistoryCollectionViewCell.swift in Sources */,
 				7203BF591DE1F903007C99B6 /* ProfileViewController.swift in Sources */,
+				72BA15031DF9C71F006393E9 /* userExchangingCollectionViewCell.swift in Sources */,
 				1870D6C41DC083AF00C697DA /* ObjectDataStructure.swift in Sources */,
 				7224FF851DEEB1540020CE85 /* ProfileSegmentedControl.swift in Sources */,
 				1870D6CC1DC09E4100C697DA /* HomeObjectCollectionViewCell.swift in Sources */,
@@ -422,6 +436,8 @@
 				1870D6CA1DC09E2C00C697DA /* HomeObjectCollectionViewController.swift in Sources */,
 				18812D9C1DE572B500BA0B56 /* uploadaViewController.swift in Sources */,
 				18006E501DC99A1B00C89A91 /* ObjectInfoViewController.swift in Sources */,
+				72BA14FF1DF99007006393E9 /* userHistoryViewController.swift in Sources */,
+				72BA15051DF9C733006393E9 /* userExchangingViewController.swift in Sources */,
 				184A3D611DDEA37900CA3541 /* LoginViewController.swift in Sources */,
 				184A3D631DDEA47800CA3541 /* Constants.swift in Sources */,
 			);

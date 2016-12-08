@@ -38,19 +38,33 @@ struct Constants {
     static var userStarCategotyArray : [String] = []
     static var userStarObjNameArray : [String] = []
     static var userStarOwnerNameArray : [String] = []
+    
     static var userWait4ExchImageURLArrayNP : [String] = []
     static var userWait4ExchImageURLArrayP : [String] = []
     static var userWait4ExchCategoryArray : [String] = []
     static var userWait4ExchObjNameArray : [String] = []
-    static var userExchangingImageURLArrayNP : [String] = []
-    static var userExchangingImageURLArrayP : [String] = []
-    static var userExchangingCategoryArray : [String] = []
-    static var userExchangingObjNameArray : [String] = []
-    static var userExchHistoryImageURLArrayNP : [String] = []
-    static var userExchHistoryImageURLArrayP : [String] = []
-    static var userExchHistoryCategoryArray : [String] = []
-    static var userExchHistoryObjNameArray : [String] = []
     
+    static var userExchangingOwnerImageURLArrayNP : [String] = []
+    static var userExchangingOwnerImageURLArrayP : [String] = []
+    static var userExchangingOwnerCategoryArray : [String] = []
+    static var userExchangingOwnerObjNameArray : [String] = []
+    static var userExchangingOtherImageURLArrayNP : [String] = []
+    static var userExchangingOtherImageURLArrayP : [String] = []
+    static var userExchangingOtherCategoryArray : [String] = []
+    static var userExchangingOtherObjNameArray : [String] = []
+    static var userExchangingOtherNameArray : [String] = []
+    
+    static var userExchHistoryOwnerImageURLArrayNP : [String] = []
+    static var userExchHistoryOtherImageURLArrayNP : [String] = []
+    static var userExchHistoryOwnerImageURLArrayP : [String] = []
+    static var userExchHistoryOtherImageURLArrayP : [String] = []
+    static var userExchHistoryOwnerCategoryArray : [String] = []
+    static var userExchHistoryOtherCategoryArray : [String] = []
+    static var userExchHistoryOwnerObjNameArray : [String] = []
+    static var userExchHistoryOtherObjNameArray : [String] = []
+    static var userExchHistoryOtherNameArray : [String] = []
+    
+
     
     
 }
