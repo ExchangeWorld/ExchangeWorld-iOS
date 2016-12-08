@@ -112,7 +112,7 @@ func httpGet(URL: String, getType: Int){
 //                        }
 //                    }
 //                }
-//                let JSON = json as
+                
             }
             Constants.userWait4ExchImageURLArrayP = urlArrayTranformation(url: Constants.userWait4ExchImageURLArrayNP)
             Constants.userStarImageURLArrayP = urlArrayTranformation(url: Constants.userStarImageURLArrayNP)

@@ -89,9 +89,12 @@ class uploadViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     @IBAction func postingObjectButton(_ sender: Any) {
         print("111")
+        //print(Constants.imageInBase64)
         httpPost(URL: "\(Constants.API_SERVER_URL)/api/upload/image?token=\(Constants.exwdToken)", parameters: ["filesize":Constants.imageSize, "filename": "\(uploadNameTextField.text)" , "base64": "\(Constants.imageInBase64)", "filetype": Constants.imageType],returnJsonFormat: false)
         
         httpPost(URL: "\(Constants.API_SERVER_URL)/api/goods/post?token=\(Constants.exwdToken)", parameters: ["name":"\(uploadNameTextField.text!)", "category":"\(categoriesEng[categoryNum-1])", "description":"\(uploadContextTextView.text!)", "photo_path":"[\"\(Constants.imageURL)\"]", "position_x":121.5453914, "position_y":25.0261973],returnJsonFormat: true)
+
+//        httpPost(URL: "\(Constants.API_SERVER_URL)/api/goods/post?token=\(Constants.exwdToken)", parameters: ["name":"\(uploadNameTextField.text!)", "category":"\(categoriesEng[categoryNum-1])", "description":"\(uploadContextTextView.text!)", "photo_path":"[\"http://exwd.csie.org/images/ec7407e3dcec45ac2f1d4ac16be11632f4ee2ae4af8adbbad9902023d6567496.jpeg\"]", "position_x":121.5453914, "position_y":25.0261973],returnJsonFormat: true)
         
 //        var alert = UIAlertController(title: "新增物品", message: "上傳成功", preferredStyle: UIAlertControllerStyle.alert)
 //        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))

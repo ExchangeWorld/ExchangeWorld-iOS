@@ -282,7 +282,7 @@
 				TargetAttributes = {
 					18D9925C1DBC521D00538F00 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 6T3SFM9RFU;
+						DevelopmentTeam = 22R7T697WU;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -581,7 +581,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ExchangeWorld/ExchangeWorld.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 6T3SFM9RFU;
+				DEVELOPMENT_TEAM = 22R7T697WU;
 				INFOPLIST_FILE = ExchangeWorld/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Sourov.ExchangeWorld;
@@ -598,7 +598,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ExchangeWorld/ExchangeWorld.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 6T3SFM9RFU;
+				DEVELOPMENT_TEAM = 22R7T697WU;
 				INFOPLIST_FILE = ExchangeWorld/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Sourov.ExchangeWorld;
