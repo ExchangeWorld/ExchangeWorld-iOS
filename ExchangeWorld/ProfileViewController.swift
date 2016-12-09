@@ -79,13 +79,6 @@ class ProfileViewController: UIViewController {
 
         let screenSize: CGRect = UIScreen.main.bounds
         
-        print("----------------")
-        print(Constants.facebookID)
-        print(Constants.facebookProfilePicURL)
-        print("----------------")
-        
-        
-        print("Begin of code")
         if let checkedUrl = URL(string: "\(Constants.facebookProfilePicURL)") {
             userProfilePic.contentMode = .scaleAspectFit
             userProfilePic.frame = CGRect(x: screenSize.width*0.23, y: screenSize.height*0.13, width: screenSize.width*0.26, height: screenSize.width*0.26)
@@ -97,7 +90,7 @@ class ProfileViewController: UIViewController {
             userProfilePic.clipsToBounds = true
             downloadImage(url: checkedUrl)
         }
-        print("End of code. The image will continue downloading in the background and it will be loaded when it ends.")
+        
         
         userProfileName.text = Constants.facebookName
         userProfileName.frame = CGRect(x: screenSize.width*0.54, y: screenSize.height*0.15, width: screenSize.width*0.4, height: screenSize.width*0.1)
@@ -121,9 +114,7 @@ class ProfileViewController: UIViewController {
         self.exchangeHistoryView.frame = self.wishListView.frame
         self.view.backgroundColor = UIColor(patternImage: UIImage(named:"profileBackground")!)
         
-//        let heightConstraint = NSLayoutConstraint(item: exchangeHistoryView, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: screenSize.height*0.53)
-//        exchangeHistoryView.addConstraint(heightConstraint)
-        
+     
         
     }
 
@@ -140,11 +131,9 @@ class ProfileViewController: UIViewController {
     }
     
     func downloadImage(url: URL) {
-        print("Download Started")
         getDataFromUrl(url: url) { (data, response, error)  in
             guard let data = data, error == nil else { return }
             print(response?.suggestedFilename ?? url.lastPathComponent)
-            print("Download Finished")
             DispatchQueue.main.async() { () -> Void in
                 self.userProfilePic.image = UIImage(data: data)
             }

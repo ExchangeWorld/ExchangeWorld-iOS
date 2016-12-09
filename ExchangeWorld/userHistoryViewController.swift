@@ -41,7 +41,7 @@ class userHistoryViewController: UIViewController, UICollectionViewDataSource, U
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
     }
     
 
@@ -56,17 +56,11 @@ class userHistoryViewController: UIViewController, UICollectionViewDataSource, U
         cell.userOwnerObjImageView.frame = CGRect(x: 0, y: 0, width: collectionView.bounds.size.width*0.5-15, height: collectionView.bounds.size.width*0.5-15)
         
         cell.userOtherObjImageView.frame = CGRect(x: collectionView.bounds.size.width*0.5-15, y: 0, width: collectionView.bounds.size.width*0.5-15, height: collectionView.bounds.size.width*0.5-15)
-//
-//        cell.userOwnerIcon.frame = CGRect(x: 15, y: collectionView.bounds.size.width*0.5-7, width: 19, height: 19)
-//        
-//        cell.userOwnerCategoryIcon.frame = CGRect(x: 15, y: collectionView.bounds.size.width*0.5+17, width: 19, height: 19)
-//        
-//        cell.historyExchIcon.frame = CGRect(x: collectionView.bounds.size.width*0.5-30, y: collectionView.bounds.size.width*0.5-0.5, width: 30, height: 30)
-//        
-//        cell.userOwnerNameLabel.frame = CGRect(x: collectionView.bounds.size.width*0.5-15, y: <#T##CGFloat#>, width: <#T##CGFloat#>, height: <#T##CGFloat#>)
         
         
-        
+        cell.ViewBorderFunction(HorW: false, clear: true, amount: 80, borderWidth: 1)
+        cell.userOwnerObjImageView.ViewBorderFunction(HorW: false, clear: true, amount: 50, borderWidth: 1)
+        cell.userOtherObjImageView.ViewBorderFunction(HorW: false, clear: true, amount: 50, borderWidth: 1)
         cell.userOwnerObjImageView.image = self.historyOwnerImageArray[indexPath.row]
         cell.userOtherObjImageView.image = self.historyOtherImageArray[indexPath.row]
         cell.userOwnerNameLabel.text = Constants.facebookName

@@ -48,18 +48,11 @@ class Wait4ExchViewController: UIViewController , UICollectionViewDataSource, UI
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! Wait4ExchCollectionViewCell
         
-        
+        cell.ViewBorderFunction(HorW: false, clear: true, amount: 80, borderWidth: 1)
         cell.wait4ExchImageView.image = self.wait4ExchImageArray[indexPath.row]
         cell.wait4ExchObjNameLabel.text = Constants.userWait4ExchObjNameArray[indexPath.row]
         cell.wait4ExchCategoryNameLabel.text = Constants.userWait4ExchCategoryArray[indexPath.row]
         cell.wait4ExchOwnerNameLabel.text = Constants.facebookName
-        
-        
-        
-        //        if var Image1 : UIImage = cell.viewWithTag(1) as? UIImage{
-        //
-        //            Image1 = self.image1!
-        
         
         
         return cell

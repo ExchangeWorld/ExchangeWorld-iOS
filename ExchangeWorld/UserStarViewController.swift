@@ -50,19 +50,12 @@ class UserStarViewController: UIViewController, UICollectionViewDataSource, UICo
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! UserStarCollectionViewCell
         
-        
+        cell.ViewBorderFunction(HorW: false, clear: true, amount: 80, borderWidth: 1)
         cell.userStarImageView.image = self.starImageArray[indexPath.row]
         cell.userStarObjNameLabel.text = Constants.userStarObjNameArray[indexPath.row]
         cell.userStarCategoryNameLabel.text = Constants.userStarCategotyArray[indexPath.row]
         cell.userStarOwnerNameLabel.text = Constants.userStarOwnerNameArray[indexPath.row]
-        
-    
-        
-//        if var Image1 : UIImage = cell.viewWithTag(1) as? UIImage{
-//        
-//            Image1 = self.image1!
-        
-        
+
         
         return cell
     }

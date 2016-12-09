@@ -9,5 +9,30 @@
 import UIKit
 
 class userExchangingCollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var userExchangingOwnerView: UIView!
+    
+    @IBOutlet weak var userExchangingOtherView: UIView!
+    @IBOutlet weak var userExchangingOtherObjImageView: UIImageView!
+    
+    @IBOutlet weak var userExchangingOwnerObjImageView: UIImageView!
+    
+    @IBOutlet weak var userExchangingOwnerCategoryIcon: UIImageView!
+    @IBOutlet weak var userExchangingOwnerCategoryLabel: UILabel!
+    
+    @IBOutlet weak var userExchangingOwnerNameLabel: UILabel!
+    @IBOutlet weak var userExchangingOwnerObjLabel: UILabel!
+    
+    @IBOutlet weak var userExchangingOwnerDescriptionLabel: UILabel!
+    
+    
+    @IBOutlet weak var userExchangingOtherCategoryIcon: UIImageView!
+    @IBOutlet weak var userExchangingOtherCategoryLabel: UILabel!
+    @IBOutlet weak var userExchangingOtherNameLabel: UILabel!
+    
+    @IBOutlet weak var userExchangingOtherObjNameLabel: UILabel!
+    
+    @IBOutlet weak var userExchangingOtherDescriptionLabel: UILabel!
+    
+    
     
 }

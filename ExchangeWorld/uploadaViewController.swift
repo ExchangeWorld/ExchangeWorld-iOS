@@ -39,6 +39,11 @@ class uploadViewController: UIViewController, UIImagePickerControllerDelegate, U
         let screenSize: CGRect = UIScreen.main.bounds
         
         self.view.backgroundColor = UIColor(red: 245.0/255.0, green: 245.0/255.0, blue: 245.0/255.0, alpha: 1.0)
+        
+
+        imageDisplay.ViewBorderFunction(HorW: true, clear: false, amount: 50, borderWidth: 1.2)
+        userInputView.ViewBorderFunction(HorW: false, clear: true, amount: 50, borderWidth: 1.2)
+        
         userInputTitleLabel.font = UIFont.systemFont(ofSize: 17)
         userInputTitleLabel.textColor = UIColor(red: 100.0/255.0, green: 100.0/255.0, blue: 100.0/255.0, alpha: 1.0)
         let heightConstraint = NSLayoutConstraint(item: userInputView, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: screenSize.height*0.35)
@@ -48,14 +53,17 @@ class uploadViewController: UIViewController, UIImagePickerControllerDelegate, U
         uploadNameTitleLabel.text = "商品名稱"
         uploadNameTextField.backgroundColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 1.0)
         uploadNameTextField.textColor = UIColor.black
+        uploadNameTextField.ViewBorderFunction(HorW: false, clear: false, amount: 50, borderWidth: 0.1)
         uploadCategoryTitleLabel.text = "商品種類"
         uploadCategoryTitleLabel.textColor = uploadNameTitleLabel.textColor
         uploadCategoryTextField.backgroundColor = uploadNameTextField.backgroundColor
         uploadCategoryTextField.textColor = UIColor.black
+        uploadCategoryTextField.ViewBorderFunction(HorW: false, clear: false, amount: 50, borderWidth: 0.1)
         uploadContextTitleLabel.text = "商品描述"
         uploadContextTitleLabel.textColor = uploadNameTitleLabel.textColor
         uploadContextTextView.backgroundColor = uploadNameTextField.backgroundColor
         uploadContextTextView.textColor = UIColor.black
+        uploadContextTextView.ViewBorderFunction(HorW: false, clear: false, amount: 50, borderWidth: 0.2)
         
 
         picker.delegate = self

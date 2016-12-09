@@ -28,7 +28,6 @@ func httpGet(URL: String, getType: Int){
                 print("--------------------------")
                 print(json)
                 print("--------------------------")
-                //if(getType == 1){
                     for dictionary1 in json as! [String: Any] {
                         if(dictionary1.key == "uid"){
                             Constants.uid = dictionary1.value as! Int
@@ -99,24 +98,7 @@ func httpGet(URL: String, getType: Int){
                             }
                         }
                     }
-            //}
-            //else if(getType == 2){
-//                for dictionary1 in json as! [String: Any]{
-//                    let dictionary1Value = (dictionary1.value as? [AnyObject] ?? [])
-//                    if(dictionary1Value.count != 0){
-//                        for count in 0...dictionary1Value.count-1{
-//                            for dictionary2 in dictionary1Value[count] as! [String: Any]{
-//                                if(dictionary2.key == "status" && dictionary2.value as! String == "initiated"){
-//                                    let dictionary2Value = (dictionary2.value as AnyObject )
-//                                    print(dictionary2Value)
-//                                }
-//                            }
-//                        }
-//                    }
-//                }
-                
-                
-            //}
+    
                 Constants.userWait4ExchImageURLArrayP = urlArrayTranformation(url: Constants.userWait4ExchImageURLArrayNP)
                 Constants.userStarImageURLArrayP = urlArrayTranformation(url: Constants.userStarImageURLArrayNP)
             
@@ -143,7 +125,6 @@ func httpGet(URL: String, getType: Int){
                                         Constants.userExchHistoryOwnerObjNameArray.append(owner_goods["name"] as! String)
                                         Constants.userExchHistoryOwnerCategoryArray.append(owner_goods["category"] as! String)
                                         Constants.userExchHistoryOwnerImageURLArrayNP.append(owner_goods["photo_path"] as! String)
-                                    
                                     }
                                     if let other_goods = dictionary["other_goods"] as? [String: Any]{
                                         
@@ -161,6 +142,7 @@ func httpGet(URL: String, getType: Int){
                                         Constants.userExchangingOwnerObjNameArray.append(owner_goods["name"] as! String)
                                         Constants.userExchangingOwnerCategoryArray.append(owner_goods["category"] as! String)
                                         Constants.userExchangingOwnerImageURLArrayNP.append(owner_goods["photo_path"] as! String)
+                                        Constants.userExchangingOwnerObjDescription.append(owner_goods["description"] as! String)
                                         
                                     }
                                     if let other_goods = dictionary["other_goods"] as? [String: Any]{
@@ -168,6 +150,7 @@ func httpGet(URL: String, getType: Int){
                                         Constants.userExchangingOtherObjNameArray.append(other_goods["name"] as! String)
                                         Constants.userExchangingOtherCategoryArray.append(other_goods["category"] as! String)
                                         Constants.userExchangingOtherImageURLArrayNP.append(other_goods["photo_path"] as! String)
+                                        Constants.userExchangingOtherObjDescription.append(other_goods["description"] as! String)
                                         if let other_owner = other_goods["owner"] as? [String: Any]{
                                             Constants.userExchangingOtherNameArray.append(other_owner["name"] as! String)
                                         }
@@ -176,40 +159,14 @@ func httpGet(URL: String, getType: Int){
                             }
                         }
                     }
-                    print(Constants.userExchHistoryOwnerObjNameArray)
-                    print(Constants.userExchHistoryOwnerCategoryArray)
-                    print(Constants.userExchHistoryOwnerImageURLArrayNP)
-                    print(Constants.userExchHistoryOtherObjNameArray)
-                    print(Constants.userExchHistoryOtherCategoryArray)
-                    print(Constants.userExchHistoryOtherImageURLArrayNP)
-                    print(Constants.userExchHistoryOtherNameArray)
+                   
                     Constants.userExchHistoryOtherImageURLArrayP = urlArrayTranformation(url: Constants.userExchHistoryOtherImageURLArrayNP)
                     Constants.userExchHistoryOwnerImageURLArrayP = urlArrayTranformation(url: Constants.userExchHistoryOwnerImageURLArrayNP)
-                    print(Constants.userExchHistoryOtherImageURLArrayP)
-                    print(Constants.userExchHistoryOwnerImageURLArrayP)
-                    
-                    print(Constants.userExchangingOwnerObjNameArray)
-                    print(Constants.userExchangingOwnerCategoryArray)
-                    print(Constants.userExchangingOwnerImageURLArrayNP)
-                    print(Constants.userExchangingOtherObjNameArray)
-                    print(Constants.userExchangingOtherCategoryArray)
-                    print(Constants.userExchangingOtherImageURLArrayNP)
-                    print(Constants.userExchangingOtherNameArray)
                     Constants.userExchangingOtherImageURLArrayP = urlArrayTranformation(url: Constants.userExchangingOtherImageURLArrayNP)
                     Constants.userExchangingOwnerImageURLArrayP = urlArrayTranformation(url: Constants.userExchangingOwnerImageURLArrayNP)
-                    print(Constants.userExchangingOtherImageURLArrayP)
-                    print(Constants.userExchangingOwnerImageURLArrayP)
+                    
                 }
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
+  
             }catch{
                 print("JSONERROR2")
             }

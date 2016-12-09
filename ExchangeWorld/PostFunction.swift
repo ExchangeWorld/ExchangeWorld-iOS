@@ -56,5 +56,5 @@ func httpPost(URL:String,parameters: [String : Any],returnJsonFormat: Bool) {
         semaphore.signal()
     }
     task.resume()
-    semaphore.wait(timeout: .distantFuture)
+    semaphore.wait()
 }
