@@ -55,6 +55,7 @@ struct Constants {
     static var userExchangingOtherNameArray : [String] = []
     static var userExchangingOwnerObjDescription : [String] = []
     static var userExchangingOtherObjDescription : [String] = []
+    static var userExchangingEIDArray: [Int] = []
     
     static var userExchHistoryOwnerImageURLArrayNP : [String] = []
     static var userExchHistoryOtherImageURLArrayNP : [String] = []
@@ -65,7 +66,7 @@ struct Constants {
     static var userExchHistoryOwnerObjNameArray : [String] = []
     static var userExchHistoryOtherObjNameArray : [String] = []
     static var userExchHistoryOtherNameArray : [String] = []
-    
+    static var userExchHistoryEIDArray: [Int] = []
 
     
     

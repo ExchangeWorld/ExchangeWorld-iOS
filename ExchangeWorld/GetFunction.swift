@@ -120,6 +120,9 @@ func httpGet(URL: String, getType: Int){
                             if let status = dictionary["status"] as? String {
                                 print(status)
                                 if(status == "completed"){
+                                    if let eid = dictionary["eid"] as? Int{
+                                        Constants.userExchHistoryEIDArray.append(eid)
+                                    }
                                     if let owner_goods = dictionary["owner_goods"] as? [String: Any]{
                                         
                                         Constants.userExchHistoryOwnerObjNameArray.append(owner_goods["name"] as! String)
@@ -137,6 +140,9 @@ func httpGet(URL: String, getType: Int){
                                     }
                                 }
                                 else if(status == "initiated"){
+                                    if let eid = dictionary["eid"] as? Int{
+                                        Constants.userExchangingEIDArray.append(eid)
+                                    }
                                     if let owner_goods = dictionary["owner_goods"] as? [String: Any]{
                                         
                                         Constants.userExchangingOwnerObjNameArray.append(owner_goods["name"] as! String)
@@ -164,6 +170,8 @@ func httpGet(URL: String, getType: Int){
                     Constants.userExchHistoryOwnerImageURLArrayP = urlArrayTranformation(url: Constants.userExchHistoryOwnerImageURLArrayNP)
                     Constants.userExchangingOtherImageURLArrayP = urlArrayTranformation(url: Constants.userExchangingOtherImageURLArrayNP)
                     Constants.userExchangingOwnerImageURLArrayP = urlArrayTranformation(url: Constants.userExchangingOwnerImageURLArrayNP)
+                    print(Constants.userExchHistoryEIDArray)
+                    print(Constants.userExchangingEIDArray)
                     
                 }
   

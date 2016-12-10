@@ -978,6 +978,13 @@
                                                             <color key="textColor" red="0.29995226860046387" green="0.2116977870464325" blue="0.18986350297927856" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ou5-OM-Y0f">
+                                                            <rect key="frame" x="61" y="114" width="13" height="15"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.73206108808517456" green="0.62896490097045898" blue="0.50236999988555908" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
@@ -1039,7 +1046,7 @@
                                                                 </label>
                                                             </subviews>
                                                         </stackView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="jW3-lk-kjx">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="jW3-lk-kjx">
                                                             <rect key="frame" x="8" y="202" width="103" height="24"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1079,6 +1086,9 @@
                                                         <constraint firstAttribute="height" constant="70" id="crU-cl-2As"/>
                                                     </constraints>
                                                     <state key="normal" image="ExchangeButton"/>
+                                                    <connections>
+                                                        <action selector="ExchangeButton:" destination="GJN-A9-xZ8" eventType="touchUpInside" id="uwn-0m-Ouf"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </view>
@@ -1094,6 +1104,7 @@
                                             <constraint firstAttribute="bottom" secondItem="ncb-ck-K9o" secondAttribute="bottom" id="uoc-UG-d7g"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="userExchangingExchIDLabel" destination="ou5-OM-Y0f" id="1wr-nt-7dV"/>
                                             <outlet property="userExchangingOtherCategoryIcon" destination="BQj-3q-bgT" id="5XR-dT-zzS"/>
                                             <outlet property="userExchangingOtherCategoryLabel" destination="10c-fX-1y9" id="qVc-JO-cPq"/>
                                             <outlet property="userExchangingOtherDescriptionLabel" destination="lLH-gg-0V3" id="Rs4-qp-4Qh"/>

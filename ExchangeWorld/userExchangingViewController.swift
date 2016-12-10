@@ -17,6 +17,7 @@ class userExchangingViewController: UIViewController, UICollectionViewDataSource
     var exchangingOtherImageArray = [UIImage]()
     var exchangingOwnerImageURLArray : [String] = []
     var exchangingOtherImageURLArray : [String] = []
+    var exchangingEIDArray : [Int] = []
     
     
     override func viewDidLoad() {
@@ -45,6 +46,9 @@ class userExchangingViewController: UIViewController, UICollectionViewDataSource
         super.didReceiveMemoryWarning()
         
     }
+    
+    
+    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return Constants.userExchangingOwnerImageURLArrayP.count
@@ -75,6 +79,7 @@ class userExchangingViewController: UIViewController, UICollectionViewDataSource
         cell.userExchangingOtherNameLabel.text = Constants.userExchangingOtherNameArray[indexPath.row]
         cell.userExchangingOtherObjNameLabel.text = Constants.userExchangingOtherObjNameArray[indexPath.row]
         cell.userExchangingOtherDescriptionLabel.text = Constants.userExchangingOtherObjDescription[indexPath.row]
+        cell.userExchangingExchIDLabel.text = String(Constants.userExchangingEIDArray[indexPath.row])
         
         
         
@@ -83,10 +88,18 @@ class userExchangingViewController: UIViewController, UICollectionViewDataSource
         
         cell.userExchangingOtherCategoryLabel.LabelWidthLayoutFunction(constant: (cell.userExchangingOwnerView.frame.width-44)*0.8)
         cell.userExchangingOtherNameLabel.LabelWidthLayoutFunction(constant: (cell.userExchangingOwnerView.frame.width-44)*0.8)
-    
+        
+        
         
         return cell
     }
+    
+    @IBAction func ExchangeButton(_ sender: Any) {
+        print("12231223123123123")
+//        print(Constants.userExchangingEIDArray[1])
+//        httpPut(URL: "\(Constants.API_SERVER_URL)/api/exchange/agree?eid=\(Constants.userExchangingEIDArray[1])&owner_uid=\(Constants.uid)&token=\(Constants.exwdToken)")
+    }
+
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         

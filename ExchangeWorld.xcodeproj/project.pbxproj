@@ -38,6 +38,7 @@
 		72BA15011DF9901B006393E9 /* userHistoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BA15001DF9901B006393E9 /* userHistoryCollectionViewCell.swift */; };
 		72BA15031DF9C71F006393E9 /* userExchangingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BA15021DF9C71F006393E9 /* userExchangingCollectionViewCell.swift */; };
 		72BA15051DF9C733006393E9 /* userExchangingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BA15041DF9C733006393E9 /* userExchangingViewController.swift */; };
+		72BA15091DFBDBEB006393E9 /* PutFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BA15081DFBDBEB006393E9 /* PutFunction.swift */; };
 		E1ADB407C1F4447CA9F48694 /* Pods_ExchangeWorld.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F21E3FFA0DFA9649412216E0 /* Pods_ExchangeWorld.framework */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +100,7 @@
 		72BA15001DF9901B006393E9 /* userHistoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userHistoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		72BA15021DF9C71F006393E9 /* userExchangingCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userExchangingCollectionViewCell.swift; sourceTree = "<group>"; };
 		72BA15041DF9C733006393E9 /* userExchangingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userExchangingViewController.swift; sourceTree = "<group>"; };
+		72BA15081DFBDBEB006393E9 /* PutFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PutFunction.swift; sourceTree = "<group>"; };
 		F21E3FFA0DFA9649412216E0 /* Pods_ExchangeWorld.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExchangeWorld.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -159,6 +161,7 @@
 				184A3D601DDEA37900CA3541 /* LoginViewController.swift */,
 				184A3D641DDEA5AA00CA3541 /* PostFunction.swift */,
 				72BA14F81DF7E6C0006393E9 /* GetFunction.swift */,
+				72BA15081DFBDBEB006393E9 /* PutFunction.swift */,
 				72BA14F61DF67346006393E9 /* URLProcessingFunction.swift */,
 				184A3D621DDEA47800CA3541 /* Constants.swift */,
 				1870D6BF1DC078D100C697DA /* HomeViewController.swift */,
@@ -418,6 +421,7 @@
 				1870D6C81DC098B600C697DA /* HomeObjectCategoryCollectionViewCell.swift in Sources */,
 				184A3D651DDEA5AA00CA3541 /* PostFunction.swift in Sources */,
 				1870D6C61DC0952600C697DA /* HomeObjectCategoryCollectionViewController.swift in Sources */,
+				72BA15091DFBDBEB006393E9 /* PutFunction.swift in Sources */,
 				1870D6C21DC07EB000C697DA /* HomeMapViewController.swift in Sources */,
 				721F46BE1DF463AF00AAA83D /* UserStarViewController.swift in Sources */,
 				72BA15011DF9901B006393E9 /* userHistoryCollectionViewCell.swift in Sources */,

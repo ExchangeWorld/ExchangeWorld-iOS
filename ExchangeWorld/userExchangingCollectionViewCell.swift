@@ -33,6 +33,10 @@ class userExchangingCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var userExchangingOtherDescriptionLabel: UILabel!
     
+    @IBOutlet weak var userExchangingExchIDLabel: UILabel!
+    
+    
+
     
     
 }
