@@ -22,6 +22,8 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         loginbutton.delegate = self
         
         
+        
+        
     }
 
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
@@ -44,11 +46,17 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
                 return
             }
             
+            //print(result)
+            
             // result -> facebookID
             let resultInFunc = result as! Dictionary<String, AnyObject>
             for (key,value) in resultInFunc{
                 if(key == "id"){
                     Constants.facebookID = value as! String
+                }
+                if(key == "name"){
+                    Constants.facebookName = value as! String
+                    //print(Constants.facebookName)
                 }
                 if(key == "picture"){
                     let resultInFunc2 = value as! Dictionary<String,AnyObject>
@@ -58,7 +66,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
                             for (key3,value3) in resultInFunc3{
                                 if(key3 == "url"){
                                     Constants.facebookProfilePicURL = value3 as! String
-                                    print(Constants.facebookProfilePicURL)
+                                    //print(Constants.facebookProfilePicURL)
                                 }
                             }
                         }
@@ -68,8 +76,13 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
            
          
             
-            httpPost(URL: "\(Constants.API_SERVER_URL)/api/authenticate/login", parameters: ["fb": true , "identity": Constants.facebookID])
-            //self.posting(URL: "http://exwd.csie.org:43002/api/goods/post?token=a8127148e28cdac117c80b77c1d7527795104f36")
+            httpPost(URL: "\(Constants.API_SERVER_URL)/api/authenticate/login", parameters: ["fb": true , "identity": Constants.facebookID], returnJsonFormat : true)
+            
+            httpGet(URL: "\(Constants.API_SERVER_URL)/api/user?identity=\(Constants.facebookID)",getType : 1)
+            //httpGet(URL: "\(Constants.API_SERVER_URL)/api/user?uid=4)",alreadyGetUID : 1)
+            
+            httpGet(URL: "\(Constants.API_SERVER_URL)/api/exchange/of/user/all?owner_uid=\(Constants.uid)&token=\(Constants.exwdToken)", getType: 2)
+            
         }
         
         let storyboard: UIStoryboard = self.storyboard!

@@ -8,7 +8,7 @@
 
 import Foundation
 
-func httpPost(URL:String,parameters: [String : Any]) {
+func httpPost(URL:String,parameters: [String : Any],returnJsonFormat: Bool) {
     let URL:NSURL = NSURL(string:URL)!
     let request:NSMutableURLRequest = NSMutableURLRequest(url: URL as URL, cachePolicy: NSURLRequest.CachePolicy.reloadIgnoringLocalCacheData, timeoutInterval: 10)
     let semaphore = DispatchSemaphore(value: 0)
@@ -18,8 +18,8 @@ func httpPost(URL:String,parameters: [String : Any]) {
     request.httpMethod = "POST"
     request.allHTTPHeaderFields = ["Content-Type": "application/json"]
     request.httpBody = try! JSONSerialization.data(withJSONObject: parameters , options: [])
-    //let jsonString = String(data: request.httpBody!, encoding: .utf8)!
-    //NSLog("jsonString = \(jsonString)")
+    let jsonString = String(data: request.httpBody!, encoding: .utf8)!
+    NSLog("jsonString = \(jsonString)")
     
     
     
@@ -33,11 +33,21 @@ func httpPost(URL:String,parameters: [String : Any]) {
         
         //get returnString
         do {
-            let json = try JSONSerialization.jsonObject(with: data!,options: .mutableContainers)
-            for dictionary in json as! [String: Any] {
-                if(dictionary.key == "token"){
-                    Constants.exwdToken = dictionary.value as! String
-                    print(Constants.exwdToken)
+            if(returnJsonFormat == false){
+                let data = data
+                let NSresponseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+                let responseString: String = NSresponseString! as String
+                Constants.imageURL = responseString
+                
+            }
+            else if (returnJsonFormat == true){
+                let json = try JSONSerialization.jsonObject(with: data!,options: .mutableContainers)
+                print(json)
+                for dictionary in json as! [String: Any] {
+                    if(dictionary.key == "token"){
+                        Constants.exwdToken = dictionary.value as! String
+                        print(Constants.exwdToken)
+                    }
                 }
             }
         }catch let jsonError{
@@ -46,5 +56,5 @@ func httpPost(URL:String,parameters: [String : Any]) {
         semaphore.signal()
     }
     task.resume()
-    semaphore.wait(timeout: .distantFuture)
+    semaphore.wait()
 }

@@ -26,7 +26,21 @@
 		18D9926B1DBC521E00538F00 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D992691DBC521E00538F00 /* LaunchScreen.storyboard */; };
 		18D992761DBC521E00538F00 /* ExchangeWorldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D992751DBC521E00538F00 /* ExchangeWorldTests.swift */; };
 		18D992811DBC521E00538F00 /* ExchangeWorldUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D992801DBC521E00538F00 /* ExchangeWorldUITests.swift */; };
+		18E497F11DFC513400A45E0B /* HomeAreaCategoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E497F01DFC513400A45E0B /* HomeAreaCategoryCollectionViewController.swift */; };
+		18E497F31DFC518800A45E0B /* HomeAreaCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E497F21DFC518800A45E0B /* HomeAreaCategoryCollectionViewCell.swift */; };
 		7203BF591DE1F903007C99B6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7203BF581DE1F903007C99B6 /* ProfileViewController.swift */; };
+		721F46BE1DF463AF00AAA83D /* UserStarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721F46BD1DF463AF00AAA83D /* UserStarViewController.swift */; };
+		721F46FC1DF5344900AAA83D /* UserStarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721F46FB1DF5344900AAA83D /* UserStarCollectionViewCell.swift */; };
+		7224FF851DEEB1540020CE85 /* ProfileSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7224FF841DEEB1540020CE85 /* ProfileSegmentedControl.swift */; };
+		72BA14F71DF67346006393E9 /* URLProcessingFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BA14F61DF67346006393E9 /* URLProcessingFunction.swift */; };
+		72BA14F91DF7E6C0006393E9 /* GetFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BA14F81DF7E6C0006393E9 /* GetFunction.swift */; };
+		72BA14FB1DF87C25006393E9 /* Wait4ExchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BA14FA1DF87C25006393E9 /* Wait4ExchCollectionViewCell.swift */; };
+		72BA14FD1DF87C49006393E9 /* Wait4ExchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BA14FC1DF87C49006393E9 /* Wait4ExchViewController.swift */; };
+		72BA14FF1DF99007006393E9 /* userHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BA14FE1DF99007006393E9 /* userHistoryViewController.swift */; };
+		72BA15011DF9901B006393E9 /* userHistoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BA15001DF9901B006393E9 /* userHistoryCollectionViewCell.swift */; };
+		72BA15031DF9C71F006393E9 /* userExchangingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BA15021DF9C71F006393E9 /* userExchangingCollectionViewCell.swift */; };
+		72BA15051DF9C733006393E9 /* userExchangingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BA15041DF9C733006393E9 /* userExchangingViewController.swift */; };
+		72BA15091DFBDBEB006393E9 /* PutFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BA15081DFBDBEB006393E9 /* PutFunction.swift */; };
 		E1ADB407C1F4447CA9F48694 /* Pods_ExchangeWorld.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F21E3FFA0DFA9649412216E0 /* Pods_ExchangeWorld.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,8 +89,22 @@
 		18D9927C1DBC521E00538F00 /* ExchangeWorldUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExchangeWorldUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18D992801DBC521E00538F00 /* ExchangeWorldUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeWorldUITests.swift; sourceTree = "<group>"; };
 		18D992821DBC521E00538F00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18E497F01DFC513400A45E0B /* HomeAreaCategoryCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeAreaCategoryCollectionViewController.swift; sourceTree = "<group>"; };
+		18E497F21DFC518800A45E0B /* HomeAreaCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeAreaCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		1D3C19982F5BA4E9121B65E2 /* Pods-ExchangeWorld.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExchangeWorld.release.xcconfig"; path = "Pods/Target Support Files/Pods-ExchangeWorld/Pods-ExchangeWorld.release.xcconfig"; sourceTree = "<group>"; };
 		7203BF581DE1F903007C99B6 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		721F46BD1DF463AF00AAA83D /* UserStarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserStarViewController.swift; sourceTree = "<group>"; };
+		721F46FB1DF5344900AAA83D /* UserStarCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserStarCollectionViewCell.swift; sourceTree = "<group>"; };
+		7224FF841DEEB1540020CE85 /* ProfileSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileSegmentedControl.swift; sourceTree = "<group>"; };
+		72BA14F61DF67346006393E9 /* URLProcessingFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLProcessingFunction.swift; sourceTree = "<group>"; };
+		72BA14F81DF7E6C0006393E9 /* GetFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFunction.swift; sourceTree = "<group>"; };
+		72BA14FA1DF87C25006393E9 /* Wait4ExchCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wait4ExchCollectionViewCell.swift; sourceTree = "<group>"; };
+		72BA14FC1DF87C49006393E9 /* Wait4ExchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wait4ExchViewController.swift; sourceTree = "<group>"; };
+		72BA14FE1DF99007006393E9 /* userHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userHistoryViewController.swift; sourceTree = "<group>"; };
+		72BA15001DF9901B006393E9 /* userHistoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userHistoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		72BA15021DF9C71F006393E9 /* userExchangingCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userExchangingCollectionViewCell.swift; sourceTree = "<group>"; };
+		72BA15041DF9C733006393E9 /* userExchangingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userExchangingViewController.swift; sourceTree = "<group>"; };
+		72BA15081DFBDBEB006393E9 /* PutFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PutFunction.swift; sourceTree = "<group>"; };
 		F21E3FFA0DFA9649412216E0 /* Pods_ExchangeWorld.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExchangeWorld.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -136,11 +164,16 @@
 				18D992641DBC521E00538F00 /* Main.storyboard */,
 				184A3D601DDEA37900CA3541 /* LoginViewController.swift */,
 				184A3D641DDEA5AA00CA3541 /* PostFunction.swift */,
+				72BA14F81DF7E6C0006393E9 /* GetFunction.swift */,
+				72BA15081DFBDBEB006393E9 /* PutFunction.swift */,
+				72BA14F61DF67346006393E9 /* URLProcessingFunction.swift */,
 				184A3D621DDEA47800CA3541 /* Constants.swift */,
+				1870D6C31DC083AF00C697DA /* ObjectDataStructure.swift */,
 				1870D6BF1DC078D100C697DA /* HomeViewController.swift */,
 				18006E4D1DC9905700C89A91 /* HomeSegmentedControl.swift */,
 				1870D6C11DC07EB000C697DA /* HomeMapViewController.swift */,
-				1870D6C31DC083AF00C697DA /* ObjectDataStructure.swift */,
+				18E497F01DFC513400A45E0B /* HomeAreaCategoryCollectionViewController.swift */,
+				18E497F21DFC518800A45E0B /* HomeAreaCategoryCollectionViewCell.swift */,
 				1870D6C51DC0952600C697DA /* HomeObjectCategoryCollectionViewController.swift */,
 				1870D6C71DC098B600C697DA /* HomeObjectCategoryCollectionViewCell.swift */,
 				1870D6C91DC09E2C00C697DA /* HomeObjectCollectionViewController.swift */,
@@ -148,6 +181,15 @@
 				18006E4F1DC99A1B00C89A91 /* ObjectInfoViewController.swift */,
 				18812D9B1DE572B500BA0B56 /* uploadaViewController.swift */,
 				7203BF581DE1F903007C99B6 /* ProfileViewController.swift */,
+				7224FF841DEEB1540020CE85 /* ProfileSegmentedControl.swift */,
+				721F46BD1DF463AF00AAA83D /* UserStarViewController.swift */,
+				721F46FB1DF5344900AAA83D /* UserStarCollectionViewCell.swift */,
+				72BA14FC1DF87C49006393E9 /* Wait4ExchViewController.swift */,
+				72BA14FA1DF87C25006393E9 /* Wait4ExchCollectionViewCell.swift */,
+				72BA15041DF9C733006393E9 /* userExchangingViewController.swift */,
+				72BA15021DF9C71F006393E9 /* userExchangingCollectionViewCell.swift */,
+				72BA14FE1DF99007006393E9 /* userHistoryViewController.swift */,
+				72BA15001DF9901B006393E9 /* userHistoryCollectionViewCell.swift */,
 				18D992671DBC521E00538F00 /* Assets.xcassets */,
 				18D992691DBC521E00538F00 /* LaunchScreen.storyboard */,
 				18D9926C1DBC521E00538F00 /* Info.plist */,
@@ -381,19 +423,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72BA14F71DF67346006393E9 /* URLProcessingFunction.swift in Sources */,
 				1870D6C81DC098B600C697DA /* HomeObjectCategoryCollectionViewCell.swift in Sources */,
 				184A3D651DDEA5AA00CA3541 /* PostFunction.swift in Sources */,
 				1870D6C61DC0952600C697DA /* HomeObjectCategoryCollectionViewController.swift in Sources */,
+				72BA15091DFBDBEB006393E9 /* PutFunction.swift in Sources */,
 				1870D6C21DC07EB000C697DA /* HomeMapViewController.swift in Sources */,
+				721F46BE1DF463AF00AAA83D /* UserStarViewController.swift in Sources */,
+				72BA15011DF9901B006393E9 /* userHistoryCollectionViewCell.swift in Sources */,
 				7203BF591DE1F903007C99B6 /* ProfileViewController.swift in Sources */,
+				72BA15031DF9C71F006393E9 /* userExchangingCollectionViewCell.swift in Sources */,
 				1870D6C41DC083AF00C697DA /* ObjectDataStructure.swift in Sources */,
+				7224FF851DEEB1540020CE85 /* ProfileSegmentedControl.swift in Sources */,
+				18E497F11DFC513400A45E0B /* HomeAreaCategoryCollectionViewController.swift in Sources */,
 				1870D6CC1DC09E4100C697DA /* HomeObjectCollectionViewCell.swift in Sources */,
 				18006E4E1DC9905700C89A91 /* HomeSegmentedControl.swift in Sources */,
 				18D992611DBC521E00538F00 /* AppDelegate.swift in Sources */,
+				721F46FC1DF5344900AAA83D /* UserStarCollectionViewCell.swift in Sources */,
 				1870D6C01DC078D100C697DA /* HomeViewController.swift in Sources */,
+				18E497F31DFC518800A45E0B /* HomeAreaCategoryCollectionViewCell.swift in Sources */,
+				72BA14FB1DF87C25006393E9 /* Wait4ExchCollectionViewCell.swift in Sources */,
+				72BA14F91DF7E6C0006393E9 /* GetFunction.swift in Sources */,
+				72BA14FD1DF87C49006393E9 /* Wait4ExchViewController.swift in Sources */,
 				1870D6CA1DC09E2C00C697DA /* HomeObjectCollectionViewController.swift in Sources */,
 				18812D9C1DE572B500BA0B56 /* uploadaViewController.swift in Sources */,
 				18006E501DC99A1B00C89A91 /* ObjectInfoViewController.swift in Sources */,
+				72BA14FF1DF99007006393E9 /* userHistoryViewController.swift in Sources */,
+				72BA15051DF9C733006393E9 /* userExchangingViewController.swift in Sources */,
 				184A3D611DDEA37900CA3541 /* LoginViewController.swift in Sources */,
 				184A3D631DDEA47800CA3541 /* Constants.swift in Sources */,
 			);
@@ -556,7 +612,7 @@
 				DEVELOPMENT_TEAM = 6T3SFM9RFU;
 				INFOPLIST_FILE = ExchangeWorld/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Sourov.ExchangeWorld;
+				PRODUCT_BUNDLE_IDENTIFIER = Sourov.ExchangeWorld2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -573,7 +629,7 @@
 				DEVELOPMENT_TEAM = 6T3SFM9RFU;
 				INFOPLIST_FILE = ExchangeWorld/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Sourov.ExchangeWorld;
+				PRODUCT_BUNDLE_IDENTIFIER = Sourov.ExchangeWorld2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

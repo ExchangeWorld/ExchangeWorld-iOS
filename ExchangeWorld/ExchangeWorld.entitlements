@@ -4,7 +4,7 @@
 <dict>
 	<key>keychain-access-groups</key>
 	<array>
-		<string>$(AppIdentifierPrefix)Sourov.ExchangeWorld</string>
+		<string>$(AppIdentifierPrefix)Sourov.ExchangeWorld2</string>
 	</array>
 </dict>
 </plist>

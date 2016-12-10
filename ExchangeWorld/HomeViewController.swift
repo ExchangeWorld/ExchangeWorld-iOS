@@ -16,6 +16,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var homeMapContainerView: UIView!
     @IBOutlet weak var homeAreaCategoryContainerView: UIView!
     @IBOutlet weak var homeObjectCategoryContainerView: UIView!
+    @IBOutlet weak var homeTabBar: UITabBarItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,7 @@ class HomeViewController: UIViewController {
 //        self.homeMapContainerView.isHidden = true
         self.homeAreaCategoryContainerView.isHidden = true
         self.homeObjectCategoryContainerView.isHidden = true
+        self.homeTabBar.badgeColor = UIColor(red: 38, green: 38, blue: 38, alpha: 0)
     }
 
     @IBAction func homeSegmentedControlChangeTab(_ sender: UISegmentedControl) {

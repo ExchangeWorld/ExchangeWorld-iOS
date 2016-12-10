@@ -14,9 +14,9 @@ class HomeObjectCategoryCollectionViewController: UICollectionViewController {
 
     @IBOutlet var homeObjectCategoryCollectionView: UICollectionView!
 
-    let categoryImageArray = ["Book", "Textbooks", "3C", "3C_accessories", "Clothes", "Cosmetic", "Accessories", "Food", "Houseware", "Sports", "Games", "Others"] 
+    let categoryImageArray = ["Books", "Textbooks", "3C", "3C_accessories", "Clothes", "Cosmetic", "Accessories", "Food", "Houseware", "Sports", "Games", "Others"]
     
-//    let categoryImageArray = ["Textbooks", "Textbooks", "Textbooks", "Textbooks", "Textbooks", "Textbooks", "Textbooks", "Textbooks", "Textbooks", "Textbooks", "Textbooks", "Textbooks"]
+    let categortNameArray = ["書籍", "教科書", "3C產品", "3C配件", "服飾", "美妝用品", "穿搭配件", "食物", "家庭用品", "運動用品", "電玩遊戲", "其它"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,35 +28,33 @@ class HomeObjectCategoryCollectionViewController: UICollectionViewController {
         // Register cell classes
 //        self.collectionView!.register(HomeObjectCategoryCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.setToolbarHidden(true, animated: true)
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
 
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
         return categoryImageArray.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! HomeObjectCategoryCollectionViewCell
         
-        let cornerRadiusOfCell = cell.bounds.size.height/2
-        if cell.categoryImageView.layer.cornerRadius != cornerRadiusOfCell {
-            cell.categoryImageView.layer.cornerRadius = cornerRadiusOfCell;
-        }
+//        let cornerRadiusOfCell = cell.bounds.size.height/2
+//        if cell.categoryImageView.layer.cornerRadius != cornerRadiusOfCell {
+//            cell.categoryImageView.layer.cornerRadius = cornerRadiusOfCell;
+//        }
         cell.categoryImageView.image = UIImage(named: self.categoryImageArray[indexPath.row])
+        cell.categoryNameLabel.text = self.categortNameArray[indexPath.row]
     
         // Configure the cell
     

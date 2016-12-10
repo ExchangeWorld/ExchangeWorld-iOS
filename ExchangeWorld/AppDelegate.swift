@@ -22,6 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().barTintColor = UIColor(red: 128.0/255.0, green: 192.0/255.0, blue: 189.0/255.0, alpha: 1.0)
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white]
 
+        UITabBar.appearance().barTintColor = UIColor(red: 10.0/255.0, green: 10.0/255.0, blue: 10.0/255.0, alpha: 1.0)
+        UITabBar.appearance().tintColor = UIColor(red: 193.0/255.0, green: 241.0/255.0, blue: 238.0/255.0, alpha: 1.0)
+        
         GMSServices.provideAPIKey("AIzaSyDLHMK3MExBBwCeRDWZj38BzysD4qWAcIE")
         
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)

@@ -13,25 +13,28 @@ class HomeMapViewController: UIViewController, GMSMapViewDelegate, CLLocationMan
 
     let locationManager = CLLocationManager()
     
+    var myLatitude: Double = 24.987574
+    var myLongtitude: Double = 121.575774
+    var myZoom: Int = 16
+    
     var categoryAll: Category? {
         didSet {
-            let camera = GMSCameraPosition.camera(withLatitude: 24.987574, longitude: 121.575774, zoom: 16)
+            let camera = GMSCameraPosition.camera(withLatitude: myLatitude, longitude: myLongtitude, zoom: 16)
             let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
             mapView.isMyLocationEnabled = true
             mapView.settings.compassButton = true
             mapView.settings.myLocationButton = true
+            mapView.delegate = self
             
 //            self.map.camera = camera
             self.view = mapView
             
             for object in categoryAll!.objects {
                 let marker = GMSMarker()
-                
                 marker.position = CLLocationCoordinate2DMake(object.position_y,object.position_x)
                 marker.title = object.name
                 marker.snippet = object.category
-                marker.icon = UIImage(named: object.category)
-//                marker.icon = GMSMarker.markerImage(with: UIColor(red: 128.0/255.0, green: 192.0/255.0, blue: 189.0/255.0, alpha: 1.0))
+                marker.icon = UIImage(named: "\(object.category)-small")
                 marker.map = mapView
                 marker.appearAnimation = kGMSMarkerAnimationPop
                 
@@ -61,14 +64,21 @@ class HomeMapViewController: UIViewController, GMSMapViewDelegate, CLLocationMan
         }
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.allData = ExchangeWorldCategoryDataSource(categoryName: "")
         
+        
         self.locationManager.delegate = self
         self.locationManager.requestWhenInUseAuthorization()
+        self.tabBarItem.imageInsets = UIEdgeInsetsMake(9, 7, 9, 7)
+        
+
+    }
+    
+    func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
+        
     }
     
 
