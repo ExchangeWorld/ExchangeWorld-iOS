@@ -8,12 +8,12 @@
 
 import Foundation
 
-// getType : 1 : facebookID -> star & wait , 2 uid -> exchanging & exchange History
+// getType : 1 : facebookID -> star & wait , 2 uid -> exchanging & exchangeHistory , 3 token -> exchangeRequest
 
 func httpGet(URL: String, getType: Int){
-
-
+    
     let url = NSURL(string: URL)
+    let semaphore = DispatchSemaphore(value: 0)
     
     let task = URLSession.shared.dataTask(with: url! as URL) {(data, response, error) in
         if error != nil
@@ -24,10 +24,20 @@ func httpGet(URL: String, getType: Int){
         if(getType == 1){
         
             do {
+                
+                var userWait4ExchImageURLArrayNP : [String] = []
+                var userWait4ExchCategoryArray : [String] = []
+                var userWait4ExchObjNameArray : [String] = []
+                
+                var userStarImageURLArrayNP : [String] = []
+                var userStarCategotyArray : [String] = []
+                var userStarObjNameArray : [String] = []
+                var userStarOwnerNameArray : [String] = []
+                
                 let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers)
-                print("--------------------------")
-                print(json)
-                print("--------------------------")
+//                print("--------------------------")
+//                print(json)
+//                print("--------------------------")
                     for dictionary1 in json as! [String: Any] {
                         if(dictionary1.key == "uid"){
                             Constants.uid = dictionary1.value as! Int
@@ -43,13 +53,16 @@ func httpGet(URL: String, getType: Int){
                                             if(dictionary2.value as! Int == 0){
                                                 for dictionary2 in dictionary1Value[count] as! [String: Any]{
                                                     if(dictionary2.key == "photo_path"){
-                                                        Constants.userWait4ExchImageURLArrayNP.append(dictionary2.value as! String)
+                                                        userWait4ExchImageURLArrayNP.append(dictionary2.value as! String)
+                                                        Constants.userWait4ExchImageURLArrayNP = userWait4ExchImageURLArrayNP
                                                     }
                                                     if(dictionary2.key == "name"){
-                                                        Constants.userWait4ExchObjNameArray.append(dictionary2.value as! String)
+                                                        userWait4ExchObjNameArray.append(dictionary2.value as! String)
+                                                        Constants.userWait4ExchObjNameArray = userWait4ExchObjNameArray
                                                     }
                                                     if(dictionary2.key == "category"){
-                                                        Constants.userWait4ExchCategoryArray.append(dictionary2.value as! String)
+                                                        userWait4ExchCategoryArray.append(dictionary2.value as! String)
+                                                        Constants.userWait4ExchCategoryArray = userWait4ExchCategoryArray
                                                     }
                                                 }
                                             }
@@ -73,19 +86,23 @@ func httpGet(URL: String, getType: Int){
                                         
                                             for dictionary3 in dictionary2Value as! [String: Any]{
                                                 if(dictionary3.key == "photo_path"){
-                                                    Constants.userStarImageURLArrayNP.append(dictionary3.value as! String)
+                                                    userStarImageURLArrayNP.append(dictionary3.value as! String)
+                                                    Constants.userStarImageURLArrayNP = userStarImageURLArrayNP
                                                 }
                                                 if (dictionary3.key == "category"){
-                                                    Constants.userStarCategotyArray.append(dictionary3.value as! String)
+                                                    userStarCategotyArray.append(dictionary3.value as! String)
+                                                    Constants.userStarCategotyArray = userStarCategotyArray
                                                 }
                                                 if (dictionary3.key == "name"){
-                                                    Constants.userStarObjNameArray.append(dictionary3.value as! String)
+                                                    userStarObjNameArray.append(dictionary3.value as! String)
+                                                    Constants.userStarObjNameArray = userStarObjNameArray
                                                 }
                                                 if (dictionary3.key == "owner"){
                                                     let dictionary3Value = (dictionary3.value as AnyObject)
                                                     for dictionary4 in dictionary3Value as! [String: Any]{
                                                         if (dictionary4.key == "name"){
-                                                            Constants.userStarOwnerNameArray.append(dictionary4.value as! String)
+                                                            userStarOwnerNameArray.append(dictionary4.value as! String)
+                                                            Constants.userStarOwnerNameArray = userStarOwnerNameArray
                                                         }
                                                     }
                                                 }
@@ -110,6 +127,29 @@ func httpGet(URL: String, getType: Int){
         }
         else if (getType == 2){
             do{
+                
+                var userExchangingOwnerImageURLArrayNP : [String] = []
+                var userExchangingOwnerCategoryArray : [String] = []
+                var userExchangingOwnerObjNameArray : [String] = []
+                var userExchangingOwnerObjDescription : [String] = []
+                var userExchangingOtherObjNameArray : [String] = []
+                var userExchangingOtherCategoryArray : [String] = []
+                var userExchangingOtherImageURLArrayNP : [String] = []
+                var userExchangingOtherObjDescription : [String] = []
+                var userExchangingOtherNameArray : [String] = []
+                
+                var userExchangingEIDArray: [Int] = []
+                
+                var userExchHistoryOwnerObjNameArray : [String] = []
+                var userExchHistoryOwnerCategoryArray : [String] = []
+                var userExchHistoryOwnerImageURLArrayNP : [String] = []
+                var userExchHistoryOtherObjNameArray : [String] = []
+                var userExchHistoryOtherCategoryArray : [String] = []
+                var userExchHistoryOtherImageURLArrayNP : [String] = []
+                var userExchHistoryOtherNameArray : [String] = []
+                
+                var userExchHistoryEIDArray: [Int] = []
+                
                 let json = try? JSONSerialization.jsonObject(with: data!, options: [.mutableContainers])
                 
                 if let array = json as? [Any] {
@@ -121,44 +161,62 @@ func httpGet(URL: String, getType: Int){
                                 print(status)
                                 if(status == "completed"){
                                     if let eid = dictionary["eid"] as? Int{
-                                        Constants.userExchHistoryEIDArray.append(eid)
+                                        userExchHistoryEIDArray.append(eid)
+                                        Constants.userExchHistoryEIDArray = userExchHistoryEIDArray
                                     }
                                     if let owner_goods = dictionary["owner_goods"] as? [String: Any]{
                                         
-                                        Constants.userExchHistoryOwnerObjNameArray.append(owner_goods["name"] as! String)
-                                        Constants.userExchHistoryOwnerCategoryArray.append(owner_goods["category"] as! String)
-                                        Constants.userExchHistoryOwnerImageURLArrayNP.append(owner_goods["photo_path"] as! String)
+                                        userExchHistoryOwnerObjNameArray.append(owner_goods["name"] as! String)
+                                        Constants.userExchHistoryOwnerObjNameArray = userExchHistoryOwnerObjNameArray
+                                        userExchHistoryOwnerCategoryArray.append(owner_goods["category"] as! String)
+                                        Constants.userExchHistoryOwnerCategoryArray = userExchHistoryOwnerCategoryArray
+                                        userExchHistoryOwnerImageURLArrayNP.append(owner_goods["photo_path"] as! String)
+                                        Constants.userExchHistoryOwnerImageURLArrayNP = userExchHistoryOwnerImageURLArrayNP
                                     }
                                     if let other_goods = dictionary["other_goods"] as? [String: Any]{
                                         
-                                        Constants.userExchHistoryOtherObjNameArray.append(other_goods["name"] as! String)
-                                        Constants.userExchHistoryOtherCategoryArray.append(other_goods["category"] as! String)
-                                        Constants.userExchHistoryOtherImageURLArrayNP.append(other_goods["photo_path"] as! String)
+                                        userExchHistoryOtherObjNameArray.append(other_goods["name"] as! String)
+                                        Constants.userExchHistoryOtherObjNameArray = userExchHistoryOtherObjNameArray
+                                        userExchHistoryOtherCategoryArray.append(other_goods["category"] as! String)
+                                        Constants.userExchHistoryOtherCategoryArray = userExchHistoryOtherCategoryArray
+                                        userExchHistoryOtherImageURLArrayNP.append(other_goods["photo_path"] as! String)
+                                        Constants.userExchHistoryOtherImageURLArrayNP = userExchHistoryOtherImageURLArrayNP
                                         if let other_owner = other_goods["owner"] as? [String: Any]{
-                                            Constants.userExchHistoryOtherNameArray.append(other_owner["name"] as! String)
+                                            userExchHistoryOtherNameArray.append(other_owner["name"] as! String)
+                                            Constants.userExchHistoryOtherNameArray = userExchHistoryOtherNameArray
                                         }
                                     }
                                 }
                                 else if(status == "initiated"){
                                     if let eid = dictionary["eid"] as? Int{
-                                        Constants.userExchangingEIDArray.append(eid)
+                                        userExchangingEIDArray.append(eid)
+                                        Constants.userExchangingEIDArray = userExchangingEIDArray
                                     }
                                     if let owner_goods = dictionary["owner_goods"] as? [String: Any]{
                                         
-                                        Constants.userExchangingOwnerObjNameArray.append(owner_goods["name"] as! String)
-                                        Constants.userExchangingOwnerCategoryArray.append(owner_goods["category"] as! String)
-                                        Constants.userExchangingOwnerImageURLArrayNP.append(owner_goods["photo_path"] as! String)
-                                        Constants.userExchangingOwnerObjDescription.append(owner_goods["description"] as! String)
+                                        userExchangingOwnerObjNameArray.append(owner_goods["name"] as! String)
+                                        Constants.userExchangingOwnerObjNameArray = userExchangingOwnerObjNameArray
+                                        userExchangingOwnerCategoryArray.append(owner_goods["category"] as! String)
+                                        Constants.userExchangingOwnerCategoryArray = userExchangingOwnerCategoryArray
+                                        userExchangingOwnerImageURLArrayNP.append(owner_goods["photo_path"] as! String)
+                                        Constants.userExchangingOwnerImageURLArrayNP = userExchangingOwnerImageURLArrayNP
+                                        userExchangingOwnerObjDescription.append(owner_goods["description"] as! String)
+                                        Constants.userExchangingOwnerObjDescription = userExchangingOwnerObjDescription
                                         
                                     }
                                     if let other_goods = dictionary["other_goods"] as? [String: Any]{
                                         
-                                        Constants.userExchangingOtherObjNameArray.append(other_goods["name"] as! String)
-                                        Constants.userExchangingOtherCategoryArray.append(other_goods["category"] as! String)
-                                        Constants.userExchangingOtherImageURLArrayNP.append(other_goods["photo_path"] as! String)
-                                        Constants.userExchangingOtherObjDescription.append(other_goods["description"] as! String)
+                                        userExchangingOtherObjNameArray.append(other_goods["name"] as! String)
+                                        Constants.userExchangingOtherObjNameArray = userExchangingOtherObjNameArray
+                                        userExchangingOtherCategoryArray.append(other_goods["category"] as! String)
+                                        Constants.userExchangingOtherCategoryArray = userExchangingOtherCategoryArray
+                                        userExchangingOtherImageURLArrayNP.append(other_goods["photo_path"] as! String)
+                                        Constants.userExchangingOtherImageURLArrayNP = userExchangingOtherImageURLArrayNP
+                                        userExchangingOtherObjDescription.append(other_goods["description"] as! String)
+                                        Constants.userExchangingOtherObjDescription = userExchangingOtherObjDescription
                                         if let other_owner = other_goods["owner"] as? [String: Any]{
-                                            Constants.userExchangingOtherNameArray.append(other_owner["name"] as! String)
+                                            userExchangingOtherNameArray.append(other_owner["name"] as! String)
+                                            Constants.userExchangingOtherNameArray = userExchangingOtherNameArray
                                         }
                                     }
                                 }
@@ -170,8 +228,6 @@ func httpGet(URL: String, getType: Int){
                     Constants.userExchHistoryOwnerImageURLArrayP = urlArrayTranformation(url: Constants.userExchHistoryOwnerImageURLArrayNP)
                     Constants.userExchangingOtherImageURLArrayP = urlArrayTranformation(url: Constants.userExchangingOtherImageURLArrayNP)
                     Constants.userExchangingOwnerImageURLArrayP = urlArrayTranformation(url: Constants.userExchangingOwnerImageURLArrayNP)
-                    print(Constants.userExchHistoryEIDArray)
-                    print(Constants.userExchangingEIDArray)
                     
                 }
   
@@ -179,11 +235,62 @@ func httpGet(URL: String, getType: Int){
                 print("JSONERROR2")
             }
         }
+        else if (getType == 3){
+            do{
+                
+                var userExchRequestOwnerObjNameArray : [String] = []
+                var userExchRequestOwnerCategoryArray : [String] = []
+                var userExchRequestOwnerImageURLArrayP : [String] = []
+                
+                
+                let json = try? JSONSerialization.jsonObject(with: data!, options: [.mutableContainers])
+                
+                if let array = json as? [Any] {
+                    
+                    var a = 0
+                    for object in array {
+                        if let dictionary = object as? [String: Any] {
+                            if let name = dictionary["name"] as? String{
+                                userExchRequestOwnerObjNameArray.append(name)
+                                Constants.userExchRequestOwnerObjNameArray = userExchRequestOwnerObjNameArray
+                            }
+                            if let category = dictionary["category"] as? String{
+                                userExchRequestOwnerCategoryArray.append(category)
+                                Constants.userExchRequestOwnerCategoryArray = userExchRequestOwnerCategoryArray
+                            }
+                            if let photo_path = dictionary["photo_path"] as? String{
+                                userExchRequestOwnerImageURLArrayP.append(photo_path)
+                                Constants.userExchRequestOwnerImageURLArrayP = userExchRequestOwnerImageURLArrayP
+                            }
+                            
+                            
+                            if let queue = dictionary["queue"] as? [Any]{
+                                for object_queue in queue {
+                                    
+                                    if let dictionary2 = object_queue as? [String: Any]{
+                                        if let qid = dictionary2["qid"] as? Int{
+                                            //Constants.userExchRequestQIDArray[a].append(qid)
+                                        }
+                                    }
+                                }
+                                a += 1
+                            }
+                            
+                            
+                        }
+                    }
+                }
+                print(Constants.userExchRequestOwnerObjNameArray)
+                print(Constants.userExchRequestOwnerCategoryArray)
+                print(Constants.userExchRequestQIDArray)
+            }
+        }
         
         
         
-        
+        semaphore.signal()
     }
     task.resume()
+    semaphore.wait()
 }
 

@@ -15,6 +15,8 @@ class userExchangingViewController: UIViewController, UICollectionViewDataSource
     
     var exchangingOwnerImageArray = [UIImage]()
     var exchangingOtherImageArray = [UIImage]()
+    var imgOwnerArray = [UIImage]()
+    var imgOtherArray = [UIImage]()
     var exchangingOwnerImageURLArray : [String] = []
     var exchangingOtherImageURLArray : [String] = []
     var exchangingEIDArray : [Int] = []
@@ -22,6 +24,17 @@ class userExchangingViewController: UIViewController, UICollectionViewDataSource
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+        
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
         userExchangingCollectionView.backgroundColor = UIColor(red: 218.0/255.0, green: 218.0/255.0, blue: 218.0/255.0, alpha: 1.0)
         
         exchangingOwnerImageURLArray = Constants.userExchangingOwnerImageURLArrayP
@@ -39,20 +52,12 @@ class userExchangingViewController: UIViewController, UICollectionViewDataSource
                 }
             }
         }
-        
+        userExchangingCollectionView.reloadData()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        
-    }
-    
-    
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return Constants.userExchangingOwnerImageURLArrayP.count
-        //return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -89,15 +94,21 @@ class userExchangingViewController: UIViewController, UICollectionViewDataSource
         cell.userExchangingOtherCategoryLabel.LabelWidthLayoutFunction(constant: (cell.userExchangingOwnerView.frame.width-44)*0.8)
         cell.userExchangingOtherNameLabel.LabelWidthLayoutFunction(constant: (cell.userExchangingOwnerView.frame.width-44)*0.8)
         
+        self.imgOwnerArray = []
+        self.imgOtherArray = []
         
         
         return cell
     }
     
-    @IBAction func ExchangeButton(_ sender: Any) {
-        print("12231223123123123")
-//        print(Constants.userExchangingEIDArray[1])
-//        httpPut(URL: "\(Constants.API_SERVER_URL)/api/exchange/agree?eid=\(Constants.userExchangingEIDArray[1])&owner_uid=\(Constants.uid)&token=\(Constants.exwdToken)")
+    @IBAction func userExchangeButton(_ sender: Any) {
+        
+        let alertController = UIAlertController(title: "系統提示", message: "已發送交易確認訊息", preferredStyle: UIAlertControllerStyle.alert)
+        let okAction = UIAlertAction(title: "確認", style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
+        }
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
+        
     }
 
     
@@ -113,10 +124,12 @@ class userExchangingViewController: UIViewController, UICollectionViewDataSource
         let task = URLSession.shared.dataTask(with: url) {
             (data, response, error) in
             if(kind == 1){
-                self.exchangingOwnerImageArray.append(UIImage(data: data!)!)
+                self.imgOwnerArray.append(UIImage(data: data!)!)
+                self.exchangingOwnerImageArray = self.imgOwnerArray
             }
             else if(kind == 2){
-                self.exchangingOtherImageArray.append(UIImage(data: data!)!)
+                self.imgOtherArray.append(UIImage(data: data!)!)
+                self.exchangingOtherImageArray = self.imgOtherArray
             }
             semaphore.signal()
         }

@@ -78,10 +78,11 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             
             httpPost(URL: "\(Constants.API_SERVER_URL)/api/authenticate/login", parameters: ["fb": true , "identity": Constants.facebookID], returnJsonFormat : true)
             
-            httpGet(URL: "\(Constants.API_SERVER_URL)/api/user?identity=\(Constants.facebookID)",getType : 1)
-            //httpGet(URL: "\(Constants.API_SERVER_URL)/api/user?uid=4)",alreadyGetUID : 1)
-            
-            httpGet(URL: "\(Constants.API_SERVER_URL)/api/exchange/of/user/all?owner_uid=\(Constants.uid)&token=\(Constants.exwdToken)", getType: 2)
+//            httpGet(URL: "\(Constants.API_SERVER_URL)/api/user?identity=\(Constants.facebookID)",getType : 1)
+//            
+//            httpGet(URL: "\(Constants.API_SERVER_URL)/api/exchange/of/user/all?owner_uid=\(Constants.uid)&token=\(Constants.exwdToken)", getType: 2)
+//            
+//            httpGet(URL: "\(Constants.API_SERVER_URL)/api/user/me/goods/queue?token=\(Constants.exwdToken)", getType: 3)
             
         }
         

@@ -85,6 +85,9 @@ class HomeObjectCollectionViewController: UICollectionViewController {
         if let url = URL(string: path), let data = try? Data(contentsOf: url) {
             cell.objImageView.image = UIImage(data: data)
         }
+        cell.objNameLabel.text = object.name
+        cell.objCategoryLabel.text = object.category
+        cell.objOwnerLabel.text = object.owner.name
         
         // Configure the cell
     

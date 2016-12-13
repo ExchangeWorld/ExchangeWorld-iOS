@@ -68,6 +68,17 @@ struct Constants {
     static var userExchHistoryOtherNameArray : [String] = []
     static var userExchHistoryEIDArray: [Int] = []
 
+    static var userExchRequestOwnerImageURLArrayNP : [String] = []
+    static var userExchRequestOtherImageURLArrayNP : [String] = []
+    static var userExchRequestOwnerImageURLArrayP : [String] = []
+    static var userExchRequestOtherImageURLArrayP : [String] = []
+    static var userExchRequestOwnerCategoryArray : [String] = []
+    static var userExchRequestOtherCategoryArray : [String] = []
+    static var userExchRequestOwnerObjNameArray : [String] = []
+    static var userExchRequestOtherObjNameArray : [String] = []
+    static var userExchRequestOtherNameArray : [String] = []
+    static var userExchRequestQIDArray: [[Int]] = [[]]
+    
     
     
 }

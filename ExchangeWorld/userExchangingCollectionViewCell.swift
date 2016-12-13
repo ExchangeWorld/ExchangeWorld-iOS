@@ -9,6 +9,8 @@
 import UIKit
 
 class userExchangingCollectionViewCell: UICollectionViewCell {
+    //let viewcontroller = userExchangingViewController()
+    
     @IBOutlet weak var userExchangingOwnerView: UIView!
     
     @IBOutlet weak var userExchangingOtherView: UIView!
@@ -36,7 +38,22 @@ class userExchangingCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var userExchangingExchIDLabel: UILabel!
     
     
+    @IBOutlet weak var userExchangeButton: UIButton!
 
+    @IBAction func userExchangeButtonAction(_ sender: Any) {
+        httpPut(URL: "\(Constants.API_SERVER_URL)/api/exchange/agree?eid=\(userExchangingExchIDLabel.text!)&owner_uid=\(Constants.uid)&token=\(Constants.exwdToken)")
+        //viewcontroller.userExchangeButton(sender)
+        
+        
+    }
+    
+    @IBOutlet weak var userExchangeDropButton: UIButton!
+    
+    @IBAction func userExchangeDropAction(_ sender: Any) {
+        print("Drop")
+        httpPut(URL: "\(Constants.API_SERVER_URL)/api/exchange/drop?eid=\(userExchangingExchIDLabel.text!)&token=\(Constants.exwdToken)")
+        
+    }
     
     
 }

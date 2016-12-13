@@ -14,27 +14,37 @@ class UserStarViewController: UIViewController, UICollectionViewDataSource, UICo
     
     var image1 : UIImage? = nil
     var starImageArray = [UIImage]()
+    var imgarray = [UIImage]()
     var starImageURLArray : [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        httpGet(URL: "\(Constants.API_SERVER_URL)/api/user?identity=\(Constants.facebookID)",getType : 1)
+        
+        httpGet(URL: "\(Constants.API_SERVER_URL)/api/exchange/of/user/all?owner_uid=\(Constants.uid)&token=\(Constants.exwdToken)", getType: 2)
+        
+        httpGet(URL: "\(Constants.API_SERVER_URL)/api/user/me/goods/queue?token=\(Constants.exwdToken)", getType: 3)
+        
         userStarCollectionView.backgroundColor = UIColor(red: 218.0/255.0, green: 218.0/255.0, blue: 218.0/255.0, alpha: 1.0)
         
         starImageURLArray = Constants.userStarImageURLArrayP
-        print(starImageURLArray)
-        
-        
+  
         if(starImageURLArray.count != 0){
-        for i in 1 ... starImageURLArray.count{
-            if let checkedUrl = URL(string: starImageURLArray[i-1]) {
-                
-                //downloadImage(url: checkedUrl)
-                getDataFromUrl(url: checkedUrl){(data, response, error) in }
+            for i in 1 ... starImageURLArray.count{
+                if let checkedUrl = URL(string: starImageURLArray[i-1]) {
+                    
+                    //downloadImage(url: checkedUrl)
+                    getDataFromUrl(url: checkedUrl){(data, response, error) in }
+                }
             }
         }
-        }
-        
+        userStarCollectionView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -56,6 +66,7 @@ class UserStarViewController: UIViewController, UICollectionViewDataSource, UICo
         cell.userStarCategoryNameLabel.text = Constants.userStarCategotyArray[indexPath.row]
         cell.userStarOwnerNameLabel.text = Constants.userStarOwnerNameArray[indexPath.row]
 
+        self.imgarray = []
         
         return cell
     }
@@ -71,8 +82,10 @@ class UserStarViewController: UIViewController, UICollectionViewDataSource, UICo
         
         let task = URLSession.shared.dataTask(with: url) {
             (data, response, error) in
-            //completion(data, response, error)
-            self.starImageArray.append(UIImage(data: data!)!)
+            
+            
+            self.imgarray.append(UIImage(data: data!)!)
+            self.starImageArray = self.imgarray
             semaphore.signal()
             }
         task.resume()

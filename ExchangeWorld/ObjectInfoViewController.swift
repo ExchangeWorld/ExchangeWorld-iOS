@@ -11,7 +11,9 @@ import UIKit
 class ObjectInfoViewController: UIViewController {
 
     @IBOutlet weak var objImageView: UIImageView!
-
+    @IBOutlet weak var objNameLabel: UILabel!
+    @IBOutlet weak var ObjDescriptionLabel: UILabel!
+    
     var object: Object!
     
     override func viewDidLoad() {
@@ -25,8 +27,12 @@ class ObjectInfoViewController: UIViewController {
         if let url = URL(string: path), let data = try? Data(contentsOf: url) {
             self.objImageView.image = UIImage(data: data)
         }
+        self.objNameLabel.text = object.name
+        self.ObjDescriptionLabel.text = "商品描述：\(object.description)"
     }
 
+    @IBAction func postButton(_ sender: Any) {
+    }
 
 
 }

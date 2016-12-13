@@ -14,11 +14,17 @@ class userHistoryViewController: UIViewController, UICollectionViewDataSource, U
     
     var historyOwnerImageArray = [UIImage]()
     var historyOtherImageArray = [UIImage]()
+    var imgOwnerarray = [UIImage]()
+    var imgOtherarray = [UIImage]()
     var historyOwnerImageURLArray : [String] = []
     var historyOtherImageURLArray : [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         
         userHistoryCollectionView.backgroundColor = UIColor(red: 218.0/255.0, green: 218.0/255.0, blue: 218.0/255.0, alpha: 1.0)
         
@@ -37,6 +43,7 @@ class userHistoryViewController: UIViewController, UICollectionViewDataSource, U
                 }
             }
         }
+        self.userHistoryCollectionView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -68,6 +75,8 @@ class userHistoryViewController: UIViewController, UICollectionViewDataSource, U
         cell.userOtherNameLabel.text = Constants.userExchHistoryOtherNameArray[indexPath.row]
         cell.userOtherCategoryLabel.text = Constants.userExchHistoryOtherCategoryArray[indexPath.row]
        
+        self.imgOwnerarray = []
+        self.imgOtherarray = []
         
         
         return cell
@@ -85,10 +94,12 @@ class userHistoryViewController: UIViewController, UICollectionViewDataSource, U
         let task = URLSession.shared.dataTask(with: url) {
             (data, response, error) in
             if(kind == 1){
-                self.historyOwnerImageArray.append(UIImage(data: data!)!)
+                self.imgOwnerarray.append(UIImage(data: data!)!)
+                self.historyOwnerImageArray = self.imgOwnerarray
             }
             else if(kind == 2){
-                self.historyOtherImageArray.append(UIImage(data: data!)!)
+                self.imgOtherarray.append(UIImage(data: data!)!)
+                self.historyOtherImageArray = self.imgOtherarray
             }
             semaphore.signal()
         }

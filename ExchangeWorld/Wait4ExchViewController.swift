@@ -15,11 +15,17 @@ class Wait4ExchViewController: UIViewController , UICollectionViewDataSource, UI
     
     var image1 : UIImage? = nil
     var wait4ExchImageArray = [UIImage]()
+    var imgarray = [UIImage]()
     var starImageURLArray : [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
         wait4ExchCollectionView.backgroundColor = UIColor(red: 218.0/255.0, green: 218.0/255.0, blue: 218.0/255.0, alpha: 1.0)
         
         starImageURLArray = Constants.userWait4ExchImageURLArrayP
@@ -33,8 +39,9 @@ class Wait4ExchViewController: UIViewController , UICollectionViewDataSource, UI
                 }
             }
         }
+        wait4ExchCollectionView.reloadData()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -54,6 +61,7 @@ class Wait4ExchViewController: UIViewController , UICollectionViewDataSource, UI
         cell.wait4ExchCategoryNameLabel.text = Constants.userWait4ExchCategoryArray[indexPath.row]
         cell.wait4ExchOwnerNameLabel.text = Constants.facebookName
         
+        self.imgarray = []
         
         return cell
     }
@@ -70,7 +78,8 @@ class Wait4ExchViewController: UIViewController , UICollectionViewDataSource, UI
         let task = URLSession.shared.dataTask(with: url) {
             (data, response, error) in
 
-            self.wait4ExchImageArray.append(UIImage(data: data!)!)
+            self.imgarray.append(UIImage(data: data!)!)
+            self.wait4ExchImageArray = self.imgarray
             semaphore.signal()
         }
         task.resume()

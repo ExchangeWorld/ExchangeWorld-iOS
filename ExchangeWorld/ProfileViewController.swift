@@ -10,6 +10,7 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
+    
     @IBAction func profileSegmentedControlAction(_ sender: UISegmentedControl) {
         
         switch (profileSegmentedControl.selectedSegmentIndex) {
@@ -117,6 +118,8 @@ class ProfileViewController: UIViewController {
      
         
     }
+    
+   
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

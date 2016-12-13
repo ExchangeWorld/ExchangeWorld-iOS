@@ -33,9 +33,7 @@ func httpPut(URL:String) {
             if let object = json as? [String: Any]{
                 
                 if let goods_one_agree = object["goods_one_agree"] as? Bool{
-                    print("1231245135413513")
                     print(goods_one_agree)
-                    print("123124124124124124")
                 }
                 if let eid = object["eid"] as? Int{
                     print(eid)
