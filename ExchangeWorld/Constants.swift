@@ -33,16 +33,20 @@ struct Constants {
     static var imageType : String = ""
     static var imageURL : String = ""
     static var uid : Int = 0
+    
+    
     static var userStarImageURLArrayNP : [String] = []
     static var userStarImageURLArrayP : [String] = []
     static var userStarCategotyArray : [String] = []
     static var userStarObjNameArray : [String] = []
     static var userStarOwnerNameArray : [String] = []
     
+    
     static var userWait4ExchImageURLArrayNP : [String] = []
     static var userWait4ExchImageURLArrayP : [String] = []
     static var userWait4ExchCategoryArray : [String] = []
     static var userWait4ExchObjNameArray : [String] = []
+    
     
     static var userExchangingOwnerImageURLArrayNP : [String] = []
     static var userExchangingOwnerImageURLArrayP : [String] = []
@@ -57,6 +61,7 @@ struct Constants {
     static var userExchangingOtherObjDescription : [String] = []
     static var userExchangingEIDArray: [Int] = []
     
+    
     static var userExchHistoryOwnerImageURLArrayNP : [String] = []
     static var userExchHistoryOtherImageURLArrayNP : [String] = []
     static var userExchHistoryOwnerImageURLArrayP : [String] = []
@@ -67,6 +72,7 @@ struct Constants {
     static var userExchHistoryOtherObjNameArray : [String] = []
     static var userExchHistoryOtherNameArray : [String] = []
     static var userExchHistoryEIDArray: [Int] = []
+    
 
     static var userExchRequestOwnerImageURLArrayNP : [String] = []
     static var userExchRequestOtherImageURLArrayNP : [String] = []
@@ -77,8 +83,13 @@ struct Constants {
     static var userExchRequestOwnerObjNameArray : [String] = []
     static var userExchRequestOtherObjNameArray : [String] = []
     static var userExchRequestOtherNameArray : [String] = []
-    static var userExchRequestQIDArray: [[Int]] = [[]]
     
+    static var userExchRequestQIDArray: [[Int]] = [[]]
+    static var userExchRequestQueuerObjNameArray : [[String]] = []
+    static var userExchRequestQueuerImageURLArrayNP : [[String]] = []
+    static var userExchRequestQueuerCategoryArray : [[String]] = []
+    static var userExchRequestQueuerDescriptionArray : [[String]] = []
+    static var userExchRequestQueuerNameArray : [[String]] = []
     
     
 }

@@ -241,13 +241,20 @@ func httpGet(URL: String, getType: Int){
                 var userExchRequestOwnerObjNameArray : [String] = []
                 var userExchRequestOwnerCategoryArray : [String] = []
                 var userExchRequestOwnerImageURLArrayP : [String] = []
+                var userExchRequestQIDArray : [[Int]] = []
+                var userExchRequestQueuerObjNameArray : [[String]] = []
+                var userExchRequestQueuerImageURLArrayNP : [[String]] = []
+                var userExchRequestQueuerCategoryArray : [[String]] = []
+                var userExchRequestQueuerDescriptionArray : [[String]] = []
+                var userExchRequestQueuerNameArray : [[String]] = []
                 
                 
                 let json = try? JSONSerialization.jsonObject(with: data!, options: [.mutableContainers])
                 
                 if let array = json as? [Any] {
                     
-                    var a = 0
+                    var myObjCount = 0
+                    var queueCount = 10
                     for object in array {
                         if let dictionary = object as? [String: Any] {
                             if let name = dictionary["name"] as? String{
@@ -266,23 +273,80 @@ func httpGet(URL: String, getType: Int){
                             
                             if let queue = dictionary["queue"] as? [Any]{
                                 for object_queue in queue {
-                                    
-                                    if let dictionary2 = object_queue as? [String: Any]{
-                                        if let qid = dictionary2["qid"] as? Int{
-                                            //Constants.userExchRequestQIDArray[a].append(qid)
+                                    if(myObjCount != queueCount){
+                                        if let dictionary2 = object_queue as? [String: Any]{
+                                            if let qid = dictionary2["qid"] as? Int{
+                                                userExchRequestQIDArray.append([qid])
+                                                queueCount = myObjCount
+                                            }
+                                            if let queuer_goods = dictionary2["queuer_goods"] as? [String: Any]{
+                                                if let name = queuer_goods["name"] as? String{
+                                                    userExchRequestQueuerObjNameArray.append([name])
+                                                }
+                                                if let photo_path = queuer_goods["photo_path"] as? String{
+                                                    userExchRequestQueuerImageURLArrayNP.append([photo_path])
+                                                }
+                                                if let category = queuer_goods["category"] as? String{
+                                                    userExchRequestQueuerCategoryArray.append([category])
+                                                }
+                                                if let description = queuer_goods["description"] as? String{
+                                                    userExchRequestQueuerDescriptionArray.append([description])
+                                                }
+                                                if let owner = queuer_goods["owner"] as? [String: Any]{
+                                                    if let owner_name = owner["name"] as? String{
+                                                        userExchRequestQueuerNameArray.append([owner_name])
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    else{
+                                        if let dictionary2 = object_queue as? [String: Any]{
+                                            if let qid = dictionary2["qid"] as? Int{
+                                                userExchRequestQIDArray[queueCount].append(qid)
+                                            }
+                                            if let queuer_goods = dictionary2["queuer_goods"] as? [String: Any]{
+                                                if let name = queuer_goods["name"] as? String{
+                                                    userExchRequestQueuerObjNameArray[queueCount].append(name)
+                                                }
+                                                if let photo_path = queuer_goods["photo_path"] as? String{
+                                                    userExchRequestQueuerImageURLArrayNP[queueCount].append(photo_path)
+                                                }
+                                                if let category = queuer_goods["category"] as? String{
+                                                    userExchRequestQueuerCategoryArray[queueCount].append(category)
+                                                }
+                                                if let description = queuer_goods["description"] as? String{
+                                                    userExchRequestQueuerDescriptionArray[queueCount].append(description)
+                                                }
+                                                
+                                                if let owner = queuer_goods["owner"] as? [String: Any]{
+                                                    if let owner_name = owner["name"] as? String{
+                                                        userExchRequestQueuerNameArray[queueCount].append(owner_name)
+                                                    }
+                                                }
+                                            }
                                         }
                                     }
                                 }
-                                a += 1
+                                myObjCount += 1
                             }
-                            
-                            
                         }
                     }
                 }
+                Constants.userExchRequestQIDArray = userExchRequestQIDArray
+                Constants.userExchRequestQueuerObjNameArray = userExchRequestQueuerObjNameArray
+                Constants.userExchRequestQueuerImageURLArrayNP = userExchRequestQueuerImageURLArrayNP
+                Constants.userExchRequestQueuerCategoryArray = userExchRequestQueuerCategoryArray
+                Constants.userExchRequestQueuerDescriptionArray = userExchRequestQueuerDescriptionArray
+                Constants.userExchRequestQueuerNameArray = userExchRequestQueuerNameArray
                 print(Constants.userExchRequestOwnerObjNameArray)
                 print(Constants.userExchRequestOwnerCategoryArray)
                 print(Constants.userExchRequestQIDArray)
+                print(Constants.userExchRequestQueuerObjNameArray)
+                print(Constants.userExchRequestQueuerImageURLArrayNP)
+                print(Constants.userExchRequestQueuerCategoryArray)
+                print(Constants.userExchRequestQueuerDescriptionArray)
+                print(Constants.userExchRequestQueuerNameArray)
             }
         }
         
