@@ -1000,10 +1000,10 @@
             </objects>
             <point key="canvasLocation" x="1740" y="1505.2816901408451"/>
         </scene>
-        <!--View Controller-->
+        <!--Exch Request View Controller-->
         <scene sceneID="tbM-cN-jXJ">
             <objects>
-                <viewController id="eXW-s8-lag" sceneMemberID="viewController">
+                <viewController id="eXW-s8-lag" customClass="ExchRequestViewController" customModule="ExchangeWorld" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uhL-S7-B3j"/>
                         <viewControllerLayoutGuide type="bottom" id="lzz-H9-6C9"/>
@@ -1011,8 +1011,39 @@
                     <view key="view" contentMode="scaleToFill" id="En4-IV-DBP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="332"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="WGE-vR-heT">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="332"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="RcR-ko-Kpr">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="15" minY="15" maxX="15" maxY="15"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="6TF-F2-epp" customClass="ExchRequestCollectionViewCell" customModule="ExchangeWorld" customModuleProvider="target">
+                                        <rect key="frame" x="15" y="15" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="0.89805201479999996" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="WGE-vR-heT" firstAttribute="leading" secondItem="En4-IV-DBP" secondAttribute="leading" id="SCy-kJ-LHn"/>
+                            <constraint firstAttribute="trailing" secondItem="WGE-vR-heT" secondAttribute="trailing" id="h8S-sN-aqU"/>
+                            <constraint firstItem="WGE-vR-heT" firstAttribute="top" secondItem="uhL-S7-B3j" secondAttribute="bottom" id="nYe-8X-hdZ"/>
+                            <constraint firstItem="lzz-H9-6C9" firstAttribute="top" secondItem="WGE-vR-heT" secondAttribute="bottom" id="vXJ-wT-ZE3"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="userExchRequestCollectionView" destination="WGE-vR-heT" id="MNQ-s4-7T3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DQL-qy-KsC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1167,7 +1198,7 @@
                                                                 </label>
                                                             </subviews>
                                                         </stackView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="jW3-lk-kjx">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="jW3-lk-kjx">
                                                             <rect key="frame" x="8" y="202" width="103" height="24"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

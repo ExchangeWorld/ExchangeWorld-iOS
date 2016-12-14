@@ -87,6 +87,7 @@ struct Constants {
     static var userExchRequestQIDArray: [[Int]] = [[]]
     static var userExchRequestQueuerObjNameArray : [[String]] = []
     static var userExchRequestQueuerImageURLArrayNP : [[String]] = []
+    static var userExchRequestQueuerImageURLArrayP : [[String]] = []
     static var userExchRequestQueuerCategoryArray : [[String]] = []
     static var userExchRequestQueuerDescriptionArray : [[String]] = []
     static var userExchRequestQueuerNameArray : [[String]] = []

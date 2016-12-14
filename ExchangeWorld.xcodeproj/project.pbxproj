@@ -32,6 +32,8 @@
 		721F46BE1DF463AF00AAA83D /* UserStarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721F46BD1DF463AF00AAA83D /* UserStarViewController.swift */; };
 		721F46FC1DF5344900AAA83D /* UserStarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721F46FB1DF5344900AAA83D /* UserStarCollectionViewCell.swift */; };
 		7224FF851DEEB1540020CE85 /* ProfileSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7224FF841DEEB1540020CE85 /* ProfileSegmentedControl.swift */; };
+		723CB42E1E00F3DE0006029C /* ExchRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723CB42D1E00F3DE0006029C /* ExchRequestViewController.swift */; };
+		723CB4301E00F3F50006029C /* ExchRequestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723CB42F1E00F3F50006029C /* ExchRequestCollectionViewCell.swift */; };
 		72BA14F71DF67346006393E9 /* URLProcessingFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BA14F61DF67346006393E9 /* URLProcessingFunction.swift */; };
 		72BA14F91DF7E6C0006393E9 /* GetFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BA14F81DF7E6C0006393E9 /* GetFunction.swift */; };
 		72BA14FB1DF87C25006393E9 /* Wait4ExchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BA14FA1DF87C25006393E9 /* Wait4ExchCollectionViewCell.swift */; };
@@ -96,6 +98,8 @@
 		721F46BD1DF463AF00AAA83D /* UserStarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserStarViewController.swift; sourceTree = "<group>"; };
 		721F46FB1DF5344900AAA83D /* UserStarCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserStarCollectionViewCell.swift; sourceTree = "<group>"; };
 		7224FF841DEEB1540020CE85 /* ProfileSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileSegmentedControl.swift; sourceTree = "<group>"; };
+		723CB42D1E00F3DE0006029C /* ExchRequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExchRequestViewController.swift; sourceTree = "<group>"; };
+		723CB42F1E00F3F50006029C /* ExchRequestCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExchRequestCollectionViewCell.swift; sourceTree = "<group>"; };
 		72BA14F61DF67346006393E9 /* URLProcessingFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLProcessingFunction.swift; sourceTree = "<group>"; };
 		72BA14F81DF7E6C0006393E9 /* GetFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFunction.swift; sourceTree = "<group>"; };
 		72BA14FA1DF87C25006393E9 /* Wait4ExchCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wait4ExchCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -186,6 +190,8 @@
 				721F46FB1DF5344900AAA83D /* UserStarCollectionViewCell.swift */,
 				72BA14FC1DF87C49006393E9 /* Wait4ExchViewController.swift */,
 				72BA14FA1DF87C25006393E9 /* Wait4ExchCollectionViewCell.swift */,
+				723CB42D1E00F3DE0006029C /* ExchRequestViewController.swift */,
+				723CB42F1E00F3F50006029C /* ExchRequestCollectionViewCell.swift */,
 				72BA15041DF9C733006393E9 /* userExchangingViewController.swift */,
 				72BA15021DF9C71F006393E9 /* userExchangingCollectionViewCell.swift */,
 				72BA14FE1DF99007006393E9 /* userHistoryViewController.swift */,
@@ -425,6 +431,7 @@
 			files = (
 				72BA14F71DF67346006393E9 /* URLProcessingFunction.swift in Sources */,
 				1870D6C81DC098B600C697DA /* HomeObjectCategoryCollectionViewCell.swift in Sources */,
+				723CB42E1E00F3DE0006029C /* ExchRequestViewController.swift in Sources */,
 				184A3D651DDEA5AA00CA3541 /* PostFunction.swift in Sources */,
 				1870D6C61DC0952600C697DA /* HomeObjectCategoryCollectionViewController.swift in Sources */,
 				72BA15091DFBDBEB006393E9 /* PutFunction.swift in Sources */,
@@ -447,6 +454,7 @@
 				72BA14FD1DF87C49006393E9 /* Wait4ExchViewController.swift in Sources */,
 				1870D6CA1DC09E2C00C697DA /* HomeObjectCollectionViewController.swift in Sources */,
 				18812D9C1DE572B500BA0B56 /* uploadaViewController.swift in Sources */,
+				723CB4301E00F3F50006029C /* ExchRequestCollectionViewCell.swift in Sources */,
 				18006E501DC99A1B00C89A91 /* ObjectInfoViewController.swift in Sources */,
 				72BA14FF1DF99007006393E9 /* userHistoryViewController.swift in Sources */,
 				72BA15051DF9C733006393E9 /* userExchangingViewController.swift in Sources */,
