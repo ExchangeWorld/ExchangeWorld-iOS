@@ -509,7 +509,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HZP-7F-jkw" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="u3n-RI-JL2">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="u3n-RI-JL2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -526,7 +526,7 @@
         <scene sceneID="dLq-sc-Hb6">
             <objects>
                 <collectionViewController id="X7D-HH-PgX" userLabel="Home Object Category Collection View Controller" customClass="HomeObjectCategoryCollectionViewController" customModule="ExchangeWorld" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="8Up-yy-Bbj" userLabel="Home Object Category Collection View">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="8Up-yy-Bbj" userLabel="Home Object Category Collection View">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="427"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="0.89805201480263153" colorSpace="calibratedRGB"/>
@@ -591,7 +591,7 @@
         <scene sceneID="yGL-UK-JcF">
             <objects>
                 <collectionViewController id="rFg-iJ-Gtq" userLabel="Home Object Collection View Controller" customClass="HomeObjectCollectionViewController" customModule="ExchangeWorld" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="K3m-it-0HN" userLabel="Home Object Collection View">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="K3m-it-0HN" userLabel="Home Object Collection View">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="427"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="0.89805201479999996" colorSpace="calibratedRGB"/>
@@ -750,7 +750,7 @@
                 <navigationController title="ExchangeWorld" automaticallyAdjustsScrollViewInsets="NO" id="u0e-gw-uJF" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Upload" image="upload50" id="km5-bD-NOO"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Gho-Gy-aq4">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Gho-Gy-aq4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -910,12 +910,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="282" height="141"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VQs-Kk-zgi">
-                                                    <rect key="frame" x="0.0" y="0.0" width="180" height="141"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="VQs-Kk-zgi" secondAttribute="height" multiplier="60:47" id="3YN-gh-62C"/>
-                                                    </constraints>
-                                                </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="s15-tQ-eL4">
                                                     <rect key="frame" x="195" y="106" width="19" height="19"/>
                                                     <constraints>
@@ -948,6 +942,12 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VQs-Kk-zgi">
+                                                    <rect key="frame" x="0.0" y="0.0" width="180" height="141"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="VQs-Kk-zgi" secondAttribute="height" multiplier="60:47" id="3YN-gh-62C"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1013,25 +1013,74 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="332"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="WGE-vR-heT">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="332"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="WGE-vR-heT">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="459"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="RcR-ko-Kpr">
-                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="itemSize" width="282" height="282"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="15" minY="15" maxX="15" maxY="15"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="6TF-F2-epp" customClass="ExchRequestCollectionViewCell" customModule="ExchangeWorld" customModuleProvider="target">
-                                        <rect key="frame" x="15" y="15" width="50" height="50"/>
+                                        <rect key="frame" x="19" y="15" width="282" height="282"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="282" height="282"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="G08-ER-HiU">
+                                                    <rect key="frame" x="0.0" y="0.0" width="161" height="126"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="G08-ER-HiU" secondAttribute="height" multiplier="60:47" id="dts-PB-I9S"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="RW8-5a-edt">
+                                                    <rect key="frame" x="0.0" y="141" width="282" height="141"/>
+                                                    <color key="backgroundColor" red="0.96232205629348755" green="0.95963305234909058" blue="0.96243208646774292" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="141" id="A9g-P1-qGc"/>
+                                                    </constraints>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Baq-SY-b6c">
+                                                        <size key="itemSize" width="50" height="50"/>
+                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    </collectionViewFlowLayout>
+                                                    <cells>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="MSV-dI-gRT">
+                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                            </view>
+                                                            <color key="backgroundColor" red="0.29535862800000001" green="0.24791848659999999" blue="0.17612928150000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </collectionViewCell>
+                                                    </cells>
+                                                </collectionView>
+                                            </subviews>
                                         </view>
+                                        <color key="backgroundColor" red="0.96068006750000001" green="0.96084433790000001" blue="0.96066969629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="RW8-5a-edt" firstAttribute="top" secondItem="G08-ER-HiU" secondAttribute="bottom" constant="15" id="1JN-0K-hB0"/>
+                                            <constraint firstItem="RW8-5a-edt" firstAttribute="leading" secondItem="6TF-F2-epp" secondAttribute="leading" id="5Qr-RM-bjc"/>
+                                            <constraint firstItem="G08-ER-HiU" firstAttribute="leading" secondItem="6TF-F2-epp" secondAttribute="leading" id="8xx-o8-DqA"/>
+                                            <constraint firstAttribute="trailing" secondItem="RW8-5a-edt" secondAttribute="trailing" id="CXb-SJ-09w"/>
+                                            <constraint firstItem="G08-ER-HiU" firstAttribute="top" secondItem="6TF-F2-epp" secondAttribute="top" id="Kea-HE-xkP"/>
+                                            <constraint firstAttribute="bottom" secondItem="RW8-5a-edt" secondAttribute="bottom" id="ZDc-wW-Vaa"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="userExchReqImageView" destination="G08-ER-HiU" id="iXb-cY-n51"/>
+                                            <outlet property="userExchReqQueuerCollectionView" destination="RW8-5a-edt" id="Wrv-DA-IuH"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="eXW-s8-lag" id="9f4-mQ-BSR"/>
+                                    <outlet property="delegate" destination="eXW-s8-lag" id="94B-4Z-xq7"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="0.89805201479999996" colorSpace="calibratedRGB"/>
@@ -1494,7 +1543,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Gby-rR-WHW" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profile" image="user" id="ZqP-qa-GaQ" userLabel="Profile"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="4Rm-Iz-K2G">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4Rm-Iz-K2G">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1512,7 +1561,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cek-Zr-TL8" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="M53-WP-K2q">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="M53-WP-K2q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

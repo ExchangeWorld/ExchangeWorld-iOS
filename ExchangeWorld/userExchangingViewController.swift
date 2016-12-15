@@ -12,16 +12,6 @@ class userExchangingViewController: UIViewController, UICollectionViewDataSource
 
     @IBOutlet weak var userExchangingCollectionView: UICollectionView!
     
-    
-    var exchangingOwnerImageArray = [UIImage]()
-    var exchangingOtherImageArray = [UIImage]()
-    var imgOwnerArray = [UIImage]()
-    var imgOtherArray = [UIImage]()
-    var exchangingOwnerImageURLArray : [String] = []
-    var exchangingOtherImageURLArray : [String] = []
-    var exchangingEIDArray : [Int] = []
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -36,24 +26,6 @@ class userExchangingViewController: UIViewController, UICollectionViewDataSource
     override func viewWillAppear(_ animated: Bool) {
         
         userExchangingCollectionView.backgroundColor = UIColor(red: 218.0/255.0, green: 218.0/255.0, blue: 218.0/255.0, alpha: 1.0)
-        
-        exchangingOwnerImageURLArray = Constants.userExchangingOwnerImageURLArrayP
-        exchangingOtherImageURLArray = Constants.userExchangingOtherImageURLArrayP
-        
-        if(exchangingOwnerImageURLArray.count != 0){
-            for i in 0 ... exchangingOwnerImageURLArray.count-1{
-                if let checkUrl1 = URL(string: exchangingOwnerImageURLArray[i]){
-                    
-                    getDataFromUrl(url: checkUrl1, kind: 1){(data, response, error) in }
-                }
-                if let checkUrl2 = URL(string: exchangingOtherImageURLArray[i]){
-                    
-                    getDataFromUrl(url: checkUrl2, kind: 2){(data, response, error) in }
-                }
-            }
-            
-        }
-        
 
         userExchangingCollectionView.reloadData()
         
@@ -69,8 +41,9 @@ class userExchangingViewController: UIViewController, UICollectionViewDataSource
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! userExchangingCollectionViewCell
         
         cell.ViewBorderFunction(HorW: false, clear: true, amount: 80, borderWidth: 1)
-        cell.userExchangingOwnerObjImageView.image = self.exchangingOwnerImageArray[indexPath.row]
-        cell.userExchangingOtherObjImageView.image = self.exchangingOtherImageArray[indexPath.row]
+        cell.userExchangingOwnerObjImageView.sd_setImage(with: URL(string: Constants.userExchangingOwnerImageURLArrayP[indexPath.row]), placeholderImage: UIImage(named: "loading"), options: [.continueInBackground, .progressiveDownload])
+        cell.userExchangingOtherObjImageView.sd_setImage(with: URL(string: Constants.userExchangingOtherImageURLArrayP[indexPath.row]), placeholderImage: UIImage(named: "loading"), options: [.continueInBackground, .progressiveDownload])
+
 
         cell.userExchangingOwnerObjImageView.ViewBorderFunction(HorW: false,clear: false, amount: 10, borderWidth: 1.2)
         cell.userExchangingOtherObjImageView.ViewBorderFunction(HorW: false,clear: false, amount: 10, borderWidth: 1.2)
@@ -98,9 +71,6 @@ class userExchangingViewController: UIViewController, UICollectionViewDataSource
         cell.userExchangingOtherCategoryLabel.LabelWidthLayoutFunction(constant: (cell.userExchangingOwnerView.frame.width-44)*0.8)
         cell.userExchangingOtherNameLabel.LabelWidthLayoutFunction(constant: (cell.userExchangingOwnerView.frame.width-44)*0.8)
         
-        self.imgOwnerArray = []
-        self.imgOtherArray = []
-        
         
         return cell
     }
@@ -120,30 +90,6 @@ class userExchangingViewController: UIViewController, UICollectionViewDataSource
         
         return CGSize(width: collectionView.bounds.size.width-30, height: (collectionView.bounds.size.width-30)*0.9)
     }
-    
-    func getDataFromUrl(url: URL, kind: Int, completion: @escaping (_ data: Data?, _  response: URLResponse?, _ error: Error?) -> Void) {
-        
-        let semaphore = DispatchSemaphore(value: 0)
-        
-        let task = URLSession.shared.dataTask(with: url) {
-            (data, response, error) in
-            if(kind == 1){
-                self.imgOwnerArray.append(UIImage(data: data!)!)
-                self.exchangingOwnerImageArray = self.imgOwnerArray
-            }
-            else if(kind == 2){
-                self.imgOtherArray.append(UIImage(data: data!)!)
-                self.exchangingOtherImageArray = self.imgOtherArray
-            }
-            semaphore.signal()
-        }
-        task.resume()
-        semaphore.wait()
-    }
-    
-
-
-    
 
 }
 

@@ -11,16 +11,9 @@ import UIKit
 class ExchRequestViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
 
     @IBOutlet weak var userExchRequestCollectionView: UICollectionView!
-    
-    var image1 : UIImage? = nil
-    var exchRequestOwnerImageArray = [UIImage]()
-    var exchRequestQueuerImageArray = [[UIImage]]()
-    var imgOwnerarray = [UIImage]()
-    var imgQueuerarray = [[UIImage]]()
-    var exchRequestOwnerImageURLArray : [String] = []
-    var exchRequestQueuerImageURLArray : [[String]] = []
-    var myObjCount = 0
-    var queueCount = 10
+
+
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,9 +22,8 @@ class ExchRequestViewController: UIViewController, UICollectionViewDataSource, U
     override func viewWillAppear(_ animated: Bool) {
         userExchRequestCollectionView.backgroundColor = UIColor(red: 218.0/255.0, green: 218.0/255.0, blue: 218.0/255.0, alpha: 1.0)
     
-        exchRequestOwnerImageURLArray = Constants.userExchRequestOwnerImageURLArrayP
-        exchRequestQueuerImageURLArray = Constants.userExchRequestQueuerImageURLArrayP
-        
+
+        /* 不需要了 以此紀念
         for i in 0 ... exchRequestOwnerImageURLArray.count-1{
             if let checkUrl1 = URL(string: exchRequestOwnerImageURLArray[i]){
                 getDataFromUrl(url: checkUrl1, kind: 1){(data, response, error) in }
@@ -48,7 +40,7 @@ class ExchRequestViewController: UIViewController, UICollectionViewDataSource, U
         self.imgOwnerarray = []
         self.imgQueuerarray = []
         myObjCount = 0
-    
+        */
     }
     
 
@@ -62,25 +54,26 @@ class ExchRequestViewController: UIViewController, UICollectionViewDataSource, U
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ExchRequestCollectionViewCell
         
-//        cell.ViewBorderFunction(HorW: false, clear: true, amount: 80, borderWidth: 1)
-//        cell.wait4ExchImageView.image = self.wait4ExchImageArray[indexPath.row]
-//        cell.wait4ExchObjNameLabel.text = Constants.userWait4ExchObjNameArray[indexPath.row]
-//        cell.wait4ExchCategoryNameLabel.text = Constants.userWait4ExchCategoryArray[indexPath.row]
-//        cell.wait4ExchOwnerNameLabel.text = Constants.facebookName
-//        
-//        self.imgOwnerarray = []
-//        self.imgQueuerarray = []
-        
+        cell.ViewBorderFunction(HorW: false, clear: true, amount: 80, borderWidth: 1)
+        cell.userExchReqImageView.sd_setImage(with: URL(string: Constants.userExchRequestOwnerImageURLArrayP[indexPath.row]), placeholderImage: UIImage(named: "loading"), options: [.continueInBackground, .progressiveDownload])
+        //cell.userExchReqImageView.image = self.exchRequestOwnerImageArray[indexPath.row]
+            
+        cell.userExchReqQueuerCollectionView.ViewBorderFunction(HorW: false,clear: false, amount: 50, borderWidth: 1.2)
+
         return cell
     }
     
+       
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: collectionView.bounds.size.width-30, height: collectionView.bounds.size.width*0.5-15)
+        return CGSize(width: collectionView.bounds.size.width-30, height: collectionView.bounds.size.width*0.5-15+146)
     }
     
+    
+    /* 不需要這個了，以此紀念
     func getDataFromUrl(url: URL, kind: Int, completion: @escaping (_ data: Data?, _  response: URLResponse?, _ error: Error?) -> Void) {
         
         let semaphore = DispatchSemaphore(value: 0)
@@ -109,6 +102,6 @@ class ExchRequestViewController: UIViewController, UICollectionViewDataSource, U
         task.resume()
         semaphore.wait()
     }
-
+    */
 
 }
