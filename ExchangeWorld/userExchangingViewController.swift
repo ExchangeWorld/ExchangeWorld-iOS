@@ -41,18 +41,22 @@ class userExchangingViewController: UIViewController, UICollectionViewDataSource
         exchangingOtherImageURLArray = Constants.userExchangingOtherImageURLArrayP
         
         if(exchangingOwnerImageURLArray.count != 0){
-            for i in 1 ... exchangingOwnerImageURLArray.count{
-                if let checkUrl1 = URL(string: exchangingOwnerImageURLArray[i-1]){
+            for i in 0 ... exchangingOwnerImageURLArray.count-1{
+                if let checkUrl1 = URL(string: exchangingOwnerImageURLArray[i]){
                     
                     getDataFromUrl(url: checkUrl1, kind: 1){(data, response, error) in }
                 }
-                if let checkUrl2 = URL(string: exchangingOtherImageURLArray[i-1]){
+                if let checkUrl2 = URL(string: exchangingOtherImageURLArray[i]){
                     
                     getDataFromUrl(url: checkUrl2, kind: 2){(data, response, error) in }
                 }
             }
+            
         }
+        
+
         userExchangingCollectionView.reloadData()
+        
     }
     
     

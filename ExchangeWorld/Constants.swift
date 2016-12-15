@@ -33,6 +33,8 @@ struct Constants {
     static var imageType : String = ""
     static var imageURL : String = ""
     static var uid : Int = 0
+//    static var position_x : Double = 0
+//    static var position_y : Double = 0
     
     
     static var userStarImageURLArrayNP : [String] = []

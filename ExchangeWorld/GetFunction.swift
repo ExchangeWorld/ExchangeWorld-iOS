@@ -14,6 +14,7 @@ func httpGet(URL: String, getType: Int){
     
     let url = NSURL(string: URL)
     let semaphore = DispatchSemaphore(value: 0)
+//    var data: 
     
     let task = URLSession.shared.dataTask(with: url! as URL) {(data, response, error) in
         if error != nil
@@ -34,6 +35,7 @@ func httpGet(URL: String, getType: Int){
                 var userStarObjNameArray : [String] = []
                 var userStarOwnerNameArray : [String] = []
                 
+                var a = data
                 let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers)
 //                print("--------------------------")
 //                print(json)

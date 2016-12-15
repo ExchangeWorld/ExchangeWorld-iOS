@@ -32,8 +32,8 @@ class ExchRequestViewController: UIViewController, UICollectionViewDataSource, U
         exchRequestOwnerImageURLArray = Constants.userExchRequestOwnerImageURLArrayP
         exchRequestQueuerImageURLArray = Constants.userExchRequestQueuerImageURLArrayP
         
-        for i in 1 ... exchRequestOwnerImageURLArray.count{
-            if let checkUrl1 = URL(string: exchRequestOwnerImageURLArray[i-1]){
+        for i in 0 ... exchRequestOwnerImageURLArray.count-1{
+            if let checkUrl1 = URL(string: exchRequestOwnerImageURLArray[i]){
                 getDataFromUrl(url: checkUrl1, kind: 1){(data, response, error) in }
             }
         }
@@ -62,7 +62,7 @@ class ExchRequestViewController: UIViewController, UICollectionViewDataSource, U
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! Wait4ExchCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ExchRequestCollectionViewCell
         
 //        cell.ViewBorderFunction(HorW: false, clear: true, amount: 80, borderWidth: 1)
 //        cell.wait4ExchImageView.image = self.wait4ExchImageArray[indexPath.row]
@@ -70,8 +70,8 @@ class ExchRequestViewController: UIViewController, UICollectionViewDataSource, U
 //        cell.wait4ExchCategoryNameLabel.text = Constants.userWait4ExchCategoryArray[indexPath.row]
 //        cell.wait4ExchOwnerNameLabel.text = Constants.facebookName
 //        
-        self.imgOwnerarray = []
-        self.imgQueuerarray = []
+//        self.imgOwnerarray = []
+//        self.imgQueuerarray = []
         
         return cell
     }
