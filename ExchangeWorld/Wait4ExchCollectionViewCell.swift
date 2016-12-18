@@ -16,4 +16,5 @@ class Wait4ExchCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var wait4ExchOwnerImageView: UIImageView!
     @IBOutlet weak var wait4ExchCategoryNameLabel: UILabel!
     @IBOutlet weak var wait4ExchOwnerNameLabel: UILabel!
+    @IBOutlet weak var wait4ExchCategoryIcon: UIImageView!
 }

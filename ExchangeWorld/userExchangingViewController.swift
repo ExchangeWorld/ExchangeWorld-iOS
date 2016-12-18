@@ -14,7 +14,7 @@ class userExchangingViewController: UIViewController, UICollectionViewDataSource
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
         
     }
 
@@ -38,6 +38,9 @@ class userExchangingViewController: UIViewController, UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
+        let categoryOwnerNameChi = categoryEngToChi(categoryArray: Constants.userExchangingOwnerCategoryArray)
+        let categoryOtherNameChi = categoryEngToChi(categoryArray: Constants.userExchangingOtherCategoryArray)
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! userExchangingCollectionViewCell
         
         cell.ViewBorderFunction(HorW: false, clear: true, amount: 80, borderWidth: 1)
@@ -50,19 +53,21 @@ class userExchangingViewController: UIViewController, UICollectionViewDataSource
         cell.userExchangingOwnerView.ViewBorderFunction(HorW: false,clear: true, amount: 10, borderWidth: 1.2)
         cell.userExchangingOtherView.ViewBorderFunction(HorW: false,clear: true, amount: 10, borderWidth: 1.2)
         
-        cell.userExchangingOwnerCategoryLabel.text = Constants.userExchangingOwnerCategoryArray[indexPath.row]
+        cell.userExchangingOwnerCategoryLabel.text = categoryOwnerNameChi[indexPath.row]
+        cell.userExchangingOwnerCategoryIcon.image = UIImage(named: Constants.userExchangingOwnerCategoryArray[indexPath.row])
         cell.userExchangingOwnerNameLabel.text = Constants.facebookName
         
         cell.userExchangingOwnerObjLabel.text = Constants.userExchangingOwnerObjNameArray[indexPath.row]
         cell.userExchangingOwnerDescriptionLabel.text = Constants.userExchangingOwnerObjDescription[indexPath.row]
  
         
-        cell.userExchangingOtherCategoryLabel.text = Constants.userExchangingOtherCategoryArray[indexPath.row]
+        cell.userExchangingOtherCategoryLabel.text = categoryOtherNameChi[indexPath.row]
+        cell.userExchangingOtherCategoryIcon.image = UIImage(named: Constants.userExchangingOtherCategoryArray[indexPath.row])
         cell.userExchangingOtherNameLabel.text = Constants.userExchangingOtherNameArray[indexPath.row]
         cell.userExchangingOtherObjNameLabel.text = Constants.userExchangingOtherObjNameArray[indexPath.row]
         cell.userExchangingOtherDescriptionLabel.text = Constants.userExchangingOtherObjDescription[indexPath.row]
         cell.userExchangingExchIDLabel.text = String(Constants.userExchangingEIDArray[indexPath.row])
-        
+        cell.userExchangingExchIDLabel.isHidden = true
         
         
         cell.userExchangingOwnerCategoryLabel.LabelWidthLayoutFunction(constant: (cell.userExchangingOwnerView.frame.width-44)*0.8)

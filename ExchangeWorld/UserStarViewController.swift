@@ -44,18 +44,24 @@ class UserStarViewController: UIViewController, UICollectionViewDataSource, UICo
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
+        let categoryNameChi = categoryEngToChi(categoryArray: Constants.userStarCategotyArray)
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! UserStarCollectionViewCell
         
         cell.ViewBorderFunction(HorW: false, clear: true, amount: 80, borderWidth: 1)
         cell.userStarImageView.sd_setImage(with: URL(string: Constants.userStarImageURLArrayP[indexPath.row]), placeholderImage: UIImage(named: "loading"), options: [.continueInBackground, .progressiveDownload])
         cell.userStarObjNameLabel.text = Constants.userStarObjNameArray[indexPath.row]
-        cell.userStarCategoryNameLabel.text = Constants.userStarCategotyArray[indexPath.row]
+        cell.userStarCategoryNameLabel.text = categoryNameChi[indexPath.row]
         cell.userStarOwnerNameLabel.text = Constants.userStarOwnerNameArray[indexPath.row]
+        cell.userStarImageView.tag = indexPath.row
 
-        
+        cell.userStarCategoryIcon.image = UIImage(named: Constants.userStarCategotyArray[indexPath.row])
         
         return cell
     }
+    
+   
+    
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         

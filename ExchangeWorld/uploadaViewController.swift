@@ -70,9 +70,19 @@ class uploadViewController: UIViewController, UIImagePickerControllerDelegate, U
         picker.dataSource = self
         uploadCategoryTextField.inputView = picker
         
+        uploadNameTextField.delegate = self
+        uploadCategoryTextField.delegate = self
+        
+        
     }
     
 
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        uploadNameTextField.resignFirstResponder()
+        uploadCategoryTextField.resignFirstResponder()
+        return true
+    }
+    
     
     
     

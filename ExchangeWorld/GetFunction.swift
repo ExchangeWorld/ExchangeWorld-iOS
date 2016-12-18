@@ -34,6 +34,7 @@ func httpGet(URL: String, getType: Int){
                 var userStarCategotyArray : [String] = []
                 var userStarObjNameArray : [String] = []
                 var userStarOwnerNameArray : [String] = []
+                var userStarOwnerImageURL : [String] = []
                 
                 var a = data
                 let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers)
@@ -105,6 +106,10 @@ func httpGet(URL: String, getType: Int){
                                                         if (dictionary4.key == "name"){
                                                             userStarOwnerNameArray.append(dictionary4.value as! String)
                                                             Constants.userStarOwnerNameArray = userStarOwnerNameArray
+                                                        }
+                                                        if (dictionary4.key == "photo_path"){
+                                                            userStarOwnerImageURL.append(dictionary4.value as! String)
+                                                            Constants.userStarOwnerImageURLArray = userStarOwnerImageURL
                                                         }
                                                     }
                                                 }
@@ -233,9 +238,8 @@ func httpGet(URL: String, getType: Int){
                     
                 }
   
-            }catch{
-                print("JSONERROR2")
             }
+            
         }
         else if (getType == 3){
             do{
@@ -249,6 +253,9 @@ func httpGet(URL: String, getType: Int){
                 var userExchRequestQueuerCategoryArray : [[String]] = []
                 var userExchRequestQueuerDescriptionArray : [[String]] = []
                 var userExchRequestQueuerNameArray : [[String]] = []
+                var userExchRequestOwnerCategoryArrayChi : [String] = []
+                var userExchRequestOwnerGIDArray : [Int] = []
+                var userExchRequestQueuerGIDArray : [[Int]] = []
                 
                 
                 let json = try? JSONSerialization.jsonObject(with: data!, options: [.mutableContainers])
@@ -271,6 +278,10 @@ func httpGet(URL: String, getType: Int){
                                 userExchRequestOwnerImageURLArrayNP.append(photo_path)
                                 Constants.userExchRequestOwnerImageURLArrayNP = userExchRequestOwnerImageURLArrayNP
                             }
+                            if let gid = dictionary["gid"] as? Int{
+                                userExchRequestOwnerGIDArray.append(gid)
+                                Constants.userExchRequestOwnerGIDArray = userExchRequestOwnerGIDArray
+                            }
                             
                             
                             if let queue = dictionary["queue"] as? [Any]{
@@ -285,9 +296,10 @@ func httpGet(URL: String, getType: Int){
                                                 if let name = queuer_goods["name"] as? String{
                                                     userExchRequestQueuerObjNameArray.append([name])
                                                 }
+                                                if let gid = queuer_goods["gid"] as? Int{
+                                                    userExchRequestQueuerGIDArray.append([gid])
+                                                }
                                                 if let photo_path = queuer_goods["photo_path"] as? String{
-                                                    print("11111111111")
-                                                    print(photo_path)
                                                     var photo_path2 = [photo_path]
                                                     photo_path2 = urlArrayTranformation(url: photo_path2)
                                                     userExchRequestQueuerImageURLArrayNP.append(photo_path2)
@@ -315,12 +327,12 @@ func httpGet(URL: String, getType: Int){
                                                 if let name = queuer_goods["name"] as? String{
                                                     userExchRequestQueuerObjNameArray[queueCount].append(name)
                                                 }
+                                                if let gid = queuer_goods["gid"] as? Int{
+                                                    userExchRequestQueuerGIDArray[queueCount].append(gid)
+                                                }
                                                 if let photo_path = queuer_goods["photo_path"] as? String{
-                                                    print("222222222")
-                                                    print(photo_path)
                                                     var photo_path2 = [photo_path]
                                                     photo_path2 = urlArrayTranformation(url: photo_path2)
-                                                    //userExchRequestQueuerImageURLArrayNP.append([photo_path])
                                                     userExchRequestQueuerImageURLArrayNP[queueCount].append(photo_path2[0])
                                                 }
                                                 if let category = queuer_goods["category"] as? String{
@@ -352,6 +364,10 @@ func httpGet(URL: String, getType: Int){
                 Constants.userExchRequestQueuerNameArray = userExchRequestQueuerNameArray
                 Constants.userExchRequestOwnerImageURLArrayP = urlArrayTranformation(url: userExchRequestOwnerImageURLArrayNP)
                 Constants.userExchRequestQueuerImageURLArrayP = userExchRequestQueuerImageURLArrayNP
+                userExchRequestOwnerCategoryArrayChi = categoryEngToChi(categoryArray: userExchRequestOwnerCategoryArray)
+                Constants.userExchRequestOwnerCategoryArrayChi = userExchRequestOwnerCategoryArrayChi
+                Constants.userExchRequestOwnerGIDArray = userExchRequestOwnerGIDArray
+                Constants.userExchRequestQueuerGIDArray = userExchRequestQueuerGIDArray
                 print(Constants.userExchRequestOwnerObjNameArray)
                 print(Constants.userExchRequestOwnerCategoryArray)
                 print(Constants.userExchRequestQIDArray)
@@ -361,6 +377,8 @@ func httpGet(URL: String, getType: Int){
                 print(Constants.userExchRequestQueuerDescriptionArray)
                 print(Constants.userExchRequestQueuerNameArray)
                 print(Constants.userExchRequestQueuerImageURLArrayP)
+                print(Constants.userExchRequestOwnerGIDArray)
+                print(Constants.userExchRequestQueuerGIDArray)
                 
             }
         }

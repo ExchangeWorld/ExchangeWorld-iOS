@@ -37,13 +37,17 @@ class Wait4ExchViewController: UIViewController , UICollectionViewDataSource, UI
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
+        let categoryNameChi = categoryEngToChi(categoryArray: Constants.userWait4ExchCategoryArray)
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! Wait4ExchCollectionViewCell
         
         cell.ViewBorderFunction(HorW: false, clear: true, amount: 80, borderWidth: 1)
         cell.wait4ExchImageView.sd_setImage(with: URL(string: Constants.userWait4ExchImageURLArrayP[indexPath.row]), placeholderImage: UIImage(named: "loading"), options: [.continueInBackground, .progressiveDownload])
         cell.wait4ExchObjNameLabel.text = Constants.userWait4ExchObjNameArray[indexPath.row]
-        cell.wait4ExchCategoryNameLabel.text = Constants.userWait4ExchCategoryArray[indexPath.row]
+        cell.wait4ExchCategoryNameLabel.text = categoryNameChi[indexPath.row]
         cell.wait4ExchOwnerNameLabel.text = Constants.facebookName
+        
+        cell.wait4ExchCategoryIcon.image = UIImage(named: Constants.userWait4ExchCategoryArray[indexPath.row])
         
         return cell
     }

@@ -37,6 +37,9 @@ class userHistoryViewController: UIViewController, UICollectionViewDataSource, U
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
+        let categoryOwnerNameChi = categoryEngToChi(categoryArray: Constants.userExchHistoryOwnerCategoryArray)
+        let categoryOtherNameChi = categoryEngToChi(categoryArray: Constants.userExchHistoryOtherCategoryArray)
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! userHistoryCollectionViewCell
         
         cell.userOwnerObjImageView.frame = CGRect(x: 0, y: 0, width: collectionView.bounds.size.width*0.5-15, height: collectionView.bounds.size.width*0.5-15)
@@ -50,10 +53,12 @@ class userHistoryViewController: UIViewController, UICollectionViewDataSource, U
         cell.userOwnerObjImageView.sd_setImage(with: URL(string: Constants.userExchHistoryOwnerImageURLArrayP[indexPath.row]), placeholderImage: UIImage(named: "loading"), options: [.continueInBackground, .progressiveDownload])
         cell.userOtherObjImageView.sd_setImage(with: URL(string: Constants.userExchHistoryOtherImageURLArrayP[indexPath.row]), placeholderImage: UIImage(named: "loading"), options: [.continueInBackground, .progressiveDownload])
         cell.userOwnerNameLabel.text = Constants.facebookName
-        cell.userOwnerCategoryLabel.text = Constants.userExchHistoryOwnerCategoryArray[indexPath.row]
+        cell.userOwnerCategoryLabel.text = categoryOwnerNameChi[indexPath.row]
         cell.userOtherNameLabel.text = Constants.userExchHistoryOtherNameArray[indexPath.row]
-        cell.userOtherCategoryLabel.text = Constants.userExchHistoryOtherCategoryArray[indexPath.row]
-       
+        cell.userOtherCategoryLabel.text = categoryOtherNameChi[indexPath.row]
+        
+        cell.userOwnerCategoryIcon.image = UIImage(named: Constants.userExchHistoryOwnerCategoryArray[indexPath.row])
+        cell.userOtherCategoryIcon.image = UIImage(named: Constants.userExchHistoryOtherCategoryArray[indexPath.row])
         
         
         return cell
