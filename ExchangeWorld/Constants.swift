@@ -27,12 +27,14 @@ struct Constants {
     static var facebookID : String = ""
     static var facebookProfilePicURL : String = ""
     static var facebookName : String = ""
+    static var facebookEmail : String = ""
     static var exwdToken : String = ""
     static var imageInBase64 : String = ""
     static var imageSize : Int = 0
     static var imageType : String = ""
     static var imageURL : String = ""
     static var uid : Int = 0
+    static var firstTimeLogin : Bool = false
 //    static var position_x : Double = 0
 //    static var position_y : Double = 0
     
@@ -44,6 +46,7 @@ struct Constants {
     static var userStarOwnerNameArray : [String] = []
     static var userStarOwnerImageURLArray : [String] = []
     static var userStarGIDArray : [Int] = []
+    static var userStarDescriptionArray : [String] = []
     static var objCount = 100
     static var ownObject2QueueCount = 100
     static var whichCase : String = ""

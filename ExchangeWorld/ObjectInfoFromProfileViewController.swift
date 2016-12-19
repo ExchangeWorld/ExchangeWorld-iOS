@@ -42,9 +42,11 @@ class ObjectInfoFromProfileViewController: UIViewController {
             ObjNameLabel.text = Constants.userStarObjNameArray[objCount]
             ObjOwnerImage.sd_setImage(with: URL(string: Constants.userStarOwnerImageURLArray[objCount]), placeholderImage: UIImage(named: "loading"), options: [.continueInBackground, .progressiveDownload])
             ObjOwnerName.text = Constants.userStarOwnerNameArray[objCount]
+            ObjDescriptionTextView.text = Constants.userStarDescriptionArray[objCount]
             ObjGIDLabel.text = String(Constants.userStarGIDArray[objCount])
             print(ObjGIDLabel.text ?? "didnt get ojbect's gid")
             Constants.gidToBeQueued = Constants.userStarGIDArray[objCount]
+            
             
             break
         case "wait4Exch":

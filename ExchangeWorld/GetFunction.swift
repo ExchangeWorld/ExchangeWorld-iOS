@@ -13,13 +13,15 @@ import Foundation
             2 : uid -> (exchanging & exchangeHistory)'s Object Info
             3 : token -> exchangeRequest's Object Info
             4 : gid,uid -> check if starred
+            5 : facebookID -> firstTimeLogin?
+            6 : get description 4 userStar page
  */
 
 func httpGet(URL: String, getType: Int){
     
     let url = NSURL(string: URL)
     let semaphore = DispatchSemaphore(value: 0)
-//    var data: 
+
     
     let task = URLSession.shared.dataTask(with: url! as URL) {(data, response, error) in
         if error != nil
@@ -27,6 +29,16 @@ func httpGet(URL: String, getType: Int){
             print("error=\(error)")
         }
         
+        if(getType == 5){
+            print(nullToNil(value: data! as AnyObject?)!)
+            do{
+                let NSresponseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+                let responseString: String = NSresponseString! as String
+                if(responseString == "null"){
+                    Constants.firstTimeLogin = true
+                }
+            }
+        }
         if(getType == 1){
         
             do {
@@ -442,6 +454,38 @@ func httpGet(URL: String, getType: Int){
                 }
             }
         }
+        else if (getType == 6){
+            do{
+                var userStarDescriptionArray : [String] = []
+                var userStarDescriptionArrayRealOrder : [String] = []
+                
+                let json = try? JSONSerialization.jsonObject(with: data!, options: [.mutableContainers])
+                if let array = json as? [Any]{
+                    for object in array {
+                        if let dictionary = object as? [String: Any]{
+                            if let goods = dictionary["goods"] as? [String: Any]{
+                                if(Constants.userStarImageURLArrayP.count != 0){
+                                    //for _ in 0...Constants.userStarImageURLArrayP.count-1{
+                                        for j in 0 ... Constants.userStarImageURLArrayP.count-1{
+                                            if(Constants.userStarGIDArray[j] == goods["gid"] as? Int){
+                                                userStarDescriptionArray.append((goods["description"] as? String)!)
+                                            }
+                                        }
+                                    //}
+                                }
+                            }
+                        }
+                    }
+                }
+                
+                for i in 0...userStarDescriptionArray.count-1{
+                    userStarDescriptionArrayRealOrder.append(userStarDescriptionArray[userStarDescriptionArray.count-1-i])
+                }
+                Constants.userStarDescriptionArray = userStarDescriptionArrayRealOrder
+                print(Constants.userStarDescriptionArray)
+            }
+        }
+        
         
         semaphore.signal()
     }

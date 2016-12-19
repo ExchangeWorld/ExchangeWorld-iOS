@@ -28,6 +28,8 @@ class UserStarViewController: UIViewController, UICollectionViewDataSource, UICo
         
         httpGet(URL: "\(Constants.API_SERVER_URL)/api/user/me/goods/queue?token=\(Constants.exwdToken)", getType: 3)
         
+        httpGet(URL: "\(Constants.API_SERVER_URL)/api/star/by?starring_user_uid=\(Constants.uid)", getType: 6)
+        
         userStarCollectionView.backgroundColor = UIColor(red: 218.0/255.0, green: 218.0/255.0, blue: 218.0/255.0, alpha: 1.0)
              
         userStarCollectionView.reloadData()
