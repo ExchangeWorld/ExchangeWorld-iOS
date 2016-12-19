@@ -32,6 +32,9 @@
 		720BC32D1E0586670099C252 /* ExchRequestQueuerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720BC32C1E0586670099C252 /* ExchRequestQueuerViewController.swift */; };
 		720BC32F1E0586810099C252 /* ExchRequestQueuerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720BC32E1E0586810099C252 /* ExchRequestQueuerCollectionViewCell.swift */; };
 		720BC3311E06DB570099C252 /* ObjectInfoFromProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720BC3301E06DB570099C252 /* ObjectInfoFromProfileViewController.swift */; };
+		720BC3331E07E1840099C252 /* DeleteFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720BC3321E07E1840099C252 /* DeleteFunction.swift */; };
+		720BC3351E07EAE30099C252 /* QueueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720BC3341E07EAE30099C252 /* QueueViewController.swift */; };
+		720BC3371E07EAF50099C252 /* QueueCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720BC3361E07EAF50099C252 /* QueueCollectionViewCell.swift */; };
 		721F46BE1DF463AF00AAA83D /* UserStarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721F46BD1DF463AF00AAA83D /* UserStarViewController.swift */; };
 		721F46FC1DF5344900AAA83D /* UserStarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721F46FB1DF5344900AAA83D /* UserStarCollectionViewCell.swift */; };
 		7224FF851DEEB1540020CE85 /* ProfileSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7224FF841DEEB1540020CE85 /* ProfileSegmentedControl.swift */; };
@@ -101,6 +104,9 @@
 		720BC32C1E0586670099C252 /* ExchRequestQueuerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExchRequestQueuerViewController.swift; sourceTree = "<group>"; };
 		720BC32E1E0586810099C252 /* ExchRequestQueuerCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExchRequestQueuerCollectionViewCell.swift; sourceTree = "<group>"; };
 		720BC3301E06DB570099C252 /* ObjectInfoFromProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectInfoFromProfileViewController.swift; sourceTree = "<group>"; };
+		720BC3321E07E1840099C252 /* DeleteFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteFunction.swift; sourceTree = "<group>"; };
+		720BC3341E07EAE30099C252 /* QueueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueueViewController.swift; sourceTree = "<group>"; };
+		720BC3361E07EAF50099C252 /* QueueCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueueCollectionViewCell.swift; sourceTree = "<group>"; };
 		721F46BD1DF463AF00AAA83D /* UserStarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserStarViewController.swift; sourceTree = "<group>"; };
 		721F46FB1DF5344900AAA83D /* UserStarCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserStarCollectionViewCell.swift; sourceTree = "<group>"; };
 		7224FF841DEEB1540020CE85 /* ProfileSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileSegmentedControl.swift; sourceTree = "<group>"; };
@@ -177,6 +183,7 @@
 				184A3D641DDEA5AA00CA3541 /* PostFunction.swift */,
 				72BA14F81DF7E6C0006393E9 /* GetFunction.swift */,
 				72BA15081DFBDBEB006393E9 /* PutFunction.swift */,
+				720BC3321E07E1840099C252 /* DeleteFunction.swift */,
 				72BA14F61DF67346006393E9 /* URLProcessingFunction.swift */,
 				184A3D621DDEA47800CA3541 /* Constants.swift */,
 				1870D6C31DC083AF00C697DA /* ObjectDataStructure.swift */,
@@ -206,6 +213,8 @@
 				72BA14FE1DF99007006393E9 /* userHistoryViewController.swift */,
 				72BA15001DF9901B006393E9 /* userHistoryCollectionViewCell.swift */,
 				720BC3301E06DB570099C252 /* ObjectInfoFromProfileViewController.swift */,
+				720BC3341E07EAE30099C252 /* QueueViewController.swift */,
+				720BC3361E07EAF50099C252 /* QueueCollectionViewCell.swift */,
 				18D992671DBC521E00538F00 /* Assets.xcassets */,
 				18D992691DBC521E00538F00 /* LaunchScreen.storyboard */,
 				18D9926C1DBC521E00538F00 /* Info.plist */,
@@ -442,12 +451,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				72BA14F71DF67346006393E9 /* URLProcessingFunction.swift in Sources */,
+				720BC3331E07E1840099C252 /* DeleteFunction.swift in Sources */,
 				1870D6C81DC098B600C697DA /* HomeObjectCategoryCollectionViewCell.swift in Sources */,
 				723CB42E1E00F3DE0006029C /* ExchRequestViewController.swift in Sources */,
+				720BC3371E07EAF50099C252 /* QueueCollectionViewCell.swift in Sources */,
 				184A3D651DDEA5AA00CA3541 /* PostFunction.swift in Sources */,
 				1870D6C61DC0952600C697DA /* HomeObjectCategoryCollectionViewController.swift in Sources */,
 				720BC3311E06DB570099C252 /* ObjectInfoFromProfileViewController.swift in Sources */,
 				72BA15091DFBDBEB006393E9 /* PutFunction.swift in Sources */,
+				720BC3351E07EAE30099C252 /* QueueViewController.swift in Sources */,
 				1870D6C21DC07EB000C697DA /* HomeMapViewController.swift in Sources */,
 				720BC32D1E0586670099C252 /* ExchRequestQueuerViewController.swift in Sources */,
 				721F46BE1DF463AF00AAA83D /* UserStarViewController.swift in Sources */,

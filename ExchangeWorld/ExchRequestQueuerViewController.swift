@@ -11,12 +11,13 @@ import UIKit
 class ExchRequestQueuerViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var doesntWant2ExchYetButton: UIButton!
+    @IBOutlet weak var titleLabel: UILabel!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         doesntWant2ExchYetButton.ViewBorderFunction(HorW: false, clear: true, amount: 10, borderWidth: 1)
-        
+        titleLabel.backgroundColor = UIColor(red: 235.0/255.0, green: 235.0/255.0, blue: 235.0/255.0, alpha: 0)
         
     }
     
@@ -44,7 +45,7 @@ class ExchRequestQueuerViewController: UIViewController, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: collectionView.bounds.size.width-60, height: collectionView.bounds.size.width*0.5-30+40)
+        return CGSize(width: collectionView.bounds.size.width-40, height: collectionView.bounds.size.width*0.5-30+40)
     }
     
    

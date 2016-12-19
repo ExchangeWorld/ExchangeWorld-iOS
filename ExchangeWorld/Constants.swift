@@ -43,14 +43,21 @@ struct Constants {
     static var userStarObjNameArray : [String] = []
     static var userStarOwnerNameArray : [String] = []
     static var userStarOwnerImageURLArray : [String] = []
+    static var userStarGIDArray : [Int] = []
     static var objCount = 100
+    static var ownObject2QueueCount = 100
     static var whichCase : String = ""
+    static var starredOrNot : Bool = false
+    static var gidToBeQueued = 100
+//    static var 
     
     
     static var userWait4ExchImageURLArrayNP : [String] = []
     static var userWait4ExchImageURLArrayP : [String] = []
     static var userWait4ExchCategoryArray : [String] = []
     static var userWait4ExchObjNameArray : [String] = []
+    static var userWait4ExchDescription : [String] = []
+    static var userWait4ExchGIDArray : [Int] = []
     
     
     static var userExchangingOwnerImageURLArrayNP : [String] = []
@@ -65,7 +72,9 @@ struct Constants {
     static var userExchangingOwnerObjDescription : [String] = []
     static var userExchangingOtherObjDescription : [String] = []
     static var userExchangingEIDArray: [Int] = []
-    
+    static var userExchangingOtherProfileImageArray : [String] = []
+    static var userExchangingOwnerGIDArray : [Int] = []
+    static var userExchangingOtherGIDArray : [Int] = []
     
     static var userExchHistoryOwnerImageURLArrayNP : [String] = []
     static var userExchHistoryOtherImageURLArrayNP : [String] = []
@@ -77,7 +86,11 @@ struct Constants {
     static var userExchHistoryOtherObjNameArray : [String] = []
     static var userExchHistoryOtherNameArray : [String] = []
     static var userExchHistoryEIDArray: [Int] = []
-    
+    static var userExchHistoryOwnerObjDescription : [String] = []
+    static var userExchHistoryOtherObjDescription : [String] = []
+    static var userExchHistoryOtherProfileImageArray : [String] = []
+    static var userExchHistoryOwnerGIDArray : [Int] = []
+    static var userExchHistoryOtherGIDArray : [Int] = []
 
     static var userExchRequestOwnerImageURLArrayNP : [String] = []
     static var userExchRequestOwnerImageURLArrayP : [String] = []
@@ -94,6 +107,7 @@ struct Constants {
     static var userExchRequestQueuerDescriptionArray : [[String]] = []
     static var userExchRequestQueuerNameArray : [[String]] = []
     static var userExchRequestQueuerGIDArray: [[Int]] = []
+    static var userExchRequestQueuerProfileImageArray : [[String]] = []
     
     static var whichObjCount = 100
     static var whichQueuerCount = 100

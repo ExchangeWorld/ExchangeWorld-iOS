@@ -60,6 +60,8 @@ class userHistoryViewController: UIViewController, UICollectionViewDataSource, U
         cell.userOwnerCategoryIcon.image = UIImage(named: Constants.userExchHistoryOwnerCategoryArray[indexPath.row])
         cell.userOtherCategoryIcon.image = UIImage(named: Constants.userExchHistoryOtherCategoryArray[indexPath.row])
         
+        cell.userOwnerObjImageView.tag = indexPath.row
+        cell.userOtherObjImageView.tag = indexPath.row
         
         return cell
     }

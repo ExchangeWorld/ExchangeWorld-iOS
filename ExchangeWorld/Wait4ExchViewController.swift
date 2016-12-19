@@ -48,6 +48,8 @@ class Wait4ExchViewController: UIViewController , UICollectionViewDataSource, UI
         cell.wait4ExchOwnerNameLabel.text = Constants.facebookName
         
         cell.wait4ExchCategoryIcon.image = UIImage(named: Constants.userWait4ExchCategoryArray[indexPath.row])
+        cell.wait4ExchImageView.tag = indexPath.row
+        
         
         return cell
     }

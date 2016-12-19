@@ -22,5 +22,13 @@ class userHistoryCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var userOtherNameLabel: UILabel!
     @IBOutlet weak var userOtherCategoryLabel: UILabel!
     
+    @IBAction func ownerObjectInfoButton(_ sender: Any) {
+        Constants.objCount = userOwnerObjImageView.tag
+        Constants.whichCase = "HistoryOwner"
+    }
     
+    @IBAction func otherObjectInfoButton(_ sender: Any) {
+        Constants.objCount = userOtherObjImageView.tag
+        Constants.whichCase = "HistoryOther"
+    }
 }

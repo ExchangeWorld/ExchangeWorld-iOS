@@ -55,5 +55,15 @@ class userExchangingCollectionViewCell: UICollectionViewCell {
         
     }
     
+    @IBAction func ObjectInfoButtonAction(_ sender: Any) {
+        
+        Constants.objCount = userExchangingOwnerObjImageView.tag
+        Constants.whichCase = "ExchangingOwner"
+    }
+    
+    @IBAction func ObjectInfoButtonAction2(_ sender: Any) {
+        Constants.objCount = userExchangingOtherObjImageView.tag
+        Constants.whichCase = "ExchangingOther"
+    }
     
 }

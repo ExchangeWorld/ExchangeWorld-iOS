@@ -8,7 +8,12 @@
 
 import Foundation
 
-// getType : 1 : facebookID -> star & wait , 2 uid -> exchanging & exchangeHistory , 3 token -> exchangeRequest
+/*
+ getType :  1 : facebookID -> (star & wait)'s Object Info
+            2 : uid -> (exchanging & exchangeHistory)'s Object Info
+            3 : token -> exchangeRequest's Object Info
+            4 : gid,uid -> check if starred
+ */
 
 func httpGet(URL: String, getType: Int){
     
@@ -29,14 +34,17 @@ func httpGet(URL: String, getType: Int){
                 var userWait4ExchImageURLArrayNP : [String] = []
                 var userWait4ExchCategoryArray : [String] = []
                 var userWait4ExchObjNameArray : [String] = []
+                var userWait4ExchDescription : [String] = []
+                var userWait4ExchGIDArray : [Int] = []
                 
                 var userStarImageURLArrayNP : [String] = []
                 var userStarCategotyArray : [String] = []
                 var userStarObjNameArray : [String] = []
                 var userStarOwnerNameArray : [String] = []
                 var userStarOwnerImageURL : [String] = []
+                var userStarGIDArray : [Int] = []
                 
-                var a = data
+                
                 let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers)
 //                print("--------------------------")
 //                print(json)
@@ -66,6 +74,14 @@ func httpGet(URL: String, getType: Int){
                                                     if(dictionary2.key == "category"){
                                                         userWait4ExchCategoryArray.append(dictionary2.value as! String)
                                                         Constants.userWait4ExchCategoryArray = userWait4ExchCategoryArray
+                                                    }
+                                                    if(dictionary2.key == "description"){
+                                                        userWait4ExchDescription.append(dictionary2.value as! String)
+                                                        Constants.userWait4ExchDescription = userWait4ExchDescription
+                                                    }
+                                                    if(dictionary2.key == "gid"){
+                                                        userWait4ExchGIDArray.append(dictionary2.value as! Int)
+                                                        Constants.userWait4ExchGIDArray = userWait4ExchGIDArray
                                                     }
                                                 }
                                             }
@@ -99,6 +115,10 @@ func httpGet(URL: String, getType: Int){
                                                 if (dictionary3.key == "name"){
                                                     userStarObjNameArray.append(dictionary3.value as! String)
                                                     Constants.userStarObjNameArray = userStarObjNameArray
+                                                }
+                                                if (dictionary3.key == "gid"){
+                                                    userStarGIDArray.append(dictionary3.value as! Int)
+                                                    Constants.userStarGIDArray = userStarGIDArray
                                                 }
                                                 if (dictionary3.key == "owner"){
                                                     let dictionary3Value = (dictionary3.value as AnyObject)
@@ -144,6 +164,9 @@ func httpGet(URL: String, getType: Int){
                 var userExchangingOtherImageURLArrayNP : [String] = []
                 var userExchangingOtherObjDescription : [String] = []
                 var userExchangingOtherNameArray : [String] = []
+                var userExchangingOtherProfileImageArray : [String] = []
+                var userExchangingOwnerGIDArray : [Int] = []
+                var userExchangingOtherGIDArray : [Int] = []
                 
                 var userExchangingEIDArray: [Int] = []
                 
@@ -154,6 +177,11 @@ func httpGet(URL: String, getType: Int){
                 var userExchHistoryOtherCategoryArray : [String] = []
                 var userExchHistoryOtherImageURLArrayNP : [String] = []
                 var userExchHistoryOtherNameArray : [String] = []
+                var userExchHistoryOwnerObjDescription : [String] = []
+                var userExchHistoryOtherObjDescription : [String] = []
+                var userExchHistoryOtherProfileImageArray : [String] = []
+                var userExchHistoryOwnerGIDArray : [Int] = []
+                var userExchHistoryOtherGIDArray : [Int] = []
                 
                 var userExchHistoryEIDArray: [Int] = []
                 
@@ -179,6 +207,10 @@ func httpGet(URL: String, getType: Int){
                                         Constants.userExchHistoryOwnerCategoryArray = userExchHistoryOwnerCategoryArray
                                         userExchHistoryOwnerImageURLArrayNP.append(owner_goods["photo_path"] as! String)
                                         Constants.userExchHistoryOwnerImageURLArrayNP = userExchHistoryOwnerImageURLArrayNP
+                                        userExchHistoryOwnerObjDescription.append(owner_goods["description"] as! String)
+                                        Constants.userExchHistoryOwnerObjDescription = userExchangingOwnerObjDescription
+                                        userExchHistoryOwnerGIDArray.append(owner_goods["gid"] as! Int)
+                                        Constants.userExchHistoryOwnerGIDArray = userExchHistoryOwnerGIDArray
                                     }
                                     if let other_goods = dictionary["other_goods"] as? [String: Any]{
                                         
@@ -188,9 +220,16 @@ func httpGet(URL: String, getType: Int){
                                         Constants.userExchHistoryOtherCategoryArray = userExchHistoryOtherCategoryArray
                                         userExchHistoryOtherImageURLArrayNP.append(other_goods["photo_path"] as! String)
                                         Constants.userExchHistoryOtherImageURLArrayNP = userExchHistoryOtherImageURLArrayNP
+                                        userExchHistoryOtherObjDescription.append(other_goods["description"] as! String)
+                                        Constants.userExchHistoryOtherObjDescription = userExchangingOwnerObjDescription
+                                        userExchHistoryOtherGIDArray.append(other_goods["gid"] as! Int)
+                                        Constants.userExchHistoryOtherGIDArray = userExchHistoryOtherGIDArray
                                         if let other_owner = other_goods["owner"] as? [String: Any]{
                                             userExchHistoryOtherNameArray.append(other_owner["name"] as! String)
                                             Constants.userExchHistoryOtherNameArray = userExchHistoryOtherNameArray
+                                            userExchHistoryOtherProfileImageArray.append(other_owner["photo_path"] as! String)
+                                            Constants.userExchHistoryOtherProfileImageArray = userExchHistoryOtherProfileImageArray
+
                                         }
                                     }
                                 }
@@ -209,6 +248,8 @@ func httpGet(URL: String, getType: Int){
                                         Constants.userExchangingOwnerImageURLArrayNP = userExchangingOwnerImageURLArrayNP
                                         userExchangingOwnerObjDescription.append(owner_goods["description"] as! String)
                                         Constants.userExchangingOwnerObjDescription = userExchangingOwnerObjDescription
+                                        userExchangingOwnerGIDArray.append(owner_goods["gid"] as! Int)
+                                        Constants.userExchangingOwnerGIDArray = userExchangingOwnerGIDArray
                                         
                                     }
                                     if let other_goods = dictionary["other_goods"] as? [String: Any]{
@@ -221,9 +262,13 @@ func httpGet(URL: String, getType: Int){
                                         Constants.userExchangingOtherImageURLArrayNP = userExchangingOtherImageURLArrayNP
                                         userExchangingOtherObjDescription.append(other_goods["description"] as! String)
                                         Constants.userExchangingOtherObjDescription = userExchangingOtherObjDescription
+                                        userExchangingOtherGIDArray.append(other_goods["gid"] as! Int)
+                                        Constants.userExchangingOtherGIDArray = userExchangingOtherGIDArray
                                         if let other_owner = other_goods["owner"] as? [String: Any]{
                                             userExchangingOtherNameArray.append(other_owner["name"] as! String)
                                             Constants.userExchangingOtherNameArray = userExchangingOtherNameArray
+                                            userExchangingOtherProfileImageArray.append(other_owner["photo_path"] as! String)
+                                            Constants.userExchangingOtherProfileImageArray = userExchangingOtherProfileImageArray
                                         }
                                     }
                                 }
@@ -256,6 +301,7 @@ func httpGet(URL: String, getType: Int){
                 var userExchRequestOwnerCategoryArrayChi : [String] = []
                 var userExchRequestOwnerGIDArray : [Int] = []
                 var userExchRequestQueuerGIDArray : [[Int]] = []
+                var userExchRequestQueuerProfileImageArray : [[String]] = []
                 
                 
                 let json = try? JSONSerialization.jsonObject(with: data!, options: [.mutableContainers])
@@ -314,6 +360,9 @@ func httpGet(URL: String, getType: Int){
                                                     if let owner_name = owner["name"] as? String{
                                                         userExchRequestQueuerNameArray.append([owner_name])
                                                     }
+                                                    if let photo_path = owner["photo_path"] as? String{
+                                                        userExchRequestQueuerProfileImageArray.append([photo_path])
+                                                    }
                                                 }
                                             }
                                         }
@@ -346,6 +395,9 @@ func httpGet(URL: String, getType: Int){
                                                     if let owner_name = owner["name"] as? String{
                                                         userExchRequestQueuerNameArray[queueCount].append(owner_name)
                                                     }
+                                                    if let photo_path = owner["photo_path"] as? String{
+                                                        userExchRequestQueuerProfileImageArray[queueCount].append(photo_path)
+                                                    }
                                                 }
                                             }
                                         }
@@ -368,22 +420,28 @@ func httpGet(URL: String, getType: Int){
                 Constants.userExchRequestOwnerCategoryArrayChi = userExchRequestOwnerCategoryArrayChi
                 Constants.userExchRequestOwnerGIDArray = userExchRequestOwnerGIDArray
                 Constants.userExchRequestQueuerGIDArray = userExchRequestQueuerGIDArray
-                print(Constants.userExchRequestOwnerObjNameArray)
-                print(Constants.userExchRequestOwnerCategoryArray)
-                print(Constants.userExchRequestQIDArray)
-                print(Constants.userExchRequestQueuerObjNameArray)
-                print(Constants.userExchRequestQueuerImageURLArrayNP)
-                print(Constants.userExchRequestQueuerCategoryArray)
-                print(Constants.userExchRequestQueuerDescriptionArray)
-                print(Constants.userExchRequestQueuerNameArray)
-                print(Constants.userExchRequestQueuerImageURLArrayP)
-                print(Constants.userExchRequestOwnerGIDArray)
-                print(Constants.userExchRequestQueuerGIDArray)
+                Constants.userExchRequestQueuerProfileImageArray = userExchRequestQueuerProfileImageArray
                 
             }
         }
+        else if (getType == 4){
+            do{
         
-        
+                let json = try? JSONSerialization.jsonObject(with: data!, options: [.mutableContainers])
+                if let array = json as? [Any] {
+                    for object in array {
+                        if let dictionary = object as? [String: Any]{
+                            if let starring_user_uid = dictionary["starring_user_uid"] as? Int{
+                                if (starring_user_uid == Constants.uid){
+                                    Constants.starredOrNot = true
+                                }
+                            }
+                        }
+                    }
+   
+                }
+            }
+        }
         
         semaphore.signal()
     }

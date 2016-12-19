@@ -21,10 +21,13 @@ class ExchRequestQueuerCollectionViewCell: UICollectionViewCell {
     
     @IBAction func userExchConfirmButtonAction(_ sender: Any) {
         Constants.whichQueuerCount = userExchConfirmedButton.tag
-        print(Constants.whichQueuerCount)
         
         httpPost(URL: "\(Constants.API_SERVER_URL)/api/exchange/create?token=\(Constants.exwdToken)", parameters: ["goods_one_gid": Constants.userExchRequestOwnerGIDArray[Constants.whichObjCount] , "goods_two_gid": Constants.userExchRequestQueuerGIDArray[Constants.whichObjCount][Constants.whichQueuerCount]], returnJsonFormat : true)
         
         
+    }
+    @IBAction func ObjectInfoButtonAction(_ sender: Any) {
+        Constants.whichQueuerCount = userExchConfirmedButton.tag
+        Constants.whichCase = "Queuer's_Object"
     }
 }

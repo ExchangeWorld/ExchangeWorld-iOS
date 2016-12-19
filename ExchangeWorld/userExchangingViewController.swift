@@ -76,20 +76,38 @@ class userExchangingViewController: UIViewController, UICollectionViewDataSource
         cell.userExchangingOtherCategoryLabel.LabelWidthLayoutFunction(constant: (cell.userExchangingOwnerView.frame.width-44)*0.8)
         cell.userExchangingOtherNameLabel.LabelWidthLayoutFunction(constant: (cell.userExchangingOwnerView.frame.width-44)*0.8)
         
+        cell.userExchangingOwnerObjImageView.tag = indexPath.row
+        cell.userExchangingOtherObjImageView.tag = indexPath.row
         
         return cell
     }
     
-    @IBAction func userExchangeButton(_ sender: Any) {
-        
+    
+//    @IBAction func ExchMessageAlert123123(_ sender: Any) {
+//        let alertController = UIAlertController(title: "系統提示", message: "已發送交易確認訊息", preferredStyle: UIAlertControllerStyle.alert)
+//        let okAction = UIAlertAction(title: "確認", style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
+//        }
+//        alertController.addAction(okAction)
+//        self.present(alertController, animated: true, completion: nil)
+//    }
+
+    @IBAction func ExchMessageAlert(_ sender: Any) {
         let alertController = UIAlertController(title: "系統提示", message: "已發送交易確認訊息", preferredStyle: UIAlertControllerStyle.alert)
         let okAction = UIAlertAction(title: "確認", style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
         }
         alertController.addAction(okAction)
         self.present(alertController, animated: true, completion: nil)
-        
     }
-
+    
+    @IBAction func DropMessageAlert(_ sender: Any) {
+        let alertController = UIAlertController(title: "系統提示", message: "已取消這個交換", preferredStyle: UIAlertControllerStyle.alert)
+        let okAction = UIAlertAction(title: "確認", style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
+        }
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
