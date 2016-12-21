@@ -140,6 +140,7 @@ class ObjectInfoFromProfileViewController: UIViewController {
             ObjDescriptionTextView.text = self.object.description
             ObjGIDLabel.text = String(self.object.gid)
             print(ObjGIDLabel.text ?? "didnt get ojbect's gid")
+            Constants.gidToBeQueued = self.object.gid
             
             print(self.object.owner.photo_path)
 
