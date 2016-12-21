@@ -70,9 +70,19 @@ class uploadViewController: UIViewController, UIImagePickerControllerDelegate, U
         picker.dataSource = self
         uploadCategoryTextField.inputView = picker
         
+        uploadNameTextField.delegate = self
+        uploadCategoryTextField.delegate = self
+        
+        
     }
     
 
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        uploadNameTextField.resignFirstResponder()
+        uploadCategoryTextField.resignFirstResponder()
+        return true
+    }
+    
     
     
     
@@ -96,21 +106,37 @@ class uploadViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     
     @IBAction func postingObjectButton(_ sender: Any) {
-        print("111")
+        
         //print(Constants.imageInBase64)
-        httpPost(URL: "\(Constants.API_SERVER_URL)/api/upload/image?token=\(Constants.exwdToken)", parameters: ["filesize":Constants.imageSize, "filename": "\(uploadNameTextField.text)" , "base64": "\(Constants.imageInBase64)", "filetype": Constants.imageType],returnJsonFormat: false)
         
-        httpPost(URL: "\(Constants.API_SERVER_URL)/api/goods/post?token=\(Constants.exwdToken)", parameters: ["name":"\(uploadNameTextField.text!)", "category":"\(categoriesEng[categoryNum-1])", "description":"\(uploadContextTextView.text!)", "photo_path":"[\"\(Constants.imageURL)\"]", "position_x":121.5453914, "position_y":25.0261973],returnJsonFormat: true)
+        let okAction = UIAlertAction(title: "確認", style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
+        }
+        
+        
+        if(imageDisplay.image == nil){
+            let alertController = UIAlertController(title: "系統提示", message: "尚未選擇相片", preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
+        
+        else if (uploadCategoryTextField.text == ""){
+            let alertController = UIAlertController(title: "系統提示", message: "尚未選擇商品種類", preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
+            
+        else{
+            httpPost(URL: "\(Constants.API_SERVER_URL)/api/upload/image?token=\(Constants.exwdToken)", parameters: ["filesize":Constants.imageSize, "filename": "\(uploadNameTextField.text)" , "base64": "\(Constants.imageInBase64)", "filetype": Constants.imageType],returnJsonFormat: false)
+        
+            httpPost(URL: "\(Constants.API_SERVER_URL)/api/goods/post?token=\(Constants.exwdToken)", parameters: ["name":"\(uploadNameTextField.text!)", "category":"\(categoriesEng[categoryNum-1])", "description":"\(uploadContextTextView.text!)", "photo_path":"[\"\(Constants.imageURL)\"]", "position_x":121.5453914, "position_y":25.0261973],returnJsonFormat: true)
 
 
+            let alertController = UIAlertController(title: "系統提示", message: "物品上傳成功", preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
         
         
-        let alertView = UIAlertView()
-        alertView.title = "系统提示"
-        alertView.message = "物品上傳成功"
-        alertView.addButton(withTitle: "確認")
-        alertView.delegate=self
-        alertView.show()
+        }
         
     }
     
@@ -145,6 +171,7 @@ class uploadViewController: UIViewController, UIImagePickerControllerDelegate, U
             Constants.imageType = getImageType(imgData : imageNSData)
             print(Constants.imageSize)
             print(Constants.imageType)
+//            print(Constants.imageInBase64)
         }
         
     }

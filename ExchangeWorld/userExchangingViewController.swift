@@ -12,33 +12,9 @@ class userExchangingViewController: UIViewController, UICollectionViewDataSource
 
     @IBOutlet weak var userExchangingCollectionView: UICollectionView!
     
-    
-    var exchangingOwnerImageArray = [UIImage]()
-    var exchangingOtherImageArray = [UIImage]()
-    var exchangingOwnerImageURLArray : [String] = []
-    var exchangingOtherImageURLArray : [String] = []
-    var exchangingEIDArray : [Int] = []
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        userExchangingCollectionView.backgroundColor = UIColor(red: 218.0/255.0, green: 218.0/255.0, blue: 218.0/255.0, alpha: 1.0)
         
-        exchangingOwnerImageURLArray = Constants.userExchangingOwnerImageURLArrayP
-        exchangingOtherImageURLArray = Constants.userExchangingOtherImageURLArrayP
-        
-        if(exchangingOwnerImageURLArray.count != 0){
-            for i in 1 ... exchangingOwnerImageURLArray.count{
-                if let checkUrl1 = URL(string: exchangingOwnerImageURLArray[i-1]){
-                    
-                    getDataFromUrl(url: checkUrl1, kind: 1){(data, response, error) in }
-                }
-                if let checkUrl2 = URL(string: exchangingOtherImageURLArray[i-1]){
-                    
-                    getDataFromUrl(url: checkUrl2, kind: 2){(data, response, error) in }
-                }
-            }
-        }
         
     }
 
@@ -47,40 +23,51 @@ class userExchangingViewController: UIViewController, UICollectionViewDataSource
         
     }
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        userExchangingCollectionView.backgroundColor = UIColor(red: 218.0/255.0, green: 218.0/255.0, blue: 218.0/255.0, alpha: 1.0)
+
+        userExchangingCollectionView.reloadData()
+        
+    }
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return Constants.userExchangingOwnerImageURLArrayP.count
-        //return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
+        let categoryOwnerNameChi = categoryEngToChi(categoryArray: Constants.userExchangingOwnerCategoryArray)
+        let categoryOtherNameChi = categoryEngToChi(categoryArray: Constants.userExchangingOtherCategoryArray)
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! userExchangingCollectionViewCell
         
         cell.ViewBorderFunction(HorW: false, clear: true, amount: 80, borderWidth: 1)
-        cell.userExchangingOwnerObjImageView.image = self.exchangingOwnerImageArray[indexPath.row]
-        cell.userExchangingOtherObjImageView.image = self.exchangingOtherImageArray[indexPath.row]
+        cell.userExchangingOwnerObjImageView.sd_setImage(with: URL(string: Constants.userExchangingOwnerImageURLArrayP[indexPath.row]), placeholderImage: UIImage(named: "loading"), options: [.continueInBackground, .progressiveDownload])
+        cell.userExchangingOtherObjImageView.sd_setImage(with: URL(string: Constants.userExchangingOtherImageURLArrayP[indexPath.row]), placeholderImage: UIImage(named: "loading"), options: [.continueInBackground, .progressiveDownload])
+
 
         cell.userExchangingOwnerObjImageView.ViewBorderFunction(HorW: false,clear: false, amount: 10, borderWidth: 1.2)
         cell.userExchangingOtherObjImageView.ViewBorderFunction(HorW: false,clear: false, amount: 10, borderWidth: 1.2)
         cell.userExchangingOwnerView.ViewBorderFunction(HorW: false,clear: true, amount: 10, borderWidth: 1.2)
         cell.userExchangingOtherView.ViewBorderFunction(HorW: false,clear: true, amount: 10, borderWidth: 1.2)
         
-        cell.userExchangingOwnerCategoryLabel.text = Constants.userExchangingOwnerCategoryArray[indexPath.row]
+        cell.userExchangingOwnerCategoryLabel.text = categoryOwnerNameChi[indexPath.row]
+        cell.userExchangingOwnerCategoryIcon.image = UIImage(named: Constants.userExchangingOwnerCategoryArray[indexPath.row])
         cell.userExchangingOwnerNameLabel.text = Constants.facebookName
         
         cell.userExchangingOwnerObjLabel.text = Constants.userExchangingOwnerObjNameArray[indexPath.row]
         cell.userExchangingOwnerDescriptionLabel.text = Constants.userExchangingOwnerObjDescription[indexPath.row]
  
         
-        cell.userExchangingOtherCategoryLabel.text = Constants.userExchangingOtherCategoryArray[indexPath.row]
+        cell.userExchangingOtherCategoryLabel.text = categoryOtherNameChi[indexPath.row]
+        cell.userExchangingOtherCategoryIcon.image = UIImage(named: Constants.userExchangingOtherCategoryArray[indexPath.row])
         cell.userExchangingOtherNameLabel.text = Constants.userExchangingOtherNameArray[indexPath.row]
         cell.userExchangingOtherObjNameLabel.text = Constants.userExchangingOtherObjNameArray[indexPath.row]
         cell.userExchangingOtherDescriptionLabel.text = Constants.userExchangingOtherObjDescription[indexPath.row]
         cell.userExchangingExchIDLabel.text = String(Constants.userExchangingEIDArray[indexPath.row])
-        
+        cell.userExchangingExchIDLabel.isHidden = true
         
         
         cell.userExchangingOwnerCategoryLabel.LabelWidthLayoutFunction(constant: (cell.userExchangingOwnerView.frame.width-44)*0.8)
@@ -89,44 +76,43 @@ class userExchangingViewController: UIViewController, UICollectionViewDataSource
         cell.userExchangingOtherCategoryLabel.LabelWidthLayoutFunction(constant: (cell.userExchangingOwnerView.frame.width-44)*0.8)
         cell.userExchangingOtherNameLabel.LabelWidthLayoutFunction(constant: (cell.userExchangingOwnerView.frame.width-44)*0.8)
         
-        
+        cell.userExchangingOwnerObjImageView.tag = indexPath.row
+        cell.userExchangingOtherObjImageView.tag = indexPath.row
         
         return cell
     }
     
-    @IBAction func ExchangeButton(_ sender: Any) {
-        print("12231223123123123")
-//        print(Constants.userExchangingEIDArray[1])
-//        httpPut(URL: "\(Constants.API_SERVER_URL)/api/exchange/agree?eid=\(Constants.userExchangingEIDArray[1])&owner_uid=\(Constants.uid)&token=\(Constants.exwdToken)")
-    }
+    
+//    @IBAction func ExchMessageAlert123123(_ sender: Any) {
+//        let alertController = UIAlertController(title: "系統提示", message: "已發送交易確認訊息", preferredStyle: UIAlertControllerStyle.alert)
+//        let okAction = UIAlertAction(title: "確認", style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
+//        }
+//        alertController.addAction(okAction)
+//        self.present(alertController, animated: true, completion: nil)
+//    }
 
+    @IBAction func ExchMessageAlert(_ sender: Any) {
+        let alertController = UIAlertController(title: "系統提示", message: "已發送交易確認訊息", preferredStyle: UIAlertControllerStyle.alert)
+        let okAction = UIAlertAction(title: "確認", style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
+        }
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    @IBAction func DropMessageAlert(_ sender: Any) {
+        let alertController = UIAlertController(title: "系統提示", message: "已取消這個交換", preferredStyle: UIAlertControllerStyle.alert)
+        let okAction = UIAlertAction(title: "確認", style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
+        }
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         return CGSize(width: collectionView.bounds.size.width-30, height: (collectionView.bounds.size.width-30)*0.9)
     }
-    
-    func getDataFromUrl(url: URL, kind: Int, completion: @escaping (_ data: Data?, _  response: URLResponse?, _ error: Error?) -> Void) {
-        
-        let semaphore = DispatchSemaphore(value: 0)
-        
-        let task = URLSession.shared.dataTask(with: url) {
-            (data, response, error) in
-            if(kind == 1){
-                self.exchangingOwnerImageArray.append(UIImage(data: data!)!)
-            }
-            else if(kind == 2){
-                self.exchangingOtherImageArray.append(UIImage(data: data!)!)
-            }
-            semaphore.signal()
-        }
-        task.resume()
-        semaphore.wait()
-    }
-    
-
-
-    
 
 }
 

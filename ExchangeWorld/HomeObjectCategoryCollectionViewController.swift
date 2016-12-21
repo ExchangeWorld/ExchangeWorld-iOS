@@ -16,7 +16,7 @@ class HomeObjectCategoryCollectionViewController: UICollectionViewController {
 
     let categoryImageArray = ["Books", "Textbooks", "3C", "3C_accessories", "Clothes", "Cosmetic", "Accessories", "Food", "Houseware", "Sports", "Games", "Others"]
     
-    let categortNameArray = ["書籍", "教科書", "3C產品", "3C配件", "服飾", "美妝用品", "穿搭配件", "食物", "家庭用品", "運動用品", "電玩遊戲", "其它"]
+    let categoryNameArray = ["書籍", "教科書", "3C產品", "3C配件", "服飾", "美妝用品", "穿搭配件", "食物", "家庭用品", "運動用品", "電玩遊戲", "其它"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +54,7 @@ class HomeObjectCategoryCollectionViewController: UICollectionViewController {
 //            cell.categoryImageView.layer.cornerRadius = cornerRadiusOfCell;
 //        }
         cell.categoryImageView.image = UIImage(named: self.categoryImageArray[indexPath.row])
-        cell.categoryNameLabel.text = self.categortNameArray[indexPath.row]
+        cell.categoryNameLabel.text = self.categoryNameArray[indexPath.row]
     
         // Configure the cell
     

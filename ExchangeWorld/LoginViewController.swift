@@ -58,6 +58,9 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
                     Constants.facebookName = value as! String
                     //print(Constants.facebookName)
                 }
+                if(key == "email"){
+                    Constants.facebookEmail = value as! String
+                }
                 if(key == "picture"){
                     let resultInFunc2 = value as! Dictionary<String,AnyObject>
                     for(key2,value2) in resultInFunc2{
@@ -74,15 +77,14 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
                 }
             }
            
-         
-            
+            httpGet(URL: "\(Constants.API_SERVER_URL)/api/user?identity=\(Constants.facebookID)",getType : 5)
+            if(Constants.firstTimeLogin == true){
+                httpPost(URL: "\(Constants.API_SERVER_URL)/api/authenticate/register", parameters: ["fb": true, "identity": Constants.facebookID, "name": Constants.facebookName, "email":Constants.facebookEmail, "photo_path": Constants.facebookProfilePicURL], returnJsonFormat: true)
+            }
+            else{
             httpPost(URL: "\(Constants.API_SERVER_URL)/api/authenticate/login", parameters: ["fb": true , "identity": Constants.facebookID], returnJsonFormat : true)
             
-            httpGet(URL: "\(Constants.API_SERVER_URL)/api/user?identity=\(Constants.facebookID)",getType : 1)
-            //httpGet(URL: "\(Constants.API_SERVER_URL)/api/user?uid=4)",alreadyGetUID : 1)
-            
-            httpGet(URL: "\(Constants.API_SERVER_URL)/api/exchange/of/user/all?owner_uid=\(Constants.uid)&token=\(Constants.exwdToken)", getType: 2)
-            
+            }
         }
         
         let storyboard: UIStoryboard = self.storyboard!

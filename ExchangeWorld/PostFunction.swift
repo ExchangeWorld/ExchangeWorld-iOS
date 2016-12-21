@@ -18,8 +18,8 @@ func httpPost(URL:String,parameters: [String : Any],returnJsonFormat: Bool) {
     request.httpMethod = "POST"
     request.allHTTPHeaderFields = ["Content-Type": "application/json"]
     request.httpBody = try! JSONSerialization.data(withJSONObject: parameters , options: [])
-    let jsonString = String(data: request.httpBody!, encoding: .utf8)!
-    NSLog("jsonString = \(jsonString)")
+//    let jsonString = String(data: request.httpBody!, encoding: .utf8)!
+//    NSLog("jsonString = \(jsonString)")
     
     
     

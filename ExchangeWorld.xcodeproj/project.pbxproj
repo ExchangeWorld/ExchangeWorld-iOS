@@ -29,9 +29,17 @@
 		18E497F11DFC513400A45E0B /* HomeAreaCategoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E497F01DFC513400A45E0B /* HomeAreaCategoryCollectionViewController.swift */; };
 		18E497F31DFC518800A45E0B /* HomeAreaCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E497F21DFC518800A45E0B /* HomeAreaCategoryCollectionViewCell.swift */; };
 		7203BF591DE1F903007C99B6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7203BF581DE1F903007C99B6 /* ProfileViewController.swift */; };
+		720BC32D1E0586670099C252 /* ExchRequestQueuerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720BC32C1E0586670099C252 /* ExchRequestQueuerViewController.swift */; };
+		720BC32F1E0586810099C252 /* ExchRequestQueuerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720BC32E1E0586810099C252 /* ExchRequestQueuerCollectionViewCell.swift */; };
+		720BC3311E06DB570099C252 /* ObjectInfoFromProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720BC3301E06DB570099C252 /* ObjectInfoFromProfileViewController.swift */; };
+		720BC3331E07E1840099C252 /* DeleteFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720BC3321E07E1840099C252 /* DeleteFunction.swift */; };
+		720BC3351E07EAE30099C252 /* QueueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720BC3341E07EAE30099C252 /* QueueViewController.swift */; };
+		720BC3371E07EAF50099C252 /* QueueCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720BC3361E07EAF50099C252 /* QueueCollectionViewCell.swift */; };
 		721F46BE1DF463AF00AAA83D /* UserStarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721F46BD1DF463AF00AAA83D /* UserStarViewController.swift */; };
 		721F46FC1DF5344900AAA83D /* UserStarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721F46FB1DF5344900AAA83D /* UserStarCollectionViewCell.swift */; };
 		7224FF851DEEB1540020CE85 /* ProfileSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7224FF841DEEB1540020CE85 /* ProfileSegmentedControl.swift */; };
+		723CB42E1E00F3DE0006029C /* ExchRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723CB42D1E00F3DE0006029C /* ExchRequestViewController.swift */; };
+		723CB4301E00F3F50006029C /* ExchRequestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723CB42F1E00F3F50006029C /* ExchRequestCollectionViewCell.swift */; };
 		72BA14F71DF67346006393E9 /* URLProcessingFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BA14F61DF67346006393E9 /* URLProcessingFunction.swift */; };
 		72BA14F91DF7E6C0006393E9 /* GetFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BA14F81DF7E6C0006393E9 /* GetFunction.swift */; };
 		72BA14FB1DF87C25006393E9 /* Wait4ExchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BA14FA1DF87C25006393E9 /* Wait4ExchCollectionViewCell.swift */; };
@@ -93,9 +101,18 @@
 		18E497F21DFC518800A45E0B /* HomeAreaCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeAreaCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		1D3C19982F5BA4E9121B65E2 /* Pods-ExchangeWorld.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExchangeWorld.release.xcconfig"; path = "Pods/Target Support Files/Pods-ExchangeWorld/Pods-ExchangeWorld.release.xcconfig"; sourceTree = "<group>"; };
 		7203BF581DE1F903007C99B6 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		720BC32C1E0586670099C252 /* ExchRequestQueuerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExchRequestQueuerViewController.swift; sourceTree = "<group>"; };
+		720BC32E1E0586810099C252 /* ExchRequestQueuerCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExchRequestQueuerCollectionViewCell.swift; sourceTree = "<group>"; };
+		720BC3301E06DB570099C252 /* ObjectInfoFromProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectInfoFromProfileViewController.swift; sourceTree = "<group>"; };
+		720BC3321E07E1840099C252 /* DeleteFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteFunction.swift; sourceTree = "<group>"; };
+		720BC3341E07EAE30099C252 /* QueueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueueViewController.swift; sourceTree = "<group>"; };
+		720BC3361E07EAF50099C252 /* QueueCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueueCollectionViewCell.swift; sourceTree = "<group>"; };
 		721F46BD1DF463AF00AAA83D /* UserStarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserStarViewController.swift; sourceTree = "<group>"; };
 		721F46FB1DF5344900AAA83D /* UserStarCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserStarCollectionViewCell.swift; sourceTree = "<group>"; };
 		7224FF841DEEB1540020CE85 /* ProfileSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileSegmentedControl.swift; sourceTree = "<group>"; };
+		723CB42D1E00F3DE0006029C /* ExchRequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExchRequestViewController.swift; sourceTree = "<group>"; };
+		723CB42F1E00F3F50006029C /* ExchRequestCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExchRequestCollectionViewCell.swift; sourceTree = "<group>"; };
+		726C03C91E02E42F004EEEA5 /* ExchangeWorld-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ExchangeWorld-Bridging-Header.h"; sourceTree = "<group>"; };
 		72BA14F61DF67346006393E9 /* URLProcessingFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLProcessingFunction.swift; sourceTree = "<group>"; };
 		72BA14F81DF7E6C0006393E9 /* GetFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFunction.swift; sourceTree = "<group>"; };
 		72BA14FA1DF87C25006393E9 /* Wait4ExchCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wait4ExchCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -166,6 +183,7 @@
 				184A3D641DDEA5AA00CA3541 /* PostFunction.swift */,
 				72BA14F81DF7E6C0006393E9 /* GetFunction.swift */,
 				72BA15081DFBDBEB006393E9 /* PutFunction.swift */,
+				720BC3321E07E1840099C252 /* DeleteFunction.swift */,
 				72BA14F61DF67346006393E9 /* URLProcessingFunction.swift */,
 				184A3D621DDEA47800CA3541 /* Constants.swift */,
 				1870D6C31DC083AF00C697DA /* ObjectDataStructure.swift */,
@@ -186,13 +204,21 @@
 				721F46FB1DF5344900AAA83D /* UserStarCollectionViewCell.swift */,
 				72BA14FC1DF87C49006393E9 /* Wait4ExchViewController.swift */,
 				72BA14FA1DF87C25006393E9 /* Wait4ExchCollectionViewCell.swift */,
+				723CB42D1E00F3DE0006029C /* ExchRequestViewController.swift */,
+				723CB42F1E00F3F50006029C /* ExchRequestCollectionViewCell.swift */,
+				720BC32C1E0586670099C252 /* ExchRequestQueuerViewController.swift */,
+				720BC32E1E0586810099C252 /* ExchRequestQueuerCollectionViewCell.swift */,
 				72BA15041DF9C733006393E9 /* userExchangingViewController.swift */,
 				72BA15021DF9C71F006393E9 /* userExchangingCollectionViewCell.swift */,
 				72BA14FE1DF99007006393E9 /* userHistoryViewController.swift */,
 				72BA15001DF9901B006393E9 /* userHistoryCollectionViewCell.swift */,
+				720BC3301E06DB570099C252 /* ObjectInfoFromProfileViewController.swift */,
+				720BC3341E07EAE30099C252 /* QueueViewController.swift */,
+				720BC3361E07EAF50099C252 /* QueueCollectionViewCell.swift */,
 				18D992671DBC521E00538F00 /* Assets.xcassets */,
 				18D992691DBC521E00538F00 /* LaunchScreen.storyboard */,
 				18D9926C1DBC521E00538F00 /* Info.plist */,
+				726C03C91E02E42F004EEEA5 /* ExchangeWorld-Bridging-Header.h */,
 			);
 			path = ExchangeWorld;
 			sourceTree = "<group>";
@@ -304,6 +330,7 @@
 					18D9925C1DBC521D00538F00 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 6T3SFM9RFU;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -424,11 +451,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				72BA14F71DF67346006393E9 /* URLProcessingFunction.swift in Sources */,
+				720BC3331E07E1840099C252 /* DeleteFunction.swift in Sources */,
 				1870D6C81DC098B600C697DA /* HomeObjectCategoryCollectionViewCell.swift in Sources */,
+				723CB42E1E00F3DE0006029C /* ExchRequestViewController.swift in Sources */,
+				720BC3371E07EAF50099C252 /* QueueCollectionViewCell.swift in Sources */,
 				184A3D651DDEA5AA00CA3541 /* PostFunction.swift in Sources */,
 				1870D6C61DC0952600C697DA /* HomeObjectCategoryCollectionViewController.swift in Sources */,
+				720BC3311E06DB570099C252 /* ObjectInfoFromProfileViewController.swift in Sources */,
 				72BA15091DFBDBEB006393E9 /* PutFunction.swift in Sources */,
+				720BC3351E07EAE30099C252 /* QueueViewController.swift in Sources */,
 				1870D6C21DC07EB000C697DA /* HomeMapViewController.swift in Sources */,
+				720BC32D1E0586670099C252 /* ExchRequestQueuerViewController.swift in Sources */,
 				721F46BE1DF463AF00AAA83D /* UserStarViewController.swift in Sources */,
 				72BA15011DF9901B006393E9 /* userHistoryCollectionViewCell.swift in Sources */,
 				7203BF591DE1F903007C99B6 /* ProfileViewController.swift in Sources */,
@@ -447,7 +480,9 @@
 				72BA14FD1DF87C49006393E9 /* Wait4ExchViewController.swift in Sources */,
 				1870D6CA1DC09E2C00C697DA /* HomeObjectCollectionViewController.swift in Sources */,
 				18812D9C1DE572B500BA0B56 /* uploadaViewController.swift in Sources */,
+				723CB4301E00F3F50006029C /* ExchRequestCollectionViewCell.swift in Sources */,
 				18006E501DC99A1B00C89A91 /* ObjectInfoViewController.swift in Sources */,
+				720BC32F1E0586810099C252 /* ExchRequestQueuerCollectionViewCell.swift in Sources */,
 				72BA14FF1DF99007006393E9 /* userHistoryViewController.swift in Sources */,
 				72BA15051DF9C733006393E9 /* userExchangingViewController.swift in Sources */,
 				184A3D611DDEA37900CA3541 /* LoginViewController.swift in Sources */,
@@ -607,6 +642,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = ExchangeWorld/ExchangeWorld.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 6T3SFM9RFU;
@@ -614,6 +650,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Sourov.ExchangeWorld2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ExchangeWorld/ExchangeWorld-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -624,6 +662,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = ExchangeWorld/ExchangeWorld.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 6T3SFM9RFU;
@@ -631,6 +670,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Sourov.ExchangeWorld2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ExchangeWorld/ExchangeWorld-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

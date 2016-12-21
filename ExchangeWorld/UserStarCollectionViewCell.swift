@@ -14,4 +14,9 @@ class UserStarCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var userStarObjNameLabel: UILabel!
     @IBOutlet weak var userStarCategoryNameLabel: UILabel!
     @IBOutlet weak var userStarOwnerNameLabel: UILabel!
+    @IBOutlet weak var userStarCategoryIcon: UIImageView!
+    @IBAction func ObjDetailButtonAction(_ sender: Any) {
+        Constants.objCount = userStarImageView.tag
+        Constants.whichCase = "userStar"
+    }
 }

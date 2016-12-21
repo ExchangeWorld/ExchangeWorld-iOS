@@ -82,9 +82,10 @@ class HomeObjectCollectionViewController: UICollectionViewController {
         print(path)
         
         // Simpler
-        if let url = URL(string: path), let data = try? Data(contentsOf: url) {
-            cell.objImageView.image = UIImage(data: data)
-        }
+//        if let url = URL(string: path), let data = try? Data(contentsOf: url) {
+//            cell.objImageView.image = UIImage(data: data)
+//        }
+        cell.objImageView.sd_setImage(with: URL(string: path), placeholderImage: UIImage(named: "loading"), options: [.continueInBackground, .progressiveDownload])
         cell.objNameLabel.text = object.name
         cell.objCategoryLabel.text = object.category
         cell.objOwnerLabel.text = object.owner.name
@@ -100,7 +101,7 @@ class HomeObjectCollectionViewController: UICollectionViewController {
         }
         
         if segueIdentifier == "showObjectDetail" {
-            guard let detailViewController = segue.destination as? ObjectInfoViewController else {
+            guard let detailViewController = segue.destination as? ObjectInfoFromProfileViewController else {
                 return
             }
             guard let cell = sender as? UICollectionViewCell else {
@@ -109,6 +110,7 @@ class HomeObjectCollectionViewController: UICollectionViewController {
             let indexPath = self.collectionView?.indexPath(for: cell)
             
             detailViewController.object = self.thisCategory!.objects[indexPath!.row]
+            detailViewController.whichCase = "byCategory"
         }
     }
 

@@ -89,9 +89,10 @@ extension Object: Mappable {
 struct ExchangeWorldCategoryDataSource {
     var category: Category!
     var categoryName: String
-    init(categoryName: String){
+    init?(categoryName: String){
         self.categoryName = categoryName
     }
+    
     
     func fetch(completion: @escaping (_ objects: [Object]?) -> Void) {
         let url = "http://exwd.csie.org:43002/api/goods/search"
@@ -103,7 +104,7 @@ struct ExchangeWorldCategoryDataSource {
                 completion(nil)
                 return
             }
-//            print(response.result.value)
+            print(response.result.value)
             completion(response.result.value)
         }
     }

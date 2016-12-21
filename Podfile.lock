@@ -21,6 +21,9 @@ PODS:
   - GoogleMaps/Maps (2.1.0):
     - GoogleMaps/Base (= 2.1.0)
   - ObjectMapper (2.1.0)
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
@@ -30,6 +33,7 @@ DEPENDENCIES:
   - FBSDKShareKit
   - GoogleMaps
   - ObjectMapper (~> 2.1)
+  - SDWebImage
 
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
@@ -40,7 +44,8 @@ SPEC CHECKSUMS:
   FBSDKShareKit: 53af0239b5bd2ebf191f32f75991245a208cc982
   GoogleMaps: 06589b9a38097bce0cd6e90f0fd9b5e4b4a9344c
   ObjectMapper: e5e0f8aef8590fc2ddcde7f27eddb255863ee6e9
+  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
 
-PODFILE CHECKSUM: ab693536b8b7bdc655aa6962f4bb409a6e9b183b
+PODFILE CHECKSUM: 4194c85493eb041508d68d6b6e3e7b72401d8960
 
 COCOAPODS: 1.1.1
