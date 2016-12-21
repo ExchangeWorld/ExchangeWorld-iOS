@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import CoreLocation
 
 
-class uploadViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate,UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
+class uploadViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate,UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate ,CLLocationManagerDelegate{
     
     @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var photoLibraryButton: UIButton!
@@ -126,9 +127,22 @@ class uploadViewController: UIViewController, UIImagePickerControllerDelegate, U
         }
             
         else{
+            
+            var locManager = CLLocationManager()
+            locManager.requestWhenInUseAuthorization()
+            
+            var currentLocation = CLLocation()
+            
+            if( CLLocationManager.authorizationStatus() == CLAuthorizationStatus.authorizedWhenInUse ||
+                CLLocationManager.authorizationStatus() == CLAuthorizationStatus.authorized){
+                
+                currentLocation = locManager.location!
+                print(currentLocation.coordinate.latitude, currentLocation.coordinate.longitude)
+            }
+            
             httpPost(URL: "\(Constants.API_SERVER_URL)/api/upload/image?token=\(Constants.exwdToken)", parameters: ["filesize":Constants.imageSize, "filename": "\(uploadNameTextField.text)" , "base64": "\(Constants.imageInBase64)", "filetype": Constants.imageType],returnJsonFormat: false)
         
-            httpPost(URL: "\(Constants.API_SERVER_URL)/api/goods/post?token=\(Constants.exwdToken)", parameters: ["name":"\(uploadNameTextField.text!)", "category":"\(categoriesEng[categoryNum-1])", "description":"\(uploadContextTextView.text!)", "photo_path":"[\"\(Constants.imageURL)\"]", "position_x":121.5453914, "position_y":25.0261973],returnJsonFormat: true)
+            httpPost(URL: "\(Constants.API_SERVER_URL)/api/goods/post?token=\(Constants.exwdToken)", parameters: ["name":"\(uploadNameTextField.text!)", "category":"\(categoriesEng[categoryNum-1])", "description":"\(uploadContextTextView.text!)", "photo_path":"[\"\(Constants.imageURL)\"]", "position_x":currentLocation.coordinate.longitude, "position_y":currentLocation.coordinate.latitude],returnJsonFormat: true)
 
 
             let alertController = UIAlertController(title: "系統提示", message: "物品上傳成功", preferredStyle: UIAlertControllerStyle.alert)

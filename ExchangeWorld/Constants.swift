@@ -38,6 +38,24 @@ struct Constants {
 //    static var position_x : Double = 0
 //    static var position_y : Double = 0
     
+    /*
+        objCount            ->  to know which object is showing to ObjectInfoFromProfileVC
+        whichObjCount       ->  to know which object is showing to ObjectInfoFromProfileVC  (交換請求頁)
+        whichQueuerCount    ->  to know which object is showing to ObjectInfoFromProfileVC  (交換請求頁 到 看誰排頁)
+        whichCase           ->  to tell objectInfoFromProfileVC "which object is showing & from which VC"
+        starredOrNot        ->  {true   : object is starred }
+                                {false  : not starred       }
+        gidToBeQueued       ->  (the object is about to be queued)'s gid
+    */
+    static var objCount = 100
+    static var whichObjCount = 100
+    static var whichQueuerCount = 100
+    static var whichCase : String = ""
+    static var starredOrNot : Bool = false
+    static var gidToBeQueued = 100
+    static var ownObject2QueueCount = 100
+    
+    
     
     static var userStarImageURLArrayNP : [String] = []
     static var userStarImageURLArrayP : [String] = []
@@ -47,12 +65,6 @@ struct Constants {
     static var userStarOwnerImageURLArray : [String] = []
     static var userStarGIDArray : [Int] = []
     static var userStarDescriptionArray : [String] = []
-    static var objCount = 100
-    static var ownObject2QueueCount = 100
-    static var whichCase : String = ""
-    static var starredOrNot : Bool = false
-    static var gidToBeQueued = 100
-//    static var 
     
     
     static var userWait4ExchImageURLArrayNP : [String] = []
@@ -112,8 +124,7 @@ struct Constants {
     static var userExchRequestQueuerGIDArray: [[Int]] = []
     static var userExchRequestQueuerProfileImageArray : [[String]] = []
     
-    static var whichObjCount = 100
-    static var whichQueuerCount = 100
+    
     
     
 }
